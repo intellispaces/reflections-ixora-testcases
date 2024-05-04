@@ -11,25 +11,26 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for {@link HelloWorld1} class.
+ * Tests for HelloWorld samples.
  */
-public class HelloWorld1Test {
+public class HelloWorldTest {
 
   @ParameterizedTest
   @ValueSource(classes = {
       HelloWorld1.class,
+      HelloWorld2.class
   })
-  void testModuleOutput(Class<?> moduleClass) {
+  void testHelloWorld(Class<?> moduleClass) {
     // Given
-    var outputStream = new ByteArrayOutputStream();
-    var printStream = new PrintStream(outputStream, true, StandardCharsets.UTF_8);
-    System.setOut(printStream);
+    var os = new ByteArrayOutputStream();
+    var ps = new PrintStream(os, true, StandardCharsets.UTF_8);
+    System.setOut(ps);
 
     // When
-    IntellispacesFramework.createSystemModule(HelloWorld1.class).start();
+    IntellispacesFramework.createModule(moduleClass).start();
 
     // Then
-    String output = outputStream.toString(StandardCharsets.UTF_8);
+    String output = os.toString(StandardCharsets.UTF_8);
     assertThat(output).isEqualTo("Hello, world!" + System.lineSeparator());
   }
 }
