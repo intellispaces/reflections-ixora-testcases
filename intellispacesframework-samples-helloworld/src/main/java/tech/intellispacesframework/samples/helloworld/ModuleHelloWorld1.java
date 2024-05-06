@@ -8,10 +8,10 @@ import tech.intellispacesframework.core.annotation.Module;
 import tech.intellispacesframework.core.annotation.Startup;
 
 @Module(include = CliUnit.class)
-public class HelloWorld1 {
+public class ModuleHelloWorld1 {
 
   public static void main(String[] args) {
-    IntellispacesFramework.createModule(HelloWorld1.class).start();
+    IntellispacesFramework.createModule(ModuleHelloWorld1.class).start();
   }
 
   @Startup

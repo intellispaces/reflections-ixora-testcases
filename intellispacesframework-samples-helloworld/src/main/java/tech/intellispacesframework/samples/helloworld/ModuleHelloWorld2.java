@@ -7,12 +7,12 @@ import tech.intellispacesframework.core.annotation.Module;
 import tech.intellispacesframework.core.annotation.Startup;
 
 @Module(include = CliUnit.class)
-public abstract class HelloWorld2 {
+public abstract class ModuleHelloWorld2 {
 
   public abstract ConsoleHandle console();
 
   public static void main(String[] args) {
-    IntellispacesFramework.createModule(HelloWorld2.class).start();
+    IntellispacesFramework.createModule(ModuleHelloWorld2.class).start();
   }
 
   @Startup

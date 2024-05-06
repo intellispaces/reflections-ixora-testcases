@@ -11,14 +11,14 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for HelloWorld samples.
+ * Tests for HelloWorld module samples.
  */
-public class HelloWorldTest {
+public class ModuleHelloWorldTest {
 
   @ParameterizedTest
   @ValueSource(classes = {
-      HelloWorld1.class,
-      HelloWorld2.class
+      ModuleHelloWorld1.class,
+      ModuleHelloWorld2.class
   })
   void testHelloWorld(Class<?> moduleClass) {
     // Given
