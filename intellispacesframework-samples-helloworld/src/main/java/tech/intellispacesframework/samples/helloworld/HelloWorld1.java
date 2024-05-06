@@ -4,10 +4,10 @@ import intellispaces.cli.CliUnit;
 import intellispaces.cli.ConsoleHandle;
 
 import tech.intellispacesframework.core.IntellispacesFramework;
-import tech.intellispacesframework.core.annotation.Include;
+import tech.intellispacesframework.core.annotation.Module;
 import tech.intellispacesframework.core.annotation.Startup;
 
-@Include(CliUnit.class)
+@Module(include = CliUnit.class)
 public class HelloWorld1 {
 
   public static void main(String[] args) {

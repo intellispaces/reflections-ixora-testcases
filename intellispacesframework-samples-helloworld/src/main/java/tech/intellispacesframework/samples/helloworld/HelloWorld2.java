@@ -3,10 +3,10 @@ package tech.intellispacesframework.samples.helloworld;
 import intellispaces.cli.CliUnit;
 import intellispaces.cli.ConsoleHandle;
 import tech.intellispacesframework.core.IntellispacesFramework;
-import tech.intellispacesframework.core.annotation.Include;
+import tech.intellispacesframework.core.annotation.Module;
 import tech.intellispacesframework.core.annotation.Startup;
 
-@Include(CliUnit.class)
+@Module(include = CliUnit.class)
 public abstract class HelloWorld2 {
 
   public abstract ConsoleHandle console();

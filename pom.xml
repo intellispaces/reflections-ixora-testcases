@@ -24,7 +24,7 @@
     </dependency>
     <dependency>
       <groupId>intellispaces</groupId>
-      <artifactId>intellispacesframework-dynamic-proxy-bytebuddy</artifactId>
+      <artifactId>intellispacesframework-dynamicproxy-bytebuddy</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
