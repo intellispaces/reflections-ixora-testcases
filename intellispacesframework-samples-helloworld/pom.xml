@@ -12,10 +12,10 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!-- Intellispaces -->
+        <!-- Ixora -->
         <dependency>
             <groupId>intellispaces</groupId>
-            <artifactId>intellispaces-cli</artifactId>
+            <artifactId>ixora-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

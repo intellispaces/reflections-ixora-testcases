@@ -1,8 +1,7 @@
 package tech.intellispacesframework.samples.helloworld;
 
-import intellispaces.cli.CliUnit;
-import intellispaces.cli.ConsoleHandle;
-
+import intellispaces.ixora.cli.ConsoleHandle;
+import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispacesframework.core.IntellispacesFramework;
 import tech.intellispacesframework.core.annotation.Module;
 import tech.intellispacesframework.core.annotation.Startup;
@@ -11,7 +10,7 @@ import tech.intellispacesframework.core.annotation.Startup;
 public class ModuleHelloWorld1 {
 
   public static void main(String[] args) {
-    IntellispacesFramework.createModule(ModuleHelloWorld1.class).start();
+    IntellispacesFramework.loadModule(ModuleHelloWorld1.class);
   }
 
   @Startup

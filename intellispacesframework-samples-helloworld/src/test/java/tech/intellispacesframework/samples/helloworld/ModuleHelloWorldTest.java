@@ -1,5 +1,10 @@
 package tech.intellispacesframework.samples.helloworld;
 
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.LoggerContext;
+import org.slf4j.LoggerFactory;
+
+import org.junit.jupiter.api.BeforeAll;
 import tech.intellispacesframework.core.IntellispacesFramework;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -15,10 +20,18 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class ModuleHelloWorldTest {
 
+  @BeforeAll
+  public static void disableLogging() {
+    var lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+    lc.getLogger("ROOT").setLevel(Level.ERROR);
+  }
+
   @ParameterizedTest
   @ValueSource(classes = {
       ModuleHelloWorld1.class,
-      ModuleHelloWorld2.class
+      ModuleHelloWorld2.class,
+      ModuleHelloWorld3.class,
+      ModuleHelloWorld4.class
   })
   void testHelloWorld(Class<?> moduleClass) {
     // Given
@@ -27,7 +40,7 @@ public class ModuleHelloWorldTest {
     System.setOut(ps);
 
     // When
-    IntellispacesFramework.createModule(moduleClass).start();
+    IntellispacesFramework.loadModule(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

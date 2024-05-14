@@ -16,7 +16,7 @@
   </modules>
 
   <dependencies>
-    <!-- Intellispaces -->
+    <!-- Intellispaces framework -->
     <dependency>
       <groupId>intellispaces</groupId>
       <artifactId>intellispacesframework-core</artifactId>
@@ -40,6 +40,12 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
+    </dependency>
+
+    <!-- Logging -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
     </dependency>
   </dependencies>
 </project>
