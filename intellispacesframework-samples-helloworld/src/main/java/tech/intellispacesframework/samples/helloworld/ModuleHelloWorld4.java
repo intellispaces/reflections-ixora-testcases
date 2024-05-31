@@ -25,7 +25,10 @@ public class ModuleHelloWorld4 {
    */
   @Startup
   public void startup(ConsoleHandle console) {
+    // Get identifier of the transition 'sameConsoleWithLastMessageAndNewLine'
     String tid = TransitionFunctions.getTransitionId(Console.class, Console::sameConsoleWithLastMessageAndNewLine, null);
+
+    // Move CLI console through transition defined by ID tid
     console.moveThru(tid, "Hello, world!");
   }
 

@@ -24,6 +24,7 @@ public class ModuleHelloWorld3 {
    */
   @Startup
   public void startup(ConsoleHandle console) {
+    // Move CLI console through the transition 'sameConsoleWithLastMessageAndNewLine' with qualifier "Hello, world!"
     console.moveThru(Console::sameConsoleWithLastMessageAndNewLine, "Hello, world!");
   }
 
