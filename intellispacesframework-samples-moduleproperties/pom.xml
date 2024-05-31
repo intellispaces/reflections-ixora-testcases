@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>intellispacesframework-samples-module-properties</artifactId>
+    <artifactId>intellispacesframework-samples-moduleproperties</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

@@ -13,7 +13,7 @@
 
   <modules>
     <module>intellispacesframework-samples-helloworld</module>
-    <module>intellispacesframework-samples-module-properties</module>
+    <module>intellispacesframework-samples-moduleproperties</module>
   </modules>
 
   <dependencies>
