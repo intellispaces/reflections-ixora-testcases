@@ -8,19 +8,19 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>intellispacesframework-samples-helloworld</artifactId>
+    <artifactId>intellispacesframework-samples-module-properties</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
         <!-- Ixora -->
         <dependency>
             <groupId>intellispaces</groupId>
-            <artifactId>ixora-cli-ontology</artifactId>
+            <artifactId>ixora-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>intellispaces</groupId>
-            <artifactId>ixora-commons</artifactId>
+            <artifactId>ixora-snakeyaml</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
