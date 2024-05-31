@@ -37,7 +37,7 @@ public class ModulePropertiesTest {
     System.setOut(ps);
 
     // When
-    IntellispacesFramework.loadModule(moduleClass).start();
+    IntellispacesFramework.loadModule(moduleClass).run();
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
