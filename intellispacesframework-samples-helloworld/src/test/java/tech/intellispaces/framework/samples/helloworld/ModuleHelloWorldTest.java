@@ -1,4 +1,4 @@
-package tech.intellispacesframework.samples.moduleproperties;
+package tech.intellispaces.framework.samples.helloworld;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.LoggerFactory;
-import tech.intellispacesframework.core.IntellispacesFramework;
+import tech.intellispaces.framework.core.IntellispacesFramework;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -15,9 +15,9 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for Module Properties module samples.
+ * Tests for HelloWorld module samples.
  */
-public class ModulePropertiesTest {
+public class ModuleHelloWorldTest {
 
   @BeforeAll
   public static void disableLogging() {
@@ -27,8 +27,10 @@ public class ModulePropertiesTest {
 
   @ParameterizedTest
   @ValueSource(classes = {
-      ModuleProperties1.class,
-      ModuleProperties2.class
+      ModuleHelloWorld1.class,
+      ModuleHelloWorld2.class,
+      ModuleHelloWorld3.class,
+      ModuleHelloWorld4.class
   })
   void testHelloWorld(Class<?> moduleClass) {
     // Given
@@ -41,7 +43,6 @@ public class ModulePropertiesTest {
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
-    assertThat(output).isEqualTo("City: East Centerville" + System.lineSeparator() +
-        "Street: 123 Tornado Alley" + System.lineSeparator());
+    assertThat(output).isEqualTo("Hello, world!" + System.lineSeparator());
   }
 }

@@ -1,13 +1,13 @@
-package tech.intellispacesframework.samples.moduleproperties;
+package tech.intellispaces.framework.samples.moduleproperties;
 
+import tech.intellispaces.framework.samples.moduleproperties.model.Address;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispacesframework.core.IntellispacesFramework;
-import tech.intellispacesframework.core.annotation.Projection;
-import tech.intellispacesframework.core.annotation.Properties;
-import tech.intellispacesframework.core.annotation.Startup;
-import tech.intellispacesframework.core.annotation.Unit;
-import tech.intellispacesframework.samples.moduleproperties.model.Address;
+import tech.intellispaces.framework.core.IntellispacesFramework;
+import tech.intellispaces.framework.core.annotation.Projection;
+import tech.intellispaces.framework.core.annotation.Properties;
+import tech.intellispaces.framework.core.annotation.Startup;
+import tech.intellispaces.framework.core.annotation.Unit;
 
 public interface ModuleProperties5 {
 

@@ -1,12 +1,13 @@
-package tech.intellispacesframework.samples.moduleproperties;
+package tech.intellispaces.framework.samples.moduleproperties;
 
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispacesframework.core.IntellispacesFramework;
-import tech.intellispacesframework.core.annotation.Projection;
-import tech.intellispacesframework.core.annotation.Properties;
-import tech.intellispacesframework.core.annotation.Startup;
-import tech.intellispacesframework.samples.moduleproperties.model.Address;
+import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import tech.intellispaces.framework.core.IntellispacesFramework;
+import tech.intellispaces.framework.core.annotation.Module;
+import tech.intellispaces.framework.core.annotation.Projection;
+import tech.intellispaces.framework.core.annotation.Properties;
+import tech.intellispaces.framework.core.annotation.Startup;
 
 /**
  * IntelliSpaces framework module.
@@ -15,12 +16,12 @@ import tech.intellispacesframework.samples.moduleproperties.model.Address;
  * <p>
  * Abstract methods will be auto generated.
  */
-//@Module(units = CliUnit.class)
-public abstract class ModuleProperties3 {
+@Module(units = { CliUnit.class, SnakeyamlGuide.class })
+public abstract class ModuleProperties2 {
 
   @Projection
   @Properties("owner.address")
-  public abstract Address ownerAddress();
+  public abstract tech.intellispaces.ixora.structures.properties.Properties addressProperties();
 
   /**
    * This method will be invoked automatically after the module is started.
@@ -31,14 +32,14 @@ public abstract class ModuleProperties3 {
    */
   @Startup
   public void startup(ConsoleHandle console) {
-    console.println("City: " + ownerAddress().city());
-    console.println("Street: " + ownerAddress().street());
+    console.println("City: " + addressProperties().stringValue("city"));
+    console.println("Street: " + addressProperties().stringValue("street"));
   }
 
   /**
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(ModuleProperties3.class).run(args);
+    IntellispacesFramework.loadModule(ModuleProperties2.class).run(args);
   }
 }

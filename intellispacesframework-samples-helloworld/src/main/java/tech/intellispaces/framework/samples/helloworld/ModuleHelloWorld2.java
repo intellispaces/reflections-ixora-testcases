@@ -1,10 +1,10 @@
-package tech.intellispacesframework.samples.helloworld;
+package tech.intellispaces.framework.samples.helloworld;
 
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispacesframework.core.IntellispacesFramework;
-import tech.intellispacesframework.core.annotation.Module;
-import tech.intellispacesframework.core.annotation.Startup;
+import tech.intellispaces.framework.core.IntellispacesFramework;
+import tech.intellispaces.framework.core.annotation.Module;
+import tech.intellispaces.framework.core.annotation.Startup;
 
 /**
  * IntelliSpaces framework module.

@@ -1,14 +1,14 @@
-package tech.intellispacesframework.samples.moduleproperties;
+package tech.intellispaces.framework.samples.moduleproperties;
 
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.structures.properties.PropertiesHandle;
-import tech.intellispacesframework.core.IntellispacesFramework;
-import tech.intellispacesframework.core.annotation.Module;
-import tech.intellispacesframework.core.annotation.Projection;
-import tech.intellispacesframework.core.annotation.Properties;
-import tech.intellispacesframework.core.annotation.Startup;
+import tech.intellispaces.framework.core.IntellispacesFramework;
+import tech.intellispaces.framework.core.annotation.Module;
+import tech.intellispaces.framework.core.annotation.Projection;
+import tech.intellispaces.framework.core.annotation.Properties;
+import tech.intellispaces.framework.core.annotation.Startup;
 
 /**
  * IntelliSpaces framework module.
