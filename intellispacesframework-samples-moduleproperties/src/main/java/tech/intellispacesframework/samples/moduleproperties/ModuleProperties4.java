@@ -5,21 +5,19 @@ import tech.intellispacesframework.core.IntellispacesFramework;
 import tech.intellispacesframework.core.annotation.Projection;
 import tech.intellispacesframework.core.annotation.Properties;
 import tech.intellispacesframework.core.annotation.Startup;
+import tech.intellispacesframework.samples.moduleproperties.model.Address;
 
 //@Module(units = CliUnit.class)
 public abstract class ModuleProperties4 {
 
   @Projection
   @Properties("owner.contact")
-  public abstract ContactProperties ownerContacts();
+  public abstract Address ownerAddress();
 
   @Startup
-  public void startup(ConsoleHandle console, ContactProperties ownerContacts) {
-    console.print("Home: ");
-    console.println(ownerContacts.home());
-
-    console.print("Office: ");
-    console.println(ownerContacts.office());
+  public void startup(ConsoleHandle console, Address ownerAddress) {
+    console.println("City: " + ownerAddress.city());
+    console.println("Street: " + ownerAddress.street());
   }
 
   public static void main(String[] args) {

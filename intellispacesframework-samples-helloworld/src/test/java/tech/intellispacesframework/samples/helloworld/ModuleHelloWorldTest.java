@@ -2,12 +2,11 @@ package tech.intellispacesframework.samples.helloworld;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
-import org.slf4j.LoggerFactory;
-
 import org.junit.jupiter.api.BeforeAll;
-import tech.intellispacesframework.core.IntellispacesFramework;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.slf4j.LoggerFactory;
+import tech.intellispacesframework.core.IntellispacesFramework;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

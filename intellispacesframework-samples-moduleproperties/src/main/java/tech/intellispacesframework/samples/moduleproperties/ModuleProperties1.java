@@ -3,6 +3,7 @@ package tech.intellispacesframework.samples.moduleproperties;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import tech.intellispaces.ixora.structures.properties.PropertiesHandle;
 import tech.intellispacesframework.core.IntellispacesFramework;
 import tech.intellispacesframework.core.annotation.Module;
 import tech.intellispacesframework.core.annotation.Projection;
@@ -14,7 +15,7 @@ public abstract class ModuleProperties1 {
 
   @Projection
   @Properties
-  public abstract tech.intellispaces.ixora.structures.properties.Properties moduleProperties();
+  public abstract PropertiesHandle moduleProperties();
 
   @Startup
   public void startup(ConsoleHandle console) {

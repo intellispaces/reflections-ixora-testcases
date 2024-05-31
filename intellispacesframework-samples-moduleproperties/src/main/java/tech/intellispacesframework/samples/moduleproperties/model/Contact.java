@@ -1,13 +1,13 @@
-package tech.intellispacesframework.samples.moduleproperties;
+package tech.intellispacesframework.samples.moduleproperties.model;
 
 import tech.intellispacesframework.core.annotation.Data;
 import tech.intellispacesframework.core.annotation.Domain;
 
 @Data
 @Domain
-public interface ContactProperties {
+public interface Contact {
 
-  String home();
+  int home();
 
-  String office();
+  int office();
 }
