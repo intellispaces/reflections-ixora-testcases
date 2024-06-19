@@ -1,5 +1,6 @@
 package tech.intellispaces.framework.samples.moduleproperties;
 
+import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
@@ -11,28 +12,33 @@ import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
 
 /**
- * IntelliSpaces framework module.
- * <p>
- * Unit {@link CliUnit} is included to this module. In this unit the projection named 'console' to the CLI console is defined.
- * <p>
- * Abstract methods will be auto generated.
+ * This module demonstrates reading YAML properties.<p/>
+ *
+ * Two units {@link CliUnit} and {@link SnakeyamlGuide} are included to module.
+ * Unit {@link CliUnit} defines the projection with name 'console' and referred to the module CLI console.
+ * And unit {@link SnakeyamlGuide} provides guide to load YAML properties.
  */
 @Module(units = { CliUnit.class, SnakeyamlGuide.class })
-public abstract class ModuleProperties1 {
+public abstract class ModulePropertiesSample1 {
 
+  /**
+   * Declare projection to module properties specified by default in file 'module.yaml'.<p/>
+   *
+   * This abstract method will be auto implemented in wrapper class.
+   */
   @Projection
   @Properties
   public abstract PropertiesHandle moduleProperties();
 
   /**
-   * This method will be invoked automatically after the module is started.
-   * <p>
-   * The values of all method arguments will be selected automatically.
+   * This method will be invoked automatically after the module is started.<p/>
    *
-   * @param console value of the projection named 'console' of this module to CLI console defined in {@link CliUnit} unit.
+   * The values of method arguments will be injected automatically.
+   *
+   * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(ConsoleHandle console) {
+  public void startup(@Inject ConsoleHandle console) {
     console.println("City: " + moduleProperties().stringValue("owner.address.city"));
     console.println("Street: " + moduleProperties().stringValue("owner.address.street"));
   }
@@ -41,6 +47,6 @@ public abstract class ModuleProperties1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(ModuleProperties1.class).run(args);
+    IntellispacesFramework.loadModule(ModulePropertiesSample1.class).run(args);
   }
 }

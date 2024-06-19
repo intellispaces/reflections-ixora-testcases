@@ -27,10 +27,10 @@ public class ModuleHelloWorldTest {
 
   @ParameterizedTest
   @ValueSource(classes = {
-      ModuleHelloWorld1.class,
-      ModuleHelloWorld2.class,
-      ModuleHelloWorld3.class,
-      ModuleHelloWorld4.class
+      ModuleHelloWorldSample1.class,
+      ModuleHelloWorldSample2.class,
+      ModuleHelloWorldSample3.class,
+      ModuleHelloWorldSample4.class
   })
   void testHelloWorld(Class<?> moduleClass) {
     // Given
