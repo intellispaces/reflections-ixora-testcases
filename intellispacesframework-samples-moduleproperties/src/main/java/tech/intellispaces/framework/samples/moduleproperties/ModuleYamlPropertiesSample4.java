@@ -13,7 +13,7 @@ import tech.intellispaces.ixora.commons.structures.properties.PropertiesToDataGu
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 
 /**
- * This module demonstrates reading YAML properties.<p/>
+ * This module demonstrates reading module YAML properties.<p/>
  *
  * Three units {@link CliUnit}, {@link SnakeyamlGuide} and {@link PropertiesToDataGuide} are included to module.
  * Unit {@link CliUnit} defines the projection named 'console' referred to the module CLI console.
@@ -21,7 +21,7 @@ import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
  * Unit {@link PropertiesToDataGuide} provides guide to map properties to data.
  */
 @Module(units = { CliUnit.class, SnakeyamlGuide.class, PropertiesToDataGuide.class })
-public abstract class ModulePropertiesSample3 {
+public abstract class ModuleYamlPropertiesSample4 {
 
   /**
    * Declare projection to owner address specified by default in file 'module.yaml'.<p/>
@@ -40,15 +40,15 @@ public abstract class ModulePropertiesSample3 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject ConsoleHandle console) {
-    console.println("City: " + ownerAddress().city());
-    console.println("Street: " + ownerAddress().street());
+  public void startup(@Inject ConsoleHandle console, @Inject Address ownerAddress) {
+    console.println("City: " + ownerAddress.city());
+    console.println("Street: " + ownerAddress.street());
   }
 
   /**
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(ModulePropertiesSample3.class).run(args);
+    IntellispacesFramework.loadModule(ModuleYamlPropertiesSample4.class).run(args);
   }
 }

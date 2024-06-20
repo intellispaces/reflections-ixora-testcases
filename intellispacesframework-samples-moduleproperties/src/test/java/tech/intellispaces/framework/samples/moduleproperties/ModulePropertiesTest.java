@@ -27,11 +27,11 @@ public class ModulePropertiesTest {
 
   @ParameterizedTest
   @ValueSource(classes = {
-      ModulePropertiesSample1.class,
-      ModulePropertiesSample2.class,
-      ModulePropertiesSample3.class,
-      ModulePropertiesSample4.class,
-      ModulePropertiesSample5.MainUnit.class
+      ModuleYamlPropertiesSample1.class,
+      ModuleYamlPropertiesSample2.class,
+      ModuleYamlPropertiesSample3.class,
+      ModuleYamlPropertiesSample4.class,
+      ModuleYamlPropertiesSample5.MainUnit.class
   })
   void testHelloWorld(Class<?> moduleClass) {
     // Given

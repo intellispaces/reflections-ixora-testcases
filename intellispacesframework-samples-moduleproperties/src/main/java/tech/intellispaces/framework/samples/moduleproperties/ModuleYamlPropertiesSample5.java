@@ -13,10 +13,10 @@ import tech.intellispaces.framework.core.annotation.Unit;
 import tech.intellispaces.ixora.commons.structures.properties.PropertiesToDataGuide;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 
-public interface ModulePropertiesSample5 {
+public interface ModuleYamlPropertiesSample5 {
 
   /**
-   * This module demonstrates reading YAML properties.<p/>
+   * This module demonstrates reading module YAML properties.<p/>
    *
    * Three units {@link CliUnit}, {@link SnakeyamlGuide} and {@link PropertiesToDataGuide} are included to module.
    * Unit {@link CliUnit} defines the projection named 'console' referred to the module CLI console.

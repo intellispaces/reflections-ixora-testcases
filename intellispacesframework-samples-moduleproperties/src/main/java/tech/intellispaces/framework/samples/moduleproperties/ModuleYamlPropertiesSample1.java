@@ -12,14 +12,14 @@ import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
 
 /**
- * This module demonstrates reading YAML properties.<p/>
+ * This module demonstrates reading module YAML properties.<p/>
  *
  * Two units {@link CliUnit} and {@link SnakeyamlGuide} are included to module.
  * Unit {@link CliUnit} defines the projection with name 'console' and referred to the module CLI console.
  * And unit {@link SnakeyamlGuide} provides guide to load YAML properties.
  */
 @Module(units = { CliUnit.class, SnakeyamlGuide.class })
-public abstract class ModulePropertiesSample1 {
+public abstract class ModuleYamlPropertiesSample1 {
 
   /**
    * Declare projection to module properties specified by default in file 'module.yaml'.<p/>
@@ -47,6 +47,6 @@ public abstract class ModulePropertiesSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(ModulePropertiesSample1.class).run(args);
+    IntellispacesFramework.loadModule(ModuleYamlPropertiesSample1.class).run(args);
   }
 }
