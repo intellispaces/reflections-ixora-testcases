@@ -31,7 +31,8 @@ public class ModulePropertiesTest {
       ModuleYamlPropertiesSample2.class,
       ModuleYamlPropertiesSample3.class,
       ModuleYamlPropertiesSample4.class,
-      ModuleYamlPropertiesSample5.MainUnit.class
+      ModuleYamlPropertiesSample5.class,
+      ModuleYamlPropertiesSample6.MainUnit.class
   })
   void testHelloWorld(Class<?> moduleClass) {
     // Given
