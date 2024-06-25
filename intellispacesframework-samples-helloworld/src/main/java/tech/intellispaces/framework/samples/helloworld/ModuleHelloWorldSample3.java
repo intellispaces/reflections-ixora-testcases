@@ -2,7 +2,7 @@ package tech.intellispaces.framework.samples.helloworld;
 
 import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.ixora.cli.Console;
-import tech.intellispaces.ixora.cli.ConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispaces.framework.core.IntellispacesFramework;
 import tech.intellispaces.framework.core.annotation.Module;
@@ -24,9 +24,9 @@ public class ModuleHelloWorldSample3 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject ConsoleHandle console) {
-    // Move CLI console through the transition 'sameConsoleWithLastMessageAndNewLine' with qualifier "Hello, world!"
-    console.moveThru(Console::sameConsoleWithLastMessageAndNewLine, "Hello, world!");
+  public void startup(@Inject MovableConsoleHandle console) {
+    // Move CLI console through the transition 'Console::println' with qualifier "Hello, world!"
+    console.moveThru(Console::println, "Hello, world!");
   }
 
   /**
