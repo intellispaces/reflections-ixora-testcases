@@ -2,7 +2,7 @@ package tech.intellispaces.framework.samples.moduleproperties;
 
 import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.framework.core.annotation.Module;
-import tech.intellispaces.framework.samples.moduleproperties.model.Address;
+import tech.intellispaces.framework.samples.moduleproperties.model.AddressHandle;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispaces.framework.core.IntellispacesFramework;
@@ -30,7 +30,7 @@ public abstract class ModuleYamlPropertiesSample3 {
    */
   @Projection
   @Properties("owner.address")
-  public abstract Address ownerAddress();
+  public abstract AddressHandle ownerAddress();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -40,9 +40,9 @@ public abstract class ModuleYamlPropertiesSample3 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject ConsoleHandle console) {
-    console.println("City: " + ownerAddress().city());
-    console.println("Street: " + ownerAddress().street());
+  public void startup(@Inject ConsoleHandle console, @Inject AddressHandle ownerAddress) {
+    console.println("City: " + ownerAddress.city());
+    console.println("Street: " + ownerAddress.street());
   }
 
   /**

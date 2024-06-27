@@ -1,14 +1,13 @@
 package tech.intellispaces.framework.samples.moduleproperties;
 
+import tech.intellispaces.framework.core.IntellispacesFramework;
 import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.framework.core.annotation.Module;
-import tech.intellispaces.framework.samples.moduleproperties.model.Address;
-import tech.intellispaces.ixora.cli.ConsoleHandle;
-import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispaces.framework.core.IntellispacesFramework;
 import tech.intellispaces.framework.core.annotation.Projection;
 import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
+import tech.intellispaces.ixora.cli.ConsoleHandle;
+import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispaces.ixora.commons.structures.properties.PropertiesToDataGuide;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 
@@ -24,13 +23,22 @@ import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 public abstract class ModuleYamlPropertiesSample4 {
 
   /**
-   * Declare projection to owner address specified by default in file 'module.yaml'.<p/>
+   * Declare projection to owner address city specified by default in file 'module.yaml'.<p/>
    *
    * This abstract method will be auto implemented in wrapper class.
    */
   @Projection
-  @Properties("owner.address")
-  public abstract Address ownerAddress();
+  @Properties("owner.address.city")
+  public abstract String ownerCity();
+
+  /**
+   * Declare projection to owner address street specified by default in file 'module.yaml'.<p/>
+   *
+   * This abstract method will be auto implemented in wrapper class.
+   */
+  @Projection
+  @Properties("owner.address.street")
+  public abstract String ownerStreet();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -40,9 +48,9 @@ public abstract class ModuleYamlPropertiesSample4 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject ConsoleHandle console, @Inject Address ownerAddress) {
-    console.println("City: " + ownerAddress.city());
-    console.println("Street: " + ownerAddress.street());
+  public void startup(@Inject ConsoleHandle console) {
+    console.println("City: " + ownerCity());
+    console.println("Street: " + ownerStreet());
   }
 
   /**

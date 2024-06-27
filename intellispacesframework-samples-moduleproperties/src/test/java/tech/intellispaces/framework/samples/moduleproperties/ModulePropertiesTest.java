@@ -31,10 +31,9 @@ public class ModulePropertiesTest {
       ModuleYamlPropertiesSample2.class,
       ModuleYamlPropertiesSample3.class,
       ModuleYamlPropertiesSample4.class,
-      ModuleYamlPropertiesSample5.class,
-      ModuleYamlPropertiesSample6.MainUnit.class
+      ModuleYamlPropertiesSample5.MainUnit.class
   })
-  void testHelloWorld(Class<?> moduleClass) {
+  void testOutput(Class<?> moduleClass) {
     // Given
     var os = new ByteArrayOutputStream();
     var ps = new PrintStream(os, true, StandardCharsets.UTF_8);

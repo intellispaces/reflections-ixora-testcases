@@ -32,7 +32,7 @@ public class ModuleHelloWorldTest {
       ModuleHelloWorldSample3.class,
       ModuleHelloWorldSample4.class
   })
-  void testHelloWorld(Class<?> moduleClass) {
+  void testOutput(Class<?> moduleClass) {
     // Given
     var os = new ByteArrayOutputStream();
     var ps = new PrintStream(os, true, StandardCharsets.UTF_8);
