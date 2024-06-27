@@ -14,6 +14,7 @@
   <modules>
     <module>intellispacesframework-samples-helloworld</module>
     <module>intellispacesframework-samples-moduleproperties</module>
+    <module>intellispacesframework-samples-moduleproperties-model</module>
   </modules>
 
   <dependencies>

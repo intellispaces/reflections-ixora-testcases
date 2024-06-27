@@ -1,4 +1,4 @@
-package tech.intellispaces.framework.samples.moduleproperties.model;
+package tech.intellispaces.framework.samples.moduleproperties;
 
 import tech.intellispaces.framework.core.annotation.Data;
 import tech.intellispaces.framework.core.annotation.Domain;

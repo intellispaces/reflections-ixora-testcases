@@ -2,7 +2,7 @@ package tech.intellispaces.framework.samples.moduleproperties;
 
 import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.framework.core.annotation.Module;
-import tech.intellispaces.framework.samples.moduleproperties.model.AddressHandle;
+import tech.intellispaces.framework.samples.moduleproperties.AddressHandle;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispaces.framework.core.IntellispacesFramework;

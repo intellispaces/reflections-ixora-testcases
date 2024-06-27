@@ -12,6 +12,12 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <dependency>
+            <groupId>intellispaces</groupId>
+            <artifactId>intellispacesframework-samples-moduleproperties-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!-- Ixora -->
         <dependency>
             <groupId>intellispaces</groupId>
