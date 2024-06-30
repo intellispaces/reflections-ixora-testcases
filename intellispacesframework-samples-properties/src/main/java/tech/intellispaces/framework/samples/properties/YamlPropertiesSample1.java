@@ -1,15 +1,15 @@
 package tech.intellispaces.framework.samples.properties;
 
-import tech.intellispaces.framework.core.annotation.Inject;
-import tech.intellispaces.ixora.cli.ConsoleHandle;
-import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import tech.intellispaces.ixora.structures.properties.PropertiesHandle;
 import tech.intellispaces.framework.core.IntellispacesFramework;
+import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.framework.core.annotation.Module;
 import tech.intellispaces.framework.core.annotation.Projection;
 import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
+import tech.intellispaces.ixora.cli.ConsoleHandle;
+import tech.intellispaces.ixora.commons.cli.CliUnit;
+import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import tech.intellispaces.ixora.structures.properties.PropertiesHandle;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>

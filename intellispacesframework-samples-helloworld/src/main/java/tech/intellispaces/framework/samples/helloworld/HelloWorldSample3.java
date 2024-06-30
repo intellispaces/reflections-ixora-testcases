@@ -1,12 +1,12 @@
 package tech.intellispaces.framework.samples.helloworld;
 
+import tech.intellispaces.framework.core.IntellispacesFramework;
 import tech.intellispaces.framework.core.annotation.Inject;
+import tech.intellispaces.framework.core.annotation.Module;
+import tech.intellispaces.framework.core.annotation.Startup;
 import tech.intellispaces.ixora.cli.Console;
 import tech.intellispaces.ixora.cli.ConsoleMovableHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispaces.framework.core.IntellispacesFramework;
-import tech.intellispaces.framework.core.annotation.Module;
-import tech.intellispaces.framework.core.annotation.Startup;
 
 /**
  * This module demonstrates the output to the console.<p/>

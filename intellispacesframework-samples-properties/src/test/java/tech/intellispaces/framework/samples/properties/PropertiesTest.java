@@ -7,11 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.LoggerFactory;
 import tech.intellispaces.framework.core.IntellispacesFramework;
-import tech.intellispaces.framework.samples.properties.YamlPropertiesSample1;
-import tech.intellispaces.framework.samples.properties.YamlPropertiesSample2;
-import tech.intellispaces.framework.samples.properties.YamlPropertiesSample3;
-import tech.intellispaces.framework.samples.properties.YamlPropertiesSample4;
-import tech.intellispaces.framework.samples.properties.YamlPropertiesSample5;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -20,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for Module Properties module samples.
+ * Tests for Properties samples.
  */
 public class PropertiesTest {
 

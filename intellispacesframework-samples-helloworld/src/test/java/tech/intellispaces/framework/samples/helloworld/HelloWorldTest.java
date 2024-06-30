@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for HelloWorld module samples.
+ * Tests for Hello World samples.
  */
 public class HelloWorldTest {
 

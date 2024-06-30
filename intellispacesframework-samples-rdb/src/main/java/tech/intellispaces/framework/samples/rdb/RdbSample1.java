@@ -7,11 +7,11 @@ import tech.intellispaces.framework.core.annotation.Startup;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
 import tech.intellispaces.ixora.commons.structures.properties.PropertiesToDataGuide;
-import tech.intellispaces.ixora.rdb.hikary.unit.HikariUnit;
-import tech.intellispaces.ixora.rdb.unit.RdbUnit;
 import tech.intellispaces.ixora.rdb.ResultSetHandle;
 import tech.intellispaces.ixora.rdb.TransactionFactoryHandle;
 import tech.intellispaces.ixora.rdb.TransactionFunctions;
+import tech.intellispaces.ixora.rdb.hikary.unit.HikariUnit;
+import tech.intellispaces.ixora.rdb.unit.RdbUnit;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 
 @Module(units = {
@@ -42,13 +42,10 @@ public abstract class RdbSample1 {
   public void startup(@Inject ConsoleHandle console) {
     TransactionFactoryHandle transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
-      ResultSetHandle rs = tx.query("SELECT count(*) FROM table");
+      ResultSetHandle rs = tx.query("SELECT count(*) as count FROM person");
+      console.println("");
 
-
-      System.out.println();
     });
-
-    System.out.println();
   }
 
   /**
