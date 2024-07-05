@@ -8,17 +8,17 @@ import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import tech.intellispaces.ixora.snakeyaml.SnakeYamlStringToPropertiesGuide;
 import tech.intellispaces.ixora.structures.properties.PropertiesHandle;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>
  *
- * Two units {@link CliUnit} and {@link SnakeyamlGuide} are included to module.
+ * Two units {@link CliUnit} and {@link SnakeYamlStringToPropertiesGuide} are included to module.
  * Unit {@link CliUnit} defines the projection with name 'console' and referred to the module CLI console.
- * And unit {@link SnakeyamlGuide} provides guide to load YAML properties.
+ * And unit {@link SnakeYamlStringToPropertiesGuide} provides guide to load YAML properties.
  */
-@Module(units = { CliUnit.class, SnakeyamlGuide.class })
+@Module(units = { CliUnit.class, SnakeYamlStringToPropertiesGuide.class })
 public abstract class YamlPropertiesSample1 {
 
   /**
@@ -47,6 +47,6 @@ public abstract class YamlPropertiesSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(YamlPropertiesSample1.class).run(args);
+    IntellispacesFramework.loadModule(YamlPropertiesSample1.class).start(args);
   }
 }

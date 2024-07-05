@@ -6,18 +6,18 @@ import tech.intellispaces.framework.core.annotation.Module;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispaces.ixora.commons.structures.properties.PropertiesToDataGuide;
+import tech.intellispaces.ixora.commons.structures.properties.IxoraPropertiesToDataGuide;
 import tech.intellispaces.ixora.rdb.ResultSetHandle;
 import tech.intellispaces.ixora.rdb.TransactionFactoryHandle;
 import tech.intellispaces.ixora.rdb.TransactionFunctions;
 import tech.intellispaces.ixora.rdb.hikary.unit.HikariUnit;
 import tech.intellispaces.ixora.rdb.unit.RdbUnit;
-import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import tech.intellispaces.ixora.snakeyaml.SnakeYamlStringToPropertiesGuide;
 
 @Module(units = {
     CliUnit.class,
-    SnakeyamlGuide.class,
-    PropertiesToDataGuide.class,
+    SnakeYamlStringToPropertiesGuide.class,
+    IxoraPropertiesToDataGuide.class,
     RdbUnit.class,
     HikariUnit.class
 })
@@ -52,6 +52,6 @@ public abstract class RdbSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(RdbSample1.class).run(args);
+    IntellispacesFramework.loadModule(RdbSample1.class).start(args);
   }
 }

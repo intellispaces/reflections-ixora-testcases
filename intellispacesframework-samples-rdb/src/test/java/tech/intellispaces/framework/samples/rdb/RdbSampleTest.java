@@ -1,10 +1,13 @@
 package tech.intellispaces.framework.samples.rdb;
 
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.LoggerContext;
 import org.dbunit.DataSourceBasedDBTestCase;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.yaml.YamlDataSet;
 import org.h2.jdbcx.JdbcDataSource;
 import org.junit.Test;
+import org.slf4j.LoggerFactory;
 import tech.intellispaces.framework.core.IntellispacesFramework;
 
 import javax.sql.DataSource;
@@ -27,20 +30,10 @@ public class RdbSampleTest extends DataSourceBasedDBTestCase {
 
   @Override
   public void setUp() throws Exception {
-//    var lc = (LoggerContext) LoggerFactory.getILoggerFactory();
-//    lc.getLogger("ROOT").setLevel(Level.ERROR);
+    var lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+    lc.getLogger("ROOT").setLevel(Level.ERROR);
     super.setUp();
   }
-
-//  @Override
-//  protected DatabaseOperation getSetUpOperation() {
-//    return DatabaseOperation.REFRESH;
-//  }
-
-//  @Override
-//  protected DatabaseOperation getTearDownOperation() {
-//    return DatabaseOperation.DELETE_ALL;
-//  }
 
   @Override
   protected IDataSet getDataSet() throws Exception {
@@ -57,7 +50,7 @@ public class RdbSampleTest extends DataSourceBasedDBTestCase {
     System.setOut(ps);
 
     // When
-    IntellispacesFramework.loadModule(moduleClass).run();
+    IntellispacesFramework.loadModule(moduleClass).start();
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

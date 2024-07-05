@@ -40,7 +40,7 @@ public class PropertiesTest {
     System.setOut(ps);
 
     // When
-    IntellispacesFramework.loadModule(moduleClass).run();
+    IntellispacesFramework.loadModule(moduleClass).start();
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

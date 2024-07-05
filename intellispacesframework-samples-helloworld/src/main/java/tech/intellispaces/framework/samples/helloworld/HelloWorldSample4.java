@@ -37,6 +37,6 @@ public class HelloWorldSample4 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(HelloWorldSample4.class).run(args);
+    IntellispacesFramework.loadModule(HelloWorldSample4.class).start(args);
   }
 }

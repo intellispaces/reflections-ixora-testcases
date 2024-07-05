@@ -8,18 +8,18 @@ import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.cli.CliUnit;
-import tech.intellispaces.ixora.commons.structures.properties.PropertiesToDataGuide;
-import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import tech.intellispaces.ixora.commons.structures.properties.IxoraPropertiesToDataGuide;
+import tech.intellispaces.ixora.snakeyaml.SnakeYamlStringToPropertiesGuide;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>
  *
- * Three units {@link CliUnit}, {@link SnakeyamlGuide} and {@link PropertiesToDataGuide} are included to module.
+ * Three units {@link CliUnit}, {@link SnakeYamlStringToPropertiesGuide} and {@link IxoraPropertiesToDataGuide} are included to module.
  * Unit {@link CliUnit} defines the projection named 'console' referred to the module CLI console.
- * Unit {@link SnakeyamlGuide} provides guide to load YAML properties.
- * Unit {@link PropertiesToDataGuide} provides guide to map properties to data.
+ * Unit {@link SnakeYamlStringToPropertiesGuide} provides guide to load YAML properties.
+ * Unit {@link IxoraPropertiesToDataGuide} provides guide to map properties to data.
  */
-@Module(units = { CliUnit.class, SnakeyamlGuide.class, PropertiesToDataGuide.class })
+@Module(units = { CliUnit.class, SnakeYamlStringToPropertiesGuide.class, IxoraPropertiesToDataGuide.class })
 public abstract class YamlPropertiesSample4 {
 
   /**
@@ -57,6 +57,6 @@ public abstract class YamlPropertiesSample4 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(YamlPropertiesSample4.class).run(args);
+    IntellispacesFramework.loadModule(YamlPropertiesSample4.class).start(args);
   }
 }
