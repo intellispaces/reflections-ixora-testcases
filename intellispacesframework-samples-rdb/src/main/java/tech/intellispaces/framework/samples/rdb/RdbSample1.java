@@ -5,21 +5,21 @@ import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.framework.core.annotation.Module;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.intellispaces.ixora.cli.ConsoleHandle;
-import tech.intellispaces.ixora.commons.cli.CliUnit;
+import tech.intellispaces.ixora.commons.configuration.CliConfiguration;
 import tech.intellispaces.ixora.commons.structures.properties.IxoraPropertiesToDataGuide;
 import tech.intellispaces.ixora.rdb.ResultSetHandle;
 import tech.intellispaces.ixora.rdb.TransactionFactoryHandle;
 import tech.intellispaces.ixora.rdb.TransactionFunctions;
-import tech.intellispaces.ixora.rdb.hikary.unit.HikariUnit;
-import tech.intellispaces.ixora.rdb.unit.RdbUnit;
+import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
+import tech.intellispaces.ixora.rdb.hikary.configuration.HikariConfiguration;
 import tech.intellispaces.ixora.snakeyaml.SnakeYamlStringToPropertiesGuide;
 
 @Module(units = {
-    CliUnit.class,
+    CliConfiguration.class,
+    RdbConfiguration.class,
+    HikariConfiguration.class,
     SnakeYamlStringToPropertiesGuide.class,
-    IxoraPropertiesToDataGuide.class,
-    RdbUnit.class,
-    HikariUnit.class
+    IxoraPropertiesToDataGuide.class
 })
 public abstract class RdbSample1 {
 

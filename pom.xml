@@ -14,9 +14,9 @@
   <modules>
     <module>intellispacesframework-samples-helloworld</module>
     <module>intellispacesframework-samples-properties</module>
-    <module>intellispacesframework-samples-properties-model</module>
+    <module>intellispacesframework-samples-properties-ontology</module>
     <module>intellispacesframework-samples-rdb</module>
-    <module>intellispacesframework-samples-rdb-model</module>
+    <module>intellispacesframework-samples-rdb-ontology</module>
   </modules>
 
   <dependencies>

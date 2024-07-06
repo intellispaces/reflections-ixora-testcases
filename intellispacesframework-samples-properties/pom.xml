@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>intellispaces</groupId>
-            <artifactId>intellispacesframework-samples-properties-model</artifactId>
+            <artifactId>intellispacesframework-samples-properties-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

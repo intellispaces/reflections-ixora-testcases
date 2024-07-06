@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>intellispaces</groupId>
-            <artifactId>intellispacesframework-samples-rdb-model</artifactId>
+            <artifactId>intellispacesframework-samples-rdb-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

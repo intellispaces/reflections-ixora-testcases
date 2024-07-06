@@ -8,6 +8,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>intellispacesframework-samples-rdb-model</artifactId>
+    <artifactId>intellispacesframework-samples-properties-ontology</artifactId>
     <packaging>jar</packaging>
 </project>
