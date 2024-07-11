@@ -6,10 +6,10 @@ import tech.intellispaces.framework.core.annotation.Module;
 import tech.intellispaces.framework.core.annotation.Projection;
 import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
-import tech.intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.configuration.CliConfiguration;
 import tech.intellispaces.ixora.snakeyaml.SnakeYamlStringToPropertiesGuide;
-import tech.intellispaces.ixora.structures.properties.PropertiesHandle;
+import intellispaces.ixora.structures.properties.PropertiesHandle;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>

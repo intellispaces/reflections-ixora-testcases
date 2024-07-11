@@ -8,7 +8,7 @@ import tech.intellispaces.framework.core.annotation.Projection;
 import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.intellispaces.framework.samples.moduleproperties.AddressHandle;
-import tech.intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.cli.ConsoleHandle;
 import tech.intellispaces.ixora.commons.configuration.CliConfiguration;
 import tech.intellispaces.ixora.commons.structures.properties.IxoraPropertiesToDataGuide;
 import tech.intellispaces.ixora.snakeyaml.SnakeYamlStringToPropertiesGuide;

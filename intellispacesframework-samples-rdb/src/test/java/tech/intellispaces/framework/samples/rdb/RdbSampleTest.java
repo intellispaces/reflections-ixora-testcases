@@ -6,7 +6,6 @@ import org.dbunit.DataSourceBasedDBTestCase;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.yaml.YamlDataSet;
 import org.h2.jdbcx.JdbcDataSource;
-import org.junit.Test;
 import org.slf4j.LoggerFactory;
 import tech.intellispaces.framework.core.IntellispacesFramework;
 
@@ -19,6 +18,7 @@ import java.nio.charset.StandardCharsets;
  * Tests for RDB samples.
  */
 public class RdbSampleTest extends DataSourceBasedDBTestCase {
+
   @Override
   protected DataSource getDataSource() {
     var ds = new JdbcDataSource();
@@ -29,18 +29,17 @@ public class RdbSampleTest extends DataSourceBasedDBTestCase {
   }
 
   @Override
+  protected IDataSet getDataSet() throws Exception {
+    return new YamlDataSet(RdbSampleTest.class.getResourceAsStream("/rdb_sample_data.yaml"));
+  }
+
+  @Override
   public void setUp() throws Exception {
     var lc = (LoggerContext) LoggerFactory.getILoggerFactory();
     lc.getLogger("ROOT").setLevel(Level.ERROR);
     super.setUp();
   }
 
-  @Override
-  protected IDataSet getDataSet() throws Exception {
-    return new YamlDataSet(RdbSampleTest.class.getResourceAsStream("/rdb_sample_data.yaml"));
-  }
-
-  @Test
   public void testOutput() {
     Class<?> moduleClass = RdbSample1.class;
 
