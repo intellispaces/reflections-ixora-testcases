@@ -12,13 +12,13 @@ import intellispaces.ixora.rdb.TransactionFactoryHandle;
 import tech.intellispaces.ixora.rdb.TransactionFunctions;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.hikary.configuration.HikariConfiguration;
-import tech.intellispaces.ixora.snakeyaml.SnakeYamlStringToPropertiesGuide;
+import tech.intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlGuide;
 
 @Module(units = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
-    SnakeYamlStringToPropertiesGuide.class,
+    YamlStringToPropertiesSnakeyamlGuide.class,
     IxoraPropertiesToDataGuide.class
 })
 public abstract class RdbSample1 {
