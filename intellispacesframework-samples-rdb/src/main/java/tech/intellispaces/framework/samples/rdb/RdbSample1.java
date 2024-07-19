@@ -1,17 +1,17 @@
 package tech.intellispaces.framework.samples.rdb;
 
+import intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.rdb.ResultSetHandle;
+import intellispaces.ixora.rdb.TransactionFactoryHandle;
 import tech.intellispaces.framework.core.IntellispacesFramework;
 import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.framework.core.annotation.Module;
 import tech.intellispaces.framework.core.annotation.Startup;
-import intellispaces.ixora.cli.ConsoleHandle;
-import tech.intellispaces.ixora.commons.configuration.CliConfiguration;
+import tech.intellispaces.ixora.commons.cli.CliConfiguration;
 import tech.intellispaces.ixora.commons.structures.properties.IxoraPropertiesToDataGuide;
-import intellispaces.ixora.rdb.ResultSetHandle;
-import intellispaces.ixora.rdb.TransactionFactoryHandle;
+import tech.intellispaces.ixora.rdb.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.TransactionFunctions;
-import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.hikary.configuration.HikariConfiguration;
+import tech.intellispaces.ixora.rdb.hikary.HikariConfiguration;
 import tech.intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlGuide;
 
 @Module(units = {
