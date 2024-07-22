@@ -57,6 +57,6 @@ public abstract class YamlPropertiesSample4 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(YamlPropertiesSample4.class).start(args);
+    IntellispacesFramework.loadModule(YamlPropertiesSample4.class, args);
   }
 }

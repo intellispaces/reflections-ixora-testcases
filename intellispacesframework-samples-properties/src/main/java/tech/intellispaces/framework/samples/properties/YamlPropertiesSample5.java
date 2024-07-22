@@ -51,7 +51,7 @@ public interface YamlPropertiesSample5 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
     public static void main(String[] args) {
-      IntellispacesFramework.loadModule(MainUnit.class).start(args);
+      IntellispacesFramework.loadModule(MainUnit.class, args);
     }
   }
 

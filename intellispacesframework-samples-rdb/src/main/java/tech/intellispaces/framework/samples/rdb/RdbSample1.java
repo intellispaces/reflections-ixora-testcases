@@ -52,6 +52,6 @@ public abstract class RdbSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(RdbSample1.class).start(args);
+    IntellispacesFramework.loadModule(RdbSample1.class, args);
   }
 }

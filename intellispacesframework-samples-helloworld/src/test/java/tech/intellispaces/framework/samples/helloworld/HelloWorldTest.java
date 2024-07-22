@@ -39,7 +39,7 @@ public class HelloWorldTest {
     System.setOut(ps);
 
     // When
-    IntellispacesFramework.loadModule(moduleClass).start();
+    IntellispacesFramework.loadModule(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
