@@ -12,15 +12,15 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!-- Ixora -->
+        <!-- Mindstructs -->
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-cli-ontology</artifactId>
+            <groupId>mindstructs</groupId>
+            <artifactId>mindstructs-cli-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-commons</artifactId>
+            <groupId>mindstructs</groupId>
+            <artifactId>mindstructs-cli</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

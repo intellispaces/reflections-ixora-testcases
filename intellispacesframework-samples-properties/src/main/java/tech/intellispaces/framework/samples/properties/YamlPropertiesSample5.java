@@ -1,6 +1,6 @@
 package tech.intellispaces.framework.samples.properties;
 
-import intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.mindstructs.cli.ConsoleHandle;
 import tech.intellispaces.framework.core.IntellispacesFramework;
 import tech.intellispaces.framework.core.annotation.Configuration;
 import tech.intellispaces.framework.core.annotation.Inject;
@@ -9,9 +9,9 @@ import tech.intellispaces.framework.core.annotation.Projection;
 import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.intellispaces.framework.samples.moduleproperties.AddressHandle;
-import tech.intellispaces.ixora.commons.cli.CliConfiguration;
-import tech.intellispaces.ixora.commons.structures.properties.IxoraPropertiesToDataGuide;
-import tech.intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlGuide;
+import tech.mindstructs.cli.CliConfiguration;
+import tech.mindstructs.structures.properties.IxoraPropertiesToDataGuide;
+import tech.mindstructs.snakeyaml.YamlStringToPropertiesSnakeyamlGuide;
 
 public interface YamlPropertiesSample5 {
 

@@ -18,25 +18,25 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <!-- Ixora -->
+        <!-- Mindstructs -->
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-commons</artifactId>
+            <groupId>mindstructs</groupId>
+            <artifactId>mindstructs-cli</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-snakeyaml</artifactId>
+            <groupId>mindstructs</groupId>
+            <artifactId>mindstructs-snakeyaml</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-rdb</artifactId>
+            <groupId>mindstructs</groupId>
+            <artifactId>mindstructs-rdb</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-rdb-hikari</artifactId>
+            <groupId>mindstructs</groupId>
+            <artifactId>mindstructs-rdb-hikari</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
