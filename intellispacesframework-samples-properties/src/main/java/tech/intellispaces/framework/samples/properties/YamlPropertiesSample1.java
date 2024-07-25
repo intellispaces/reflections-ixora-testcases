@@ -9,16 +9,16 @@ import tech.intellispaces.framework.core.annotation.Projection;
 import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.mindstructs.cli.CliConfiguration;
-import tech.mindstructs.snakeyaml.YamlStringToPropertiesSnakeyamlGuide;
+import tech.mindstructs.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>
  *
- * Two units {@link CliConfiguration} and {@link YamlStringToPropertiesSnakeyamlGuide} are included to module.
+ * Two units {@link CliConfiguration} and {@link YamlStringToPropertiesSnakeyamlMapper} are included to module.
  * Unit {@link CliConfiguration} defines the projection with name 'console' and referred to the module CLI console.
- * And unit {@link YamlStringToPropertiesSnakeyamlGuide} provides guide to load YAML properties.
+ * And unit {@link YamlStringToPropertiesSnakeyamlMapper} provides guide to load YAML properties.
  */
-@Module(units = { CliConfiguration.class, YamlStringToPropertiesSnakeyamlGuide.class })
+@Module(units = { CliConfiguration.class, YamlStringToPropertiesSnakeyamlMapper.class })
 public abstract class YamlPropertiesSample1 {
 
   /**

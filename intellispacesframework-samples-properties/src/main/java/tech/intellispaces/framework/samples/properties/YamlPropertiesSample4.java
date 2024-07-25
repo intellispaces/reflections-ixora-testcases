@@ -8,18 +8,18 @@ import tech.intellispaces.framework.core.annotation.Projection;
 import tech.intellispaces.framework.core.annotation.Properties;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.mindstructs.cli.CliConfiguration;
-import tech.mindstructs.structures.properties.IxoraPropertiesToDataGuide;
-import tech.mindstructs.snakeyaml.YamlStringToPropertiesSnakeyamlGuide;
+import tech.mindstructs.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
+import tech.mindstructs.structures.properties.MindstructsPropertiesToDataMapper;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>
  *
- * Three units {@link CliConfiguration}, {@link YamlStringToPropertiesSnakeyamlGuide} and {@link IxoraPropertiesToDataGuide} are included to module.
+ * Three units {@link CliConfiguration}, {@link YamlStringToPropertiesSnakeyamlMapper} and {@link MindstructsPropertiesToDataMapper} are included to module.
  * Unit {@link CliConfiguration} defines the projection named 'console' referred to the module CLI console.
- * Unit {@link YamlStringToPropertiesSnakeyamlGuide} provides guide to load YAML properties.
- * Unit {@link IxoraPropertiesToDataGuide} provides guide to map properties to data.
+ * Unit {@link YamlStringToPropertiesSnakeyamlMapper} provides guide to load YAML properties.
+ * Unit {@link MindstructsPropertiesToDataMapper} provides guide to map properties to data.
  */
-@Module(units = { CliConfiguration.class, YamlStringToPropertiesSnakeyamlGuide.class, IxoraPropertiesToDataGuide.class })
+@Module(units = { CliConfiguration.class, YamlStringToPropertiesSnakeyamlMapper.class, MindstructsPropertiesToDataMapper.class })
 public abstract class YamlPropertiesSample4 {
 
   /**

@@ -8,18 +8,18 @@ import tech.intellispaces.framework.core.annotation.Inject;
 import tech.intellispaces.framework.core.annotation.Module;
 import tech.intellispaces.framework.core.annotation.Startup;
 import tech.mindstructs.cli.CliConfiguration;
-import tech.mindstructs.structures.properties.IxoraPropertiesToDataGuide;
 import tech.mindstructs.rdb.RdbConfiguration;
 import tech.mindstructs.rdb.TransactionFunctions;
 import tech.mindstructs.hikary.HikariConfiguration;
-import tech.mindstructs.snakeyaml.YamlStringToPropertiesSnakeyamlGuide;
+import tech.mindstructs.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
+import tech.mindstructs.structures.properties.MindstructsPropertiesToDataMapper;
 
 @Module(units = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
-    YamlStringToPropertiesSnakeyamlGuide.class,
-    IxoraPropertiesToDataGuide.class
+    YamlStringToPropertiesSnakeyamlMapper.class,
+    MindstructsPropertiesToDataMapper.class
 })
 public abstract class RdbSample1 {
 
