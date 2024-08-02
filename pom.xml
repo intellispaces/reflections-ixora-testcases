@@ -4,19 +4,19 @@
 
   <parent>
     <groupId>intellispaces</groupId>
-    <artifactId>intellispacesframework-parent-pom</artifactId>
+    <artifactId>intellispaces-parent-pom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>intellispacesframework-samples</artifactId>
+  <artifactId>intellispaces-samples</artifactId>
   <packaging>pom</packaging>
 
   <modules>
-    <module>intellispacesframework-samples-helloworld</module>
-    <module>intellispacesframework-samples-properties</module>
-    <module>intellispacesframework-samples-properties-ontology</module>
-    <module>intellispacesframework-samples-rdb</module>
-    <module>intellispacesframework-samples-rdb-ontology</module>
+    <module>intellispaces-samples-helloworld</module>
+    <module>intellispaces-samples-properties</module>
+    <module>intellispaces-samples-properties-ontology</module>
+    <module>intellispaces-samples-rdb</module>
+    <module>intellispaces-samples-rdb-ontology</module>
   </modules>
 
   <build>
@@ -33,20 +33,20 @@
   </build>
 
   <dependencies>
-    <!-- Intellispaces framework -->
+    <!-- Intellispaces -->
     <dependency>
       <groupId>intellispaces</groupId>
-      <artifactId>intellispacesframework-core</artifactId>
+      <artifactId>intellispaces-core</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>intellispaces</groupId>
-      <artifactId>intellispacesframework-actions</artifactId>
+      <artifactId>intellispaces-actions</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>intellispaces</groupId>
-      <artifactId>intellispacesframework-dynamicproxy-bytebuddy</artifactId>
+      <artifactId>intellispaces-proxies-bytebuddy</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
