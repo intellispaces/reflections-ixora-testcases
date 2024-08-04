@@ -8,9 +8,9 @@ import tech.intellispaces.core.annotation.Inject;
 import tech.intellispaces.core.annotation.Module;
 import tech.intellispaces.core.annotation.Startup;
 import tech.intellispaces.ixora.cli.CliConfiguration;
+import tech.intellispaces.ixora.hikary.HikariConfiguration;
 import tech.intellispaces.ixora.rdb.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.TransactionFunctions;
-import tech.intellispaces.ixora.hikary.HikariConfiguration;
 import tech.intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
 import tech.intellispaces.ixora.structures.properties.IxoraPropertiesToDataMapper;
 

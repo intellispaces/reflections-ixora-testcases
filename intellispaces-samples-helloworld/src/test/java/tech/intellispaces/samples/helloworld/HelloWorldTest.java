@@ -30,7 +30,8 @@ public class HelloWorldTest {
       HelloWorldSample1.class,
       HelloWorldSample2.class,
       HelloWorldSample3.class,
-      HelloWorldSample4.class
+      HelloWorldSample4.class,
+      HelloWorldSample5.class
   })
   void testOutput(Class<?> moduleClass) {
     // Given

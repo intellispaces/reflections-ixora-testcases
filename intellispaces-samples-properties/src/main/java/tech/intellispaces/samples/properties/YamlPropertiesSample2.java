@@ -7,10 +7,10 @@ import tech.intellispaces.core.annotation.Module;
 import tech.intellispaces.core.annotation.Projection;
 import tech.intellispaces.core.annotation.Properties;
 import tech.intellispaces.core.annotation.Startup;
-import tech.intellispaces.samples.moduleproperties.AddressHandle;
 import tech.intellispaces.ixora.cli.CliConfiguration;
 import tech.intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
 import tech.intellispaces.ixora.structures.properties.IxoraPropertiesToDataMapper;
+import tech.intellispaces.samples.moduleproperties.AddressHandle;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>
