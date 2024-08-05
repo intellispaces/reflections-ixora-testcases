@@ -14,15 +14,19 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 /**
  * Tests for RDB samples.
  */
 public class RdbSampleTest extends DataSourceBasedDBTestCase {
 
+  private static final String DATABASE_URL = "jdbc:h2:mem:sample;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:book_schema.sql'";
+
   @Override
   protected DataSource getDataSource() {
     var ds = new JdbcDataSource();
-    ds.setURL("jdbc:h2:mem:rdb_sample;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:rdb_sample_schema.sql'");
+    ds.setURL(DATABASE_URL);
     ds.setUser("sa");
     ds.setPassword("sa");
     return ds;
@@ -30,7 +34,7 @@ public class RdbSampleTest extends DataSourceBasedDBTestCase {
 
   @Override
   protected IDataSet getDataSet() throws Exception {
-    return new YamlDataSet(RdbSampleTest.class.getResourceAsStream("/rdb_sample_data.yaml"));
+    return new YamlDataSet(RdbSampleTest.class.getResourceAsStream("/book_data.yaml"));
   }
 
   @Override
@@ -40,10 +44,9 @@ public class RdbSampleTest extends DataSourceBasedDBTestCase {
     super.setUp();
   }
 
-  public void testOutput() {
-    Class<?> moduleClass = RdbSample1.class;
-
+  public void testRowCount() {
     // Given
+    var moduleClass = RowCountSample.class;
     var os = new ByteArrayOutputStream();
     var ps = new PrintStream(os, true, StandardCharsets.UTF_8);
     System.setOut(ps);
@@ -53,6 +56,6 @@ public class RdbSampleTest extends DataSourceBasedDBTestCase {
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
-
+    assertThat(output).isEqualTo("Number books: 3" + System.lineSeparator());
   }
 }

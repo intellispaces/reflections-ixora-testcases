@@ -12,16 +12,16 @@ import tech.intellispaces.ixora.hikary.HikariConfiguration;
 import tech.intellispaces.ixora.rdb.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.TransactionFunctions;
 import tech.intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
-import tech.intellispaces.ixora.structures.properties.IxoraPropertiesToDataMapper;
+import tech.intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
 
 @Module(units = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
     YamlStringToPropertiesSnakeyamlMapper.class,
-    IxoraPropertiesToDataMapper.class
+    PropertiesToDataIxoraMapper.class
 })
-public abstract class RdbSample1 {
+public abstract class RowCountSample {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -42,9 +42,10 @@ public abstract class RdbSample1 {
   public void startup(@Inject ConsoleHandle console) {
     TransactionFactoryHandle transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
-      ResultSetHandle rs = tx.query("SELECT count(*) as count FROM person");
-      console.println("");
-
+      ResultSetHandle rs = tx.query("SELECT count(*) as count FROM book");
+      rs.next();
+      console.print("Number books: ");
+      console.println(rs.integerValue("count"));
     });
   }
 
@@ -52,6 +53,6 @@ public abstract class RdbSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(RdbSample1.class, args);
+    IntellispacesFramework.loadModule(RowCountSample.class, args);
   }
 }

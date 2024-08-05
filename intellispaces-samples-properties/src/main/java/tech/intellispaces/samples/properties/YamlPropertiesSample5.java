@@ -10,7 +10,7 @@ import tech.intellispaces.core.annotation.Properties;
 import tech.intellispaces.core.annotation.Startup;
 import tech.intellispaces.ixora.cli.CliConfiguration;
 import tech.intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
-import tech.intellispaces.ixora.structures.properties.IxoraPropertiesToDataMapper;
+import tech.intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
 import tech.intellispaces.samples.moduleproperties.AddressHandle;
 
 public interface YamlPropertiesSample5 {
@@ -18,12 +18,12 @@ public interface YamlPropertiesSample5 {
   /**
    * This module demonstrates reading module YAML properties.<p/>
    *
-   * Three units {@link CliConfiguration}, {@link YamlStringToPropertiesSnakeyamlMapper} and {@link IxoraPropertiesToDataMapper} are included to module.
+   * Three units {@link CliConfiguration}, {@link YamlStringToPropertiesSnakeyamlMapper} and {@link PropertiesToDataIxoraMapper} are included to module.
    * Unit {@link CliConfiguration} defines the projection named 'console' referred to the module CLI console.
    * Unit {@link YamlStringToPropertiesSnakeyamlMapper} provides guide to load YAML properties.
-   * Unit {@link IxoraPropertiesToDataMapper} provides guide to map properties to data.
+   * Unit {@link PropertiesToDataIxoraMapper} provides guide to map properties to data.
    */
-  @Module(units = { ModuleConfiguration.class, CliConfiguration.class, YamlStringToPropertiesSnakeyamlMapper.class, IxoraPropertiesToDataMapper.class })
+  @Module(units = { ModuleConfiguration.class, CliConfiguration.class, YamlStringToPropertiesSnakeyamlMapper.class, PropertiesToDataIxoraMapper.class })
   abstract class MainUnit {
 
     /**

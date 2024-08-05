@@ -1,5 +1,5 @@
 datasource:
-  driverClassName: org.h2.Driver
-  url: "jdbc:h2:mem:rdb_sample"
-  username: "sa"
-  password: "sa"
+  driverClassName: org.postgresql.Driver
+  url: "jdbc:postgresql://localhost:5432/sample?currentSchema=book"
+  username: "postgres"
+  password: "postgres"

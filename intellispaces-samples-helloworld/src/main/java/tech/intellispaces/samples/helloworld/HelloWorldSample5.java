@@ -27,7 +27,7 @@ public class HelloWorldSample5 {
   @Startup
   public void startup(@Inject MovableConsoleHandle console) {
     // Get identifier of the transition 'Console::println'
-    String tid = TransitionFunctions.getTransitionId(Console.class, Console::println, null);
+    String tid = TransitionFunctions.getTransitionId(Console.class, Console::println, "");
 
     // Move CLI console through transition defined by ID tid
     console.moveThru(tid, "Hello, world!");
