@@ -21,7 +21,7 @@ import tech.intellispaces.ixora.structures.properties.PropertiesToDataIxoraMappe
     YamlStringToPropertiesSnakeyamlMapper.class,
     PropertiesToDataIxoraMapper.class
 })
-public abstract class RowCountSample {
+public abstract class RowCountSample1 {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -42,7 +42,7 @@ public abstract class RowCountSample {
   public void startup(@Inject ConsoleHandle console) {
     TransactionFactoryHandle transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
-      ResultSetHandle rs = tx.query("SELECT count(*) as count FROM book");
+      ResultSetHandle rs = tx.query("SELECT count(*) as count FROM book.book");
       rs.next();
       console.print("Number books: ");
       console.println(rs.integerValue("count"));
@@ -53,6 +53,6 @@ public abstract class RowCountSample {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(RowCountSample.class, args);
+    IntellispacesFramework.loadModule(RowCountSample1.class, args);
   }
 }

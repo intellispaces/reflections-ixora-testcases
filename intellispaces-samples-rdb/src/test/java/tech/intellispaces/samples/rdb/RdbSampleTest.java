@@ -21,7 +21,9 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class RdbSampleTest extends DataSourceBasedDBTestCase {
 
-  private static final String DATABASE_URL = "jdbc:h2:mem:sample;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:book_schema.sql'";
+  private static final String DATABASE_URL = "jdbc:h2:mem:sample;" +
+      "DB_CLOSE_DELAY=-1;" +
+      "INIT=RUNSCRIPT FROM 'classpath:book_schema.sql'";
 
   @Override
   protected DataSource getDataSource() {
@@ -45,8 +47,12 @@ public class RdbSampleTest extends DataSourceBasedDBTestCase {
   }
 
   public void testRowCount() {
+    testRowCount(RowCountSample1.class);
+    testRowCount(RowCountSample2.class);
+  }
+
+  private void testRowCount(Class<?> moduleClass) {
     // Given
-    var moduleClass = RowCountSample.class;
     var os = new ByteArrayOutputStream();
     var ps = new PrintStream(os, true, StandardCharsets.UTF_8);
     System.setOut(ps);
