@@ -58,6 +58,10 @@ public class RdbSampleTest extends DataSourceBasedDBTestCase {
     testRowCount(RowCountSample3.class);
   }
 
+  public void testRowCountSample4() {
+    testRowCount(RowCountSample4.class);
+  }
+
   private void testRowCount(Class<?> moduleClass) {
     // Given
     var os = new ByteArrayOutputStream();
