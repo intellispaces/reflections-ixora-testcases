@@ -34,7 +34,7 @@ public abstract class RowCountSample3 {
   @Startup
   @Transactional
   public void startup(@Inject ConsoleHandle console) {
-    TransactionHandle tx = Transactions.getCurrent();
+    TransactionHandle tx = Transactions.current();
     ResultSetHandle rs = tx.query("SELECT count(*) as count FROM book.book");
     rs.next();
     console.print("Number books: ");
