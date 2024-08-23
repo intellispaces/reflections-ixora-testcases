@@ -1,6 +1,6 @@
 package intellispaces.samples.helloworld;
 
-import intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.cli.Console;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
@@ -23,7 +23,7 @@ public class HelloWorldSample1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject ConsoleHandle console) {
+  public void startup(@Inject Console console) {
     console.println("Hello, world!");
   }
 

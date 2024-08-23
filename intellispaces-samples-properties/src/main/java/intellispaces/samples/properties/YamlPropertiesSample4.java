@@ -1,6 +1,6 @@
 package intellispaces.samples.properties;
 
-import intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.cli.Console;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
@@ -19,7 +19,11 @@ import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
  * Unit {@link YamlStringToPropertiesSnakeyamlMapper} provides guide to load YAML properties.
  * Unit {@link PropertiesToDataIxoraMapper} provides guide to map properties to data.
  */
-@Module(units = { CliConfiguration.class, YamlStringToPropertiesSnakeyamlMapper.class, PropertiesToDataIxoraMapper.class })
+@Module(units = {
+    CliConfiguration.class,
+    YamlStringToPropertiesSnakeyamlMapper.class,
+    PropertiesToDataIxoraMapper.class
+})
 public abstract class YamlPropertiesSample4 {
 
   /**
@@ -48,7 +52,7 @@ public abstract class YamlPropertiesSample4 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject ConsoleHandle console) {
+  public void startup(@Inject Console console) {
     console.println("City: " + ownerCity());
     console.println("Street: " + ownerStreet());
   }

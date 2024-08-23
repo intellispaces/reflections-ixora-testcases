@@ -18,7 +18,12 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <!-- Intellispaces -->
+        <!-- Intellispaces Ixora -->
+        <dependency>
+            <groupId>intellispaces</groupId>
+            <artifactId>ixora-basic-ontology</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>intellispaces</groupId>
             <artifactId>ixora-cli</artifactId>

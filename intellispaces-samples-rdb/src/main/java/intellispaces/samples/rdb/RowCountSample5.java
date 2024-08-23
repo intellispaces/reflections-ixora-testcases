@@ -1,8 +1,8 @@
 package intellispaces.samples.rdb;
 
-import intellispaces.ixora.cli.ConsoleHandle;
-import intellispaces.ixora.rdb.ResultSetHandle;
-import intellispaces.ixora.rdb.TransactionFactoryHandle;
+import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.rdb.ResultSet;
+import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.actions.Action;
 import intellispaces.actions.Actions;
 import intellispaces.core.IntellispacesFramework;
@@ -35,9 +35,9 @@ public abstract class RowCountSample5 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject TransactionFactoryHandle transactionFactory, @Inject ConsoleHandle console) {
+  public void startup(@Inject TransactionFactory transactionFactory, @Inject Console console) {
     Action mainAction = Actions.get(() -> {
-      ResultSetHandle rs = Transactions.current().query("SELECT count(*) as count FROM book.book");
+      ResultSet rs = Transactions.current().query("SELECT count(*) as count FROM book.book");
       rs.next();
       console.print("Number books: ");
       console.println(rs.integerValue("count"));

@@ -6,11 +6,11 @@ import intellispaces.core.annotation.Transition;
 
 @Data
 @Domain
-public interface Address {
+public interface ContactDomain {
 
-  @Transition("bb0a84a8-6aed-4235-86b7-0303da9bd6bc")
-  String city();
+  @Transition("3e90ff80-f11a-46c4-949d-0c5904b89edb")
+  int home();
 
-  @Transition("30635fb7-2ec3-4bc9-b2d6-dc957de04c15")
-  String street();
+  @Transition("fbba4a1d-3757-4956-b491-6dd3c0de988c")
+  int office();
 }

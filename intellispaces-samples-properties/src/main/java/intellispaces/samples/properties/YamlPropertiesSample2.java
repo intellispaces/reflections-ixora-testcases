@@ -1,6 +1,6 @@
 package intellispaces.samples.properties;
 
-import intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.cli.Console;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
@@ -10,7 +10,7 @@ import intellispaces.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
 import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
-import intellispaces.samples.moduleproperties.AddressHandle;
+import intellispaces.samples.moduleproperties.Address;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>
@@ -20,7 +20,11 @@ import intellispaces.samples.moduleproperties.AddressHandle;
  * Unit {@link YamlStringToPropertiesSnakeyamlMapper} provides guide to load YAML properties.
  * Unit {@link PropertiesToDataIxoraMapper} provides guide to map properties to data.
  */
-@Module(units = { CliConfiguration.class, YamlStringToPropertiesSnakeyamlMapper.class, PropertiesToDataIxoraMapper.class })
+@Module(units = {
+    CliConfiguration.class,
+    YamlStringToPropertiesSnakeyamlMapper.class,
+    PropertiesToDataIxoraMapper.class
+})
 public abstract class YamlPropertiesSample2 {
 
   /**
@@ -30,7 +34,7 @@ public abstract class YamlPropertiesSample2 {
    */
   @Projection
   @Properties("owner.address")
-  public abstract AddressHandle ownerAddress();
+  public abstract Address ownerAddress();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -40,7 +44,7 @@ public abstract class YamlPropertiesSample2 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject ConsoleHandle console) {
+  public void startup(@Inject Console console) {
     console.println("City: " + ownerAddress().city());
     console.println("Street: " + ownerAddress().street());
   }

@@ -1,6 +1,6 @@
 package intellispaces.samples.properties;
 
-import intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.cli.Console;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Configuration;
 import intellispaces.core.annotation.Inject;
@@ -11,7 +11,7 @@ import intellispaces.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
 import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
-import intellispaces.samples.moduleproperties.AddressHandle;
+import intellispaces.samples.moduleproperties.Address;
 
 public interface YamlPropertiesSample5 {
 
@@ -23,7 +23,12 @@ public interface YamlPropertiesSample5 {
    * Unit {@link YamlStringToPropertiesSnakeyamlMapper} provides guide to load YAML properties.
    * Unit {@link PropertiesToDataIxoraMapper} provides guide to map properties to data.
    */
-  @Module(units = { ModuleConfiguration.class, CliConfiguration.class, YamlStringToPropertiesSnakeyamlMapper.class, PropertiesToDataIxoraMapper.class })
+  @Module(units = {
+      ModuleConfiguration.class,
+      CliConfiguration.class,
+      YamlStringToPropertiesSnakeyamlMapper.class,
+      PropertiesToDataIxoraMapper.class
+  })
   abstract class MainUnit {
 
     /**
@@ -32,7 +37,7 @@ public interface YamlPropertiesSample5 {
      * This abstract method will be auto implemented in wrapper class.
      */
     @Inject
-    public abstract AddressHandle ownerAddress();
+    public abstract Address ownerAddress();
 
     /**
      * This method will be invoked automatically after the module is started.<p/>
@@ -42,7 +47,7 @@ public interface YamlPropertiesSample5 {
      * @param console value of the projection named 'console'.
      */
     @Startup
-    public void startup(@Inject ConsoleHandle console) {
+    public void startup(@Inject Console console) {
       console.println("City: " + ownerAddress().city());
       console.println("Street: " + ownerAddress().street());
     }
@@ -64,6 +69,6 @@ public interface YamlPropertiesSample5 {
      */
     @Projection
     @Properties("owner.address")
-    public abstract AddressHandle ownerAddress();
+    public abstract Address ownerAddress();
   }
 }

@@ -1,6 +1,6 @@
 package intellispaces.samples.helloworld;
 
-import intellispaces.ixora.cli.ConsoleHandle;
+import intellispaces.ixora.cli.Console;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
@@ -21,7 +21,7 @@ public abstract class HelloWorldSample2 {
    * Implementation of this method will be auto generated.
    */
   @Inject
-  public abstract ConsoleHandle console();
+  public abstract Console console();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
