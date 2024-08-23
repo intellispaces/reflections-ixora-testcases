@@ -1,11 +1,11 @@
 package intellispaces.samples.helloworld;
 
-import intellispaces.ixora.cli.Console;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
 import intellispaces.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
+import intellispaces.ixora.cli.Console;
 
 /**
  * This module demonstrates the output to the console.<p/>

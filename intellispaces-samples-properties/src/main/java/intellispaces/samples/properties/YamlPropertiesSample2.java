@@ -1,6 +1,5 @@
 package intellispaces.samples.properties;
 
-import intellispaces.ixora.cli.Console;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
@@ -8,6 +7,7 @@ import intellispaces.core.annotation.Projection;
 import intellispaces.core.annotation.Properties;
 import intellispaces.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
+import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
 import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
 import intellispaces.samples.moduleproperties.Address;

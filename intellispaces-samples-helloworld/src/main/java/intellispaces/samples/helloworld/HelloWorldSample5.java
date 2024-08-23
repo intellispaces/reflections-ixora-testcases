@@ -1,14 +1,13 @@
 package intellispaces.samples.helloworld;
 
-import intellispaces.ixora.cli.Console;
-import intellispaces.ixora.cli.ConsoleDomain;
-import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
 import intellispaces.core.annotation.Startup;
 import intellispaces.core.space.transition.TransitionFunctions;
 import intellispaces.ixora.cli.CliConfiguration;
+import intellispaces.ixora.cli.ConsoleDomain;
+import intellispaces.ixora.cli.MovableConsole;
 
 /**
  * This module demonstrates the output to the console.<p/>

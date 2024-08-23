@@ -1,17 +1,16 @@
 package intellispaces.samples.rdb;
 
-import intellispaces.ixora.cli.Console;
-import intellispaces.ixora.rdb.ResultSet;
-import intellispaces.ixora.rdb.Transaction;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
 import intellispaces.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
+import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
+import intellispaces.ixora.rdb.ResultSet;
+import intellispaces.ixora.rdb.Transaction;
 import intellispaces.ixora.rdb.annotation.Transactional;
-import intellispaces.ixora.rdb.Transactions;
 import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
 import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
 
@@ -22,20 +21,20 @@ import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
     YamlStringToPropertiesSnakeyamlMapper.class,
     PropertiesToDataIxoraMapper.class
 })
-public abstract class RowCountSample3 {
+public abstract class QueryBookCountSample4 {
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
    *
    * The values of method arguments will be injected automatically.
    *
+   * @param tx current transaction.
    * @param console value of the projection named 'console'.
    */
   @Startup
   @Transactional
-  public void startup(@Inject Console console) {
-    Transaction tx = Transactions.current();
-    ResultSet rs = tx.query("SELECT count(*) as count FROM book.book");
+  public void startup(@Inject Transaction tx, @Inject Console console) {
+    ResultSet rs = tx.query(Sqls.QUEST_BOOK_COUNT);
     rs.next();
     console.print("Number books: ");
     console.println(rs.integerValue("count"));
@@ -45,6 +44,6 @@ public abstract class RowCountSample3 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(RowCountSample3.class, args);
+    IntellispacesFramework.loadModule(QueryBookCountSample4.class, args);
   }
 }
