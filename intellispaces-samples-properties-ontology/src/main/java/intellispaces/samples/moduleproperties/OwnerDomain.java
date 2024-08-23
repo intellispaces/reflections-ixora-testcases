@@ -5,7 +5,7 @@ import intellispaces.core.annotation.Domain;
 import intellispaces.core.annotation.Transition;
 
 @Data
-@Domain
+@Domain("6d541c31-31cc-4d68-9680-003a5c270e55")
 public interface OwnerDomain {
 
   @Transition("b4c2f26e-67d0-4c8b-9614-8a7e4e21390a")
