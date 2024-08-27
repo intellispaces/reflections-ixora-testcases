@@ -44,11 +44,11 @@ public abstract class QueryBookRevenueSample1 {
   public void startup(@Inject Console console, @Inject Transaction tx) {
     ResultSet rs = tx.query(Sqls.QUERY_BOOK_REVENUE_SQL);
     while (rs.next()) {
-      BookRevenueProjection revenue = rs.value(BookRevenueProjection.class);
+      BookRevenueProjection bookRevenue = rs.value(BookRevenueProjection.class);
       console.print("Book title: ");
-      console.print(revenue.title());
+      console.print(bookRevenue.title());
       console.print(". Revenue: ");
-      console.println(revenue.revenue() != null ?  revenue.revenue() : 0);
+      console.println(bookRevenue.revenue() != null ?  bookRevenue.revenue() : 0);
     }
   }
 

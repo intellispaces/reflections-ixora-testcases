@@ -44,12 +44,12 @@ public abstract class QueryBookRevenueSample2 {
   @Transactional
   public void startup(@Inject Console console, @Inject Transaction tx) {
     ResultSet rs = tx.query(Sqls.QUERY_BOOK_REVENUE_SQL);
-    List<BookRevenueProjection> revenues = rs.values(BookRevenueProjection.class);
-    for (BookRevenueProjection revenue : revenues.nativeList()) {
+    List<BookRevenueProjection> bookRevenues = rs.values(BookRevenueProjection.class);
+    for (BookRevenueProjection bookRevenue : bookRevenues.nativeList()) {
       console.print("Book title: ");
-      console.print(revenue.title());
+      console.print(bookRevenue.title());
       console.print(". Revenue: ");
-      console.println(revenue.revenue() != null ?  revenue.revenue() : 0);
+      console.println(bookRevenue.revenue() != null ?  bookRevenue.revenue() : 0);
     }
   }
 

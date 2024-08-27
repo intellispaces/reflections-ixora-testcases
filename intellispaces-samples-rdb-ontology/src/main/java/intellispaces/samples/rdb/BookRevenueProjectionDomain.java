@@ -1,11 +1,11 @@
 package intellispaces.samples.rdb;
 
-import intellispaces.core.annotation.Data;
 import intellispaces.core.annotation.Domain;
 import intellispaces.core.annotation.Transition;
+import intellispaces.ixora.rdb.annotation.Projection;
 import jakarta.persistence.Column;
 
-@Data
+@Projection
 @Domain("cf3a572e-b571-46dc-aee6-9cd448d50cc7")
 public interface BookRevenueProjectionDomain {
 
