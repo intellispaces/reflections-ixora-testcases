@@ -1,4 +1,4 @@
-package intellispaces.samples.rdb;
+package intellispaces.samples.rdb.query;
 
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
@@ -9,20 +9,19 @@ import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.ResultSet;
-import intellispaces.ixora.rdb.Transaction;
 import intellispaces.ixora.rdb.TransactionFactory;
-import intellispaces.ixora.rdb.annotation.Transactional;
-import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
-import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
+import intellispaces.ixora.rdb.TransactionFunctions;
+import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
 
 @Module(units = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
-    YamlStringToPropertiesSnakeyamlMapper.class,
-    PropertiesToDataIxoraMapper.class
+    SnakeyamlGuide.class,
+    IxoraPropertiesToDataGuide.class
 })
-public abstract class QueryBookRevenueSample1 {
+public abstract class QueryBookCountSample1 {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -40,22 +39,20 @@ public abstract class QueryBookRevenueSample1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  @Transactional
-  public void startup(@Inject Console console, @Inject Transaction tx) {
-    ResultSet rs = tx.query(Sqls.QUERY_BOOK_REVENUE_SQL);
-    while (rs.next()) {
-      BookRevenueProjection bookRevenue = rs.value(BookRevenueProjection.class);
-      console.print("Book title: ");
-      console.print(bookRevenue.title());
-      console.print(". Revenue: ");
-      console.println(bookRevenue.revenue() != null ?  bookRevenue.revenue() : 0);
-    }
+  public void startup(@Inject Console console) {
+    TransactionFactory transactionFactory = transactionFactory();
+    TransactionFunctions.transactional(transactionFactory, tx -> {
+      ResultSet rs = tx.query(QuerySql.BOOK_COUNT);
+      rs.next();
+      console.print("Number books: ");
+      console.println(rs.integerValue("count"));
+    });
   }
 
   /**
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(QueryBookRevenueSample1.class, args);
+    IntellispacesFramework.loadModule(QueryBookCountSample1.class, args);
   }
 }

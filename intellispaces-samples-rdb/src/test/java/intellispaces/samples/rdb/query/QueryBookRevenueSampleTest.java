@@ -1,4 +1,4 @@
-package intellispaces.samples.rdb;
+package intellispaces.samples.rdb.query;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;

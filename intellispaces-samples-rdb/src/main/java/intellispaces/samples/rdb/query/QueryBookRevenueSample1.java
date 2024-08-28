@@ -1,4 +1,4 @@
-package intellispaces.samples.rdb;
+package intellispaces.samples.rdb.query;
 
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
@@ -12,18 +12,18 @@ import intellispaces.ixora.rdb.ResultSet;
 import intellispaces.ixora.rdb.Transaction;
 import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.annotation.Transactional;
-import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
-import intellispaces.ixora.structures.collection.List;
-import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
+import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
+import intellispaces.samples.rdb.BookRevenueProjection;
 
 @Module(units = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
-    YamlStringToPropertiesSnakeyamlMapper.class,
-    PropertiesToDataIxoraMapper.class
+    SnakeyamlGuide.class,
+    IxoraPropertiesToDataGuide.class
 })
-public abstract class QueryBookRevenueSample2 {
+public abstract class QueryBookRevenueSample1 {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -43,9 +43,9 @@ public abstract class QueryBookRevenueSample2 {
   @Startup
   @Transactional
   public void startup(@Inject Console console, @Inject Transaction tx) {
-    ResultSet rs = tx.query(Sqls.QUERY_BOOK_REVENUE_SQL);
-    List<BookRevenueProjection> bookRevenues = rs.values(BookRevenueProjection.class);
-    for (BookRevenueProjection bookRevenue : bookRevenues.nativeList()) {
+    ResultSet rs = tx.query(QuerySql.BOOK_REVENUE_SQL);
+    while (rs.next()) {
+      BookRevenueProjection bookRevenue = rs.value(BookRevenueProjection.class);
       console.print("Book title: ");
       console.print(bookRevenue.title());
       console.print(". Revenue: ");
@@ -57,6 +57,6 @@ public abstract class QueryBookRevenueSample2 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(QueryBookRevenueSample2.class, args);
+    IntellispacesFramework.loadModule(QueryBookRevenueSample1.class, args);
   }
 }

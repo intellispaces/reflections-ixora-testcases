@@ -1,4 +1,4 @@
-package intellispaces.samples.rdb;
+package intellispaces.samples.rdb.query;
 
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
@@ -11,15 +11,15 @@ import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.ResultSet;
 import intellispaces.ixora.rdb.Transaction;
 import intellispaces.ixora.rdb.annotation.Transactional;
-import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
-import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
+import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
 
 @Module(units = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
-    YamlStringToPropertiesSnakeyamlMapper.class,
-    PropertiesToDataIxoraMapper.class
+    SnakeyamlGuide.class,
+    IxoraPropertiesToDataGuide.class
 })
 public abstract class QueryBookCountSample4 {
 
@@ -34,7 +34,7 @@ public abstract class QueryBookCountSample4 {
   @Startup
   @Transactional
   public void startup(@Inject Transaction tx, @Inject Console console) {
-    ResultSet rs = tx.query(Sqls.QUEST_BOOK_COUNT);
+    ResultSet rs = tx.query(QuerySql.BOOK_COUNT);
     rs.next();
     console.print("Number books: ");
     console.println(rs.integerValue("count"));

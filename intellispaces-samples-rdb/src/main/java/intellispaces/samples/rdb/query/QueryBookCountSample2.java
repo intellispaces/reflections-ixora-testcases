@@ -1,7 +1,5 @@
-package intellispaces.samples.rdb;
+package intellispaces.samples.rdb.query;
 
-import intellispaces.actions.Action;
-import intellispaces.actions.Actions;
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
 import intellispaces.core.annotation.Module;
@@ -12,19 +10,18 @@ import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.ResultSet;
 import intellispaces.ixora.rdb.TransactionFactory;
-import intellispaces.ixora.rdb.Transactions;
-import intellispaces.ixora.rdb.action.TransactionalAction;
-import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
-import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
+import intellispaces.ixora.rdb.TransactionFunctions;
+import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
 
 @Module(units = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
-    YamlStringToPropertiesSnakeyamlMapper.class,
-    PropertiesToDataIxoraMapper.class
+    SnakeyamlGuide.class,
+    IxoraPropertiesToDataGuide.class
 })
-public abstract class QueryBookCountSample5 {
+public abstract class QueryBookCountSample2 {
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -36,22 +33,18 @@ public abstract class QueryBookCountSample5 {
    */
   @Startup
   public void startup(@Inject TransactionFactory transactionFactory, @Inject Console console) {
-    Action mainAction = Actions.get(() -> {
-      ResultSet rs = Transactions.current().query(Sqls.QUEST_BOOK_COUNT);
+    TransactionFunctions.transactional(transactionFactory, tx -> {
+      ResultSet rs = tx.query(QuerySql.BOOK_COUNT);
       rs.next();
       console.print("Number books: ");
       console.println(rs.integerValue("count"));
     });
-
-    var transactionalAction = new TransactionalAction(transactionFactory, mainAction);
-
-    transactionalAction.execute();
   }
 
   /**
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(QueryBookCountSample5.class, args);
+    IntellispacesFramework.loadModule(QueryBookCountSample2.class, args);
   }
 }

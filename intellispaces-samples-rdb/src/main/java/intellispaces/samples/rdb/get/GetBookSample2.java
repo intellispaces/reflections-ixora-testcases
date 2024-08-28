@@ -1,4 +1,4 @@
-package intellispaces.samples.rdb;
+package intellispaces.samples.rdb.get;
 
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
@@ -8,20 +8,23 @@ import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.ResultSet;
 import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.TransactionFunctions;
-import intellispaces.ixora.snakeyaml.YamlStringToPropertiesSnakeyamlMapper;
-import intellispaces.ixora.structures.properties.PropertiesToDataIxoraMapper;
+import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
+import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
+import intellispaces.samples.rdb.Book;
+import intellispaces.samples.rdb.BookCrudGuide;
+import intellispaces.samples.rdb.GeneratedBookCrudGuide;
 
 @Module(units = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
-    YamlStringToPropertiesSnakeyamlMapper.class,
-    PropertiesToDataIxoraMapper.class
+    SnakeyamlGuide.class,
+    IxoraPropertiesToDataGuide.class,
+    GeneratedBookCrudGuide.class
 })
-public abstract class QueryBookCountSample1 {
+public abstract class GetBookSample2 {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -30,6 +33,9 @@ public abstract class QueryBookCountSample1 {
    */
   @Inject
   public abstract TransactionFactory transactionFactory();
+
+  @Inject
+  public abstract BookCrudGuide bookCrudGuide();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -42,10 +48,14 @@ public abstract class QueryBookCountSample1 {
   public void startup(@Inject Console console) {
     TransactionFactory transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
-      ResultSet rs = tx.query(Sqls.QUEST_BOOK_COUNT);
-      rs.next();
-      console.print("Number books: ");
-      console.println(rs.integerValue("count"));
+      int bookId = 2;
+      Book book = bookCrudGuide().getById(tx, bookId);
+
+      console.print("Book title: ");
+      console.println(book.title());
+
+      console.print("Book author: ");
+      console.println(book.author());
     });
   }
 
@@ -53,6 +63,6 @@ public abstract class QueryBookCountSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(QueryBookCountSample1.class, args);
+    IntellispacesFramework.loadModule(GetBookSample2.class, args);
   }
 }

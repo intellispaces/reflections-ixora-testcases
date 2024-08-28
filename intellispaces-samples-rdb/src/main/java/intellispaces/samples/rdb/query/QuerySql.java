@@ -1,10 +1,10 @@
-package intellispaces.samples.rdb;
+package intellispaces.samples.rdb.query;
 
-public interface Sqls {
+public interface QuerySql {
 
-  String QUEST_BOOK_COUNT = "SELECT count(*) as count FROM book.book";
+  String BOOK_COUNT = "SELECT count(*) as count FROM book.book";
 
-  String QUERY_BOOK_REVENUE_SQL = """
+  String BOOK_REVENUE_SQL = """
     SELECT b.title as title, SUM(bo.revenue) as revenue
     FROM book.book b
     LEFT JOIN book.book_order bo ON bo.book_id = b.id
