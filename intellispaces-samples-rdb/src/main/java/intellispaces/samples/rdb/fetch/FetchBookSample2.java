@@ -1,4 +1,4 @@
-package intellispaces.samples.rdb.get;
+package intellispaces.samples.rdb.fetch;
 
 import intellispaces.core.IntellispacesFramework;
 import intellispaces.core.annotation.Inject;
@@ -13,7 +13,6 @@ import intellispaces.ixora.rdb.TransactionFunctions;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
-import intellispaces.samples.rdb.BookCrudGuide;
 import intellispaces.samples.rdb.GeneratedBookCrudGuide;
 
 @Module(units = {
@@ -24,7 +23,7 @@ import intellispaces.samples.rdb.GeneratedBookCrudGuide;
     IxoraPropertiesToDataGuide.class,
     GeneratedBookCrudGuide.class
 })
-public abstract class GetBookSample2 {
+public abstract class FetchBookSample2 {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -35,7 +34,7 @@ public abstract class GetBookSample2 {
   public abstract TransactionFactory transactionFactory();
 
   @Inject
-  public abstract BookCrudGuide bookCrudGuide();
+  public abstract GeneratedBookCrudGuide bookCrudGuide();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -63,6 +62,6 @@ public abstract class GetBookSample2 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(GetBookSample2.class, args);
+    IntellispacesFramework.loadModule(FetchBookSample2.class, args);
   }
 }

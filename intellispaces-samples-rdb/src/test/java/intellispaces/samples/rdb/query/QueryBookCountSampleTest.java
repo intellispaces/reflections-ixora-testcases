@@ -46,23 +46,23 @@ public class QueryBookCountSampleTest extends DataSourceBasedDBTestCase {
     super.setUp();
   }
 
-  public void testRowCountSample1() {
+  public void testQueryBookCountSample1() {
     test(QueryBookCountSample1.class);
   }
 
-  public void testRowCountSample2() {
+  public void testQueryBookCountSample2() {
     test(QueryBookCountSample2.class);
   }
 
-  public void testRowCountSample3() {
+  public void testQueryBookCountSample3() {
     test(QueryBookCountSample3.class);
   }
 
-  public void testRowCountSample4() {
+  public void testQueryBookCountSample4() {
     test(QueryBookCountSample4.class);
   }
 
-  public void testRowCountSample5() {
+  public void testQueryBookCountSample5() {
     test(QueryBookCountSample5.class);
   }
 

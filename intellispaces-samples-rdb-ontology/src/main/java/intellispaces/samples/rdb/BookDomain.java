@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "book")
+@Table(schema = "book", name = "book")
 @Domain("f80a3457-66ad-42c9-8372-715a9f7dd5f4")
 public interface BookDomain {
 

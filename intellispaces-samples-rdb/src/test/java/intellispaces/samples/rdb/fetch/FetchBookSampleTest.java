@@ -1,4 +1,4 @@
-package intellispaces.samples.rdb.query;
+package intellispaces.samples.rdb.fetch;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
@@ -17,9 +17,9 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for query book revenue samples.
+ * Tests for fetch book samples.
  */
-public class QueryBookRevenueSampleTest extends DataSourceBasedDBTestCase {
+public class FetchBookSampleTest extends DataSourceBasedDBTestCase {
 
   private static final String DATABASE_URL = "jdbc:h2:mem:sample;" +
       "DB_CLOSE_DELAY=-1;" +
@@ -36,7 +36,7 @@ public class QueryBookRevenueSampleTest extends DataSourceBasedDBTestCase {
 
   @Override
   protected IDataSet getDataSet() throws Exception {
-    return new YamlDataSet(QueryBookRevenueSampleTest.class.getResourceAsStream("/book_data.yaml"));
+    return new YamlDataSet(FetchBookSampleTest.class.getResourceAsStream("/book_data.yaml"));
   }
 
   @Override
@@ -46,13 +46,17 @@ public class QueryBookRevenueSampleTest extends DataSourceBasedDBTestCase {
     super.setUp();
   }
 
-  public void testQueryBookRevenueSample1() {
-    test(QueryBookRevenueSample1.class);
+//  public void testFetchSample1() {
+//    test(FetchBookSample1.class);
+//  }
+
+  public void testFetchBookSample2() {
+    test(FetchBookSample2.class);
   }
 
-  public void testQueryBookRevenueSample2() {
-    test(QueryBookRevenueSample2.class);
-  }
+//  public void testFetchBookSample3() {
+//    test(FetchBookSample3.class);
+//  }
 
   private void test(Class<?> moduleClass) {
     // Given
@@ -66,10 +70,8 @@ public class QueryBookRevenueSampleTest extends DataSourceBasedDBTestCase {
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
     assertThat(output).isEqualTo(
-        "Book title: Winnie-the-Pooh. Revenue: 10" + System.lineSeparator() +
-        "Book title: The Hobbit. Revenue: 50" + System.lineSeparator() +
-        "Book title: The Bridges of Madison County. Revenue: 0" + System.lineSeparator() +
-        "Book title: The Eye of the Moon. Revenue: 15" + System.lineSeparator()
+        "Book title: The Hobbit" + System.lineSeparator() +
+        "Book author: J. R. R. Tolkien" + System.lineSeparator()
     );
   }
 }
