@@ -54,9 +54,9 @@ public class FetchBookSampleTest extends DataSourceBasedDBTestCase {
     test(FetchBookSample2.class);
   }
 
-//  public void testFetchBookSample3() {
-//    test(FetchBookSample3.class);
-//  }
+  public void testFetchBookSample3() {
+    test(FetchBookSample3.class);
+  }
 
   private void test(Class<?> moduleClass) {
     // Given
