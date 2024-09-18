@@ -3,7 +3,7 @@ package intellispaces.samples.rdb;
 import intellispaces.framework.core.annotation.Domain;
 import intellispaces.framework.core.annotation.Transition;
 import intellispaces.ixora.rdb.annotation.Entity;
-import intellispaces.ixora.rdb.annotation.Sql;
+import intellispaces.ixora.rdb.annotation.Query;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
@@ -31,9 +31,9 @@ public interface OrderDomain {
   BookDomain book();
 
   @Basic
-  @Sql("SELECT COUNT(*) FROM book_order bo WHERE bo.book_id = :this.bookId")
+  @Query("SELECT COUNT(*) FROM book_order bo WHERE bo.book_id = :this.bookId")
   @Transition("686b6e22-13a2-45e2-988b-8fb166b77fb2")
-  int totalCountOrdersThisBook();
+  int totalCountOrderThisBook();
 
   @Column(name = "revenue")
   @Transition("a9fb5771-8d2c-473d-8129-f7e3a34fa5a4")

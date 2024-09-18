@@ -36,7 +36,7 @@ public abstract class QueryBookCountSample5 {
    */
   @Startup
   public void startup(@Inject TransactionFactory transactionFactory, @Inject Console console) {
-    Action mainAction = Actions.get(() -> {
+    Action mainAction = Actions.of(() -> {
       ResultSet rs = Transactions.current().query(QuerySql.BOOK_COUNT);
       rs.next();
       console.print("Number books: ");
