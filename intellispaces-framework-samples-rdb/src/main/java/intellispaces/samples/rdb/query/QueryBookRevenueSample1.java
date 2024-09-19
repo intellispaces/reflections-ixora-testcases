@@ -31,7 +31,7 @@ public abstract class QueryBookRevenueSample1 {
    * Implementation of this method will be auto generated.
    */
   @Inject
-  public abstract TransactionFactory transactionFactory();
+  abstract TransactionFactory transactionFactory();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>

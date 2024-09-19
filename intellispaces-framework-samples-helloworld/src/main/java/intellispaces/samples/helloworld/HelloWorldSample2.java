@@ -21,7 +21,7 @@ public abstract class HelloWorldSample2 {
    * Implementation of this method will be auto generated.
    */
   @Inject
-  public abstract Console console();
+  abstract Console console();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>

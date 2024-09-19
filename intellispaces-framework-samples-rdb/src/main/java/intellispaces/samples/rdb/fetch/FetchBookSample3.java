@@ -32,10 +32,10 @@ public abstract class FetchBookSample3 {
    * Implementation of this method will be auto generated.
    */
   @Inject
-  public abstract TransactionFactory transactionFactory();
+  abstract TransactionFactory transactionFactory();
 
   @Inject
-  public abstract BookCrudGuide bookCrudGuide();
+  abstract BookCrudGuide bookCrudGuide();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
