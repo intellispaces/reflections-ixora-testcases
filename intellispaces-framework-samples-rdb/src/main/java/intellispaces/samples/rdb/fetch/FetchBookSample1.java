@@ -13,7 +13,7 @@ import intellispaces.ixora.rdb.TransactionFunctions;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
-import intellispaces.samples.rdb.GeneratedBookCrudGuide;
+import intellispaces.samples.rdb.DefaultBookCrudGuide;
 import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
 
 @Module(units = {
@@ -22,7 +22,7 @@ import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
     HikariConfiguration.class,
     SnakeyamlGuide.class,
     IxoraPropertiesToDataGuide.class,
-    GeneratedBookCrudGuide.class
+    DefaultBookCrudGuide.class
 })
 public abstract class FetchBookSample1 {
 

@@ -13,7 +13,7 @@ import intellispaces.ixora.rdb.TransactionFunctions;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
-import intellispaces.samples.rdb.GeneratedBookCrudGuide;
+import intellispaces.samples.rdb.DefaultBookCrudGuide;
 
 @Module(units = {
     CliConfiguration.class,
@@ -21,7 +21,7 @@ import intellispaces.samples.rdb.GeneratedBookCrudGuide;
     HikariConfiguration.class,
     SnakeyamlGuide.class,
     IxoraPropertiesToDataGuide.class,
-    GeneratedBookCrudGuide.class
+    DefaultBookCrudGuide.class
 })
 public abstract class FetchBookSample2 {
 
@@ -34,7 +34,7 @@ public abstract class FetchBookSample2 {
   public abstract TransactionFactory transactionFactory();
 
   @Inject
-  public abstract GeneratedBookCrudGuide bookCrudGuide();
+  public abstract DefaultBookCrudGuide bookCrudGuide();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
