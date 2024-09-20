@@ -13,7 +13,7 @@ import intellispaces.ixora.rdb.Transaction;
 import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
+import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.BookRevenueProjection;
 
 @Module(units = {

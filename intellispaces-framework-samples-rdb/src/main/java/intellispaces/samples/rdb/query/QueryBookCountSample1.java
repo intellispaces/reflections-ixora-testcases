@@ -12,7 +12,7 @@ import intellispaces.ixora.rdb.ResultSet;
 import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.TransactionFunctions;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.ixora.structures.properties.IxoraPropertiesToDataGuide;
+import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 
 @Module(units = {
     CliConfiguration.class,

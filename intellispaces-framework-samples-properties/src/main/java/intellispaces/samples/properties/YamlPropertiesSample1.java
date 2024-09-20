@@ -8,7 +8,7 @@ import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.ixora.structures.properties.Properties;
+import intellispaces.ixora.structures.association.Properties;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>
