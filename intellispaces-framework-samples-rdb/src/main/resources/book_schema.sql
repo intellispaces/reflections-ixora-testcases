@@ -18,6 +18,6 @@ CREATE TABLE book_order
 (
     id      int             NOT NULL,
     book_id int             NOT NULL,
-    revenue int             NOT NULL,
+    price   int             NOT NULL,
     PRIMARY KEY (id)
 );

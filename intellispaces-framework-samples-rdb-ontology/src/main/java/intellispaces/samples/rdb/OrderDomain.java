@@ -35,7 +35,7 @@ public interface OrderDomain {
   @Transition("686b6e22-13a2-45e2-988b-8fb166b77fb2")
   int totalCountOrderThisBook();
 
-  @Column(name = "revenue")
+  @Column(name = "price")
   @Transition("a9fb5771-8d2c-473d-8129-f7e3a34fa5a4")
-  int revenue();
+  int price();
 }

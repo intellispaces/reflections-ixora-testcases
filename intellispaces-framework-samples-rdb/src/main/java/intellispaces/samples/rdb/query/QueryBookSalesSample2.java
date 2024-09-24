@@ -14,7 +14,8 @@ import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
-import intellispaces.samples.rdb.BookRevenueProjection;
+import intellispaces.ixora.structures.collection.List;
+import intellispaces.samples.rdb.BookSalesProjection;
 
 @Module(units = {
     CliConfiguration.class,
@@ -23,7 +24,7 @@ import intellispaces.samples.rdb.BookRevenueProjection;
     SnakeyamlGuide.class,
     IxoraPropertiesToDataGuide.class
 })
-public abstract class QueryBookRevenueSample1 {
+public abstract class QueryBookSalesSample2 {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -43,13 +44,13 @@ public abstract class QueryBookRevenueSample1 {
   @Startup
   @Transactional
   public void startup(@Inject Console console, @Inject Transaction tx) {
-    ResultSet rs = tx.query(QuerySql.BOOK_REVENUE_SQL);
-    while (rs.next()) {
-      BookRevenueProjection bookRevenue = rs.value(BookRevenueProjection.class);
+    ResultSet rs = tx.query(QuerySql.BOOK_SALES_SQL);
+    List<BookSalesProjection> bookSales = rs.values(BookSalesProjection.class);
+    for (BookSalesProjection bookSale : bookSales.nativeList()) {
       console.print("Book title: ");
-      console.print(bookRevenue.title());
-      console.print(". Revenue: ");
-      console.println(bookRevenue.revenue() != null ?  bookRevenue.revenue() : 0);
+      console.print(bookSale.title());
+      console.print(". Sales: ");
+      console.println(bookSale.sales() != null ?  bookSale.sales() : 0);
     }
   }
 
@@ -57,6 +58,6 @@ public abstract class QueryBookRevenueSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(QueryBookRevenueSample1.class, args);
+    IntellispacesFramework.loadModule(QueryBookSalesSample2.class, args);
   }
 }

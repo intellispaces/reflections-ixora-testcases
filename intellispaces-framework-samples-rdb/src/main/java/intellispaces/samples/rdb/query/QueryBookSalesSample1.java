@@ -14,8 +14,7 @@ import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
-import intellispaces.ixora.structures.collection.List;
-import intellispaces.samples.rdb.BookRevenueProjection;
+import intellispaces.samples.rdb.BookSalesProjection;
 
 @Module(units = {
     CliConfiguration.class,
@@ -24,7 +23,7 @@ import intellispaces.samples.rdb.BookRevenueProjection;
     SnakeyamlGuide.class,
     IxoraPropertiesToDataGuide.class
 })
-public abstract class QueryBookRevenueSample2 {
+public abstract class QueryBookSalesSample1 {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -44,13 +43,13 @@ public abstract class QueryBookRevenueSample2 {
   @Startup
   @Transactional
   public void startup(@Inject Console console, @Inject Transaction tx) {
-    ResultSet rs = tx.query(QuerySql.BOOK_REVENUE_SQL);
-    List<BookRevenueProjection> bookRevenues = rs.values(BookRevenueProjection.class);
-    for (BookRevenueProjection bookRevenue : bookRevenues.nativeList()) {
+    ResultSet rs = tx.query(QuerySql.BOOK_SALES_SQL);
+    while (rs.next()) {
+      BookSalesProjection bookSales = rs.value(BookSalesProjection.class);
       console.print("Book title: ");
-      console.print(bookRevenue.title());
-      console.print(". Revenue: ");
-      console.println(bookRevenue.revenue() != null ?  bookRevenue.revenue() : 0);
+      console.print(bookSales.title());
+      console.print(". Sales: ");
+      console.println(bookSales.sales() != null ?  bookSales.sales() : 0);
     }
   }
 
@@ -58,6 +57,6 @@ public abstract class QueryBookRevenueSample2 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(QueryBookRevenueSample2.class, args);
+    IntellispacesFramework.loadModule(QueryBookSalesSample1.class, args);
   }
 }

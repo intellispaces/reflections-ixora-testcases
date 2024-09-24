@@ -17,9 +17,9 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for query book revenue samples.
+ * Tests for query book sales samples.
  */
-public class QueryBookRevenueSampleTest extends DataSourceBasedDBTestCase {
+public class QueryBookSalesSampleTest extends DataSourceBasedDBTestCase {
 
   private static final String DATABASE_URL = "jdbc:h2:mem:sample;" +
       "DB_CLOSE_DELAY=-1;" +
@@ -36,7 +36,7 @@ public class QueryBookRevenueSampleTest extends DataSourceBasedDBTestCase {
 
   @Override
   protected IDataSet getDataSet() throws Exception {
-    return new YamlDataSet(QueryBookRevenueSampleTest.class.getResourceAsStream("/book_data.yaml"));
+    return new YamlDataSet(QueryBookSalesSampleTest.class.getResourceAsStream("/book_data.yaml"));
   }
 
   @Override
@@ -46,12 +46,12 @@ public class QueryBookRevenueSampleTest extends DataSourceBasedDBTestCase {
     super.setUp();
   }
 
-  public void testQueryBookRevenueSample1() {
-    test(QueryBookRevenueSample1.class);
+  public void testQueryBookSalesSample1() {
+    test(QueryBookSalesSample1.class);
   }
 
-  public void testQueryBookRevenueSample2() {
-    test(QueryBookRevenueSample2.class);
+  public void testQueryBookSalesSample2() {
+    test(QueryBookSalesSample2.class);
   }
 
   private void test(Class<?> moduleClass) {
@@ -66,10 +66,10 @@ public class QueryBookRevenueSampleTest extends DataSourceBasedDBTestCase {
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
     assertThat(output).isEqualTo(
-        "Book title: Winnie-the-Pooh. Revenue: 10" + System.lineSeparator() +
-        "Book title: The Hobbit. Revenue: 50" + System.lineSeparator() +
-        "Book title: The Bridges of Madison County. Revenue: 0" + System.lineSeparator() +
-        "Book title: The Eye of the Moon. Revenue: 15" + System.lineSeparator()
+        "Book title: Winnie-the-Pooh. Sales: 10" + System.lineSeparator() +
+        "Book title: The Hobbit. Sales: 50" + System.lineSeparator() +
+        "Book title: The Bridges of Madison County. Sales: 0" + System.lineSeparator() +
+        "Book title: The Eye of the Moon. Sales: 15" + System.lineSeparator()
     );
   }
 }
