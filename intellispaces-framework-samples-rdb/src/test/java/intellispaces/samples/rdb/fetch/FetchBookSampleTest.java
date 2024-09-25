@@ -46,9 +46,9 @@ public class FetchBookSampleTest extends DataSourceBasedDBTestCase {
     super.setUp();
   }
 
-//  public void testFetchSample1() {
-//    test(FetchBookSample1.class);
-//  }
+  public void testFetchSample1() {
+    test(FetchBookSample1.class);
+  }
 
   public void testFetchBookSample2() {
     test(FetchBookSample2.class);
