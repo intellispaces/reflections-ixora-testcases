@@ -9,8 +9,6 @@ import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.Transactions;
-import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
@@ -42,10 +40,9 @@ public abstract class FetchBookSample1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  @Transactional
   public void startup(@Inject Console console) {
     int bookId = 2;
-    Book book = bookCrudGuide().getById(Transactions.current(), bookId);
+    Book book = bookCrudGuide().getById(bookId);
 
     console.print("Book title: ");
     console.println(book.title());

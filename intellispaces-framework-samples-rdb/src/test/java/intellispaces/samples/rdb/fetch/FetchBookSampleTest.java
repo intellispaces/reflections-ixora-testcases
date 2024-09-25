@@ -66,6 +66,10 @@ public class FetchBookSampleTest extends DataSourceBasedDBTestCase {
     test(FetchBookSample5.class);
   }
 
+  public void testFetchBookSample6() {
+    test(FetchBookSample6.class);
+  }
+
   private void test(Class<?> moduleClass) {
     // Given
     var os = new ByteArrayOutputStream();

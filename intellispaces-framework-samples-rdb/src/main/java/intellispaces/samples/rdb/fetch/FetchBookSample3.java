@@ -9,8 +9,8 @@ import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.TransactionFactory;
-import intellispaces.ixora.rdb.TransactionFunctions;
+import intellispaces.ixora.rdb.Transaction;
+import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
@@ -35,33 +35,24 @@ public abstract class FetchBookSample3 {
   abstract BookCrudGuide bookCrudGuide();
 
   /**
-   * This method returns projection named 'transactionFactory'.<p/>
-   *
-   * Implementation of this method will be auto generated.
-   */
-  @Inject
-  abstract TransactionFactory transactionFactory();
-
-  /**
    * This method will be invoked automatically after the module is started.<p/>
    *
    * The values of method arguments will be injected automatically.
    *
+   * @param tx current transaction.
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject Console console) {
-    TransactionFactory transactionFactory = transactionFactory();
-    TransactionFunctions.transactional(transactionFactory, tx -> {
-      int bookId = 2;
-      Book book = bookCrudGuide().getById(tx, bookId);
+  @Transactional
+  public void startup(@Inject Transaction tx, @Inject Console console) {
+    int bookId = 2;
+    Book book = bookCrudGuide().getById(tx, bookId);
 
-      console.print("Book title: ");
-      console.println(book.title());
+    console.print("Book title: ");
+    console.println(book.title());
 
-      console.print("Book author: ");
-      console.println(book.author());
-    });
+    console.print("Book author: ");
+    console.println(book.author());
   }
 
   /**

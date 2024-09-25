@@ -1,7 +1,6 @@
 package intellispaces.samples.rdb.fetch;
 
 import intellispaces.framework.core.IntellispacesFramework;
-import intellispaces.framework.core.annotation.AutoGuide;
 import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
@@ -14,8 +13,8 @@ import intellispaces.ixora.rdb.TransactionFunctions;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
-import intellispaces.samples.rdb.BookCrudGuide;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
+import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
 
 @Module(include = {
     CliConfiguration.class,
@@ -25,14 +24,7 @@ import intellispaces.samples.rdb.DefaultBookCrudGuide;
     IxoraPropertiesToDataGuide.class,
     DefaultBookCrudGuide.class
 })
-public abstract class FetchBookSample4 {
-
-  /**
-   * Book CRUD auto guide.
-   */
-  @Inject
-  @AutoGuide
-  abstract BookCrudGuide bookCrudGuide();
+public abstract class FetchBookSample6 {
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -54,7 +46,7 @@ public abstract class FetchBookSample4 {
     TransactionFactory transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
       int bookId = 2;
-      Book book = bookCrudGuide().getById(tx, bookId);
+      Book book = tx.mapThru(TransactionToBookByIdentifierTransition.class, bookId);
 
       console.print("Book title: ");
       console.println(book.title());
@@ -68,6 +60,6 @@ public abstract class FetchBookSample4 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(FetchBookSample4.class, args);
+    IntellispacesFramework.loadModule(FetchBookSample6.class, args);
   }
 }

@@ -9,7 +9,6 @@ import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.Transaction;
 import intellispaces.ixora.rdb.Transactions;
 import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
@@ -40,14 +39,13 @@ public abstract class FetchBookSample2 {
    *
    * The values of method arguments will be injected automatically.
    *
-   * @param tx current transaction.
    * @param console value of the projection named 'console'.
    */
   @Startup
   @Transactional
-  public void startup(@Inject Transaction tx, @Inject Console console) {
+  public void startup(@Inject Console console) {
     int bookId = 2;
-    Book book = bookCrudGuide().getById(tx, bookId);
+    Book book = bookCrudGuide().getById(Transactions.current(), bookId);
 
     console.print("Book title: ");
     console.println(book.title());

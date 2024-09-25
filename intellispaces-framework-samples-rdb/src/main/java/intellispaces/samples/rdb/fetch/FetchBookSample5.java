@@ -14,7 +14,6 @@ import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
-import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
 
 @Module(include = {
     CliConfiguration.class,
@@ -25,6 +24,12 @@ import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
     DefaultBookCrudGuide.class
 })
 public abstract class FetchBookSample5 {
+
+  /**
+   * Book CRUD default guide.
+   */
+  @Inject
+  abstract DefaultBookCrudGuide bookCrudGuide();
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -46,7 +51,7 @@ public abstract class FetchBookSample5 {
     TransactionFactory transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
       int bookId = 2;
-      Book book = tx.mapThru(TransactionToBookByIdentifierTransition.class, bookId);
+      Book book = bookCrudGuide().getById(tx, bookId);
 
       console.print("Book title: ");
       console.println(book.title());
