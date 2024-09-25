@@ -17,7 +17,7 @@ import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.ixora.structures.collection.List;
 import intellispaces.samples.rdb.BookSalesProjection;
 
-@Module(units = {
+@Module(include = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
@@ -45,7 +45,7 @@ public abstract class QueryBookSalesSample2 {
   @Transactional
   public void startup(@Inject Console console, @Inject Transaction tx) {
     ResultSet rs = tx.query(QuerySql.BOOK_SALES_SQL);
-    List<BookSalesProjection> bookSales = rs.values(BookSalesProjection.class);
+    List<BookSalesProjection> bookSales = rs.dataValues(BookSalesProjection.class);
     for (BookSalesProjection bookSale : bookSales.nativeList()) {
       console.print("Book title: ");
       console.print(bookSale.title());

@@ -13,7 +13,7 @@ import intellispaces.ixora.cli.MovableConsole;
  *
  * Unit {@link CliConfiguration} is included to this module. In this unit the projection with name 'console' and referred to module CLI console is defined.
  */
-@Module(units = CliConfiguration.class)
+@Module(include = CliConfiguration.class)
 public class HelloWorldSample4 {
 
   /**

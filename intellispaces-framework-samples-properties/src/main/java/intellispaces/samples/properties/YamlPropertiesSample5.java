@@ -23,7 +23,7 @@ public interface YamlPropertiesSample5 {
    * Unit {@link SnakeyamlGuide} provides guide to load YAML properties.
    * Unit {@link IxoraPropertiesToDataGuide} provides guide to map properties to data.
    */
-  @Module(units = {
+  @Module(include = {
       ModuleConfiguration.class,
       CliConfiguration.class,
       SnakeyamlGuide.class,

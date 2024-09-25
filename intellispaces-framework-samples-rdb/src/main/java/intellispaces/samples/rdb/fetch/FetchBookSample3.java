@@ -1,6 +1,7 @@
 package intellispaces.samples.rdb.fetch;
 
 import intellispaces.framework.core.IntellispacesFramework;
+import intellispaces.framework.core.annotation.AutoGuide;
 import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
@@ -16,7 +17,7 @@ import intellispaces.samples.rdb.Book;
 import intellispaces.samples.rdb.BookCrudGuide;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
 
-@Module(units = {
+@Module(include = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
@@ -35,6 +36,7 @@ public abstract class FetchBookSample3 {
   abstract TransactionFactory transactionFactory();
 
   @Inject
+  @AutoGuide
   abstract BookCrudGuide bookCrudGuide();
 
   /**

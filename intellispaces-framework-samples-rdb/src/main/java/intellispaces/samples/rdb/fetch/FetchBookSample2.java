@@ -15,7 +15,7 @@ import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
 
-@Module(units = {
+@Module(include = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,

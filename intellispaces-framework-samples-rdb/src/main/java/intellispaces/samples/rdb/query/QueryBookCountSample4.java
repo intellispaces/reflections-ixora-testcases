@@ -14,7 +14,7 @@ import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 
-@Module(units = {
+@Module(include = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,

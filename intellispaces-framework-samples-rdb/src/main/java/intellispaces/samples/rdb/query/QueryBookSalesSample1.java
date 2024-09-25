@@ -16,7 +16,7 @@ import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.BookSalesProjection;
 
-@Module(units = {
+@Module(include = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
@@ -45,7 +45,7 @@ public abstract class QueryBookSalesSample1 {
   public void startup(@Inject Console console, @Inject Transaction tx) {
     ResultSet rs = tx.query(QuerySql.BOOK_SALES_SQL);
     while (rs.next()) {
-      BookSalesProjection bookSales = rs.value(BookSalesProjection.class);
+      BookSalesProjection bookSales = rs.dataValue(BookSalesProjection.class);
       console.print("Book title: ");
       console.print(bookSales.title());
       console.print(". Sales: ");
