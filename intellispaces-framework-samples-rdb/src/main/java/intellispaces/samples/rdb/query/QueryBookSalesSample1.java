@@ -10,7 +10,6 @@ import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.ResultSet;
 import intellispaces.ixora.rdb.Transaction;
-import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
@@ -26,14 +25,6 @@ import intellispaces.samples.rdb.BookSalesProjection;
 public abstract class QueryBookSalesSample1 {
 
   /**
-   * This method returns projection named 'transactionFactory'.<p/>
-   *
-   * Implementation of this method will be auto generated.
-   */
-  @Inject
-  abstract TransactionFactory transactionFactory();
-
-  /**
    * This method will be invoked automatically after the module is started.<p/>
    *
    * The values of method arguments will be injected automatically.
@@ -42,8 +33,8 @@ public abstract class QueryBookSalesSample1 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject Console console, @Inject Transaction tx) {
-    ResultSet rs = tx.query(QuerySql.BOOK_SALES_SQL);
+  public void startup(@Inject Transaction tx, @Inject Console console) {
+    ResultSet rs = tx.query(Queries.BOOK_SALES_SQL);
     while (rs.next()) {
       BookSalesProjection bookSales = rs.dataValue(BookSalesProjection.class);
       console.print("Book title: ");

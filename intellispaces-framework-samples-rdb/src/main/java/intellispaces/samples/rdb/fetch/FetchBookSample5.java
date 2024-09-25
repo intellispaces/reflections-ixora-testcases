@@ -1,4 +1,4 @@
-package intellispaces.samples.rdb.query;
+package intellispaces.samples.rdb.fetch;
 
 import intellispaces.framework.core.IntellispacesFramework;
 import intellispaces.framework.core.annotation.Inject;
@@ -8,21 +8,31 @@ import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.ResultSet;
-import intellispaces.ixora.rdb.Transaction;
-import intellispaces.ixora.rdb.Transactions;
-import intellispaces.ixora.rdb.annotation.Transactional;
+import intellispaces.ixora.rdb.TransactionFactory;
+import intellispaces.ixora.rdb.TransactionFunctions;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
+import intellispaces.samples.rdb.Book;
+import intellispaces.samples.rdb.DefaultBookCrudGuide;
+import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
 
 @Module(include = {
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
     SnakeyamlGuide.class,
-    IxoraPropertiesToDataGuide.class
+    IxoraPropertiesToDataGuide.class,
+    DefaultBookCrudGuide.class
 })
-public abstract class QueryBookCountSample1 {
+public abstract class FetchBookSample5 {
+
+  /**
+   * This method returns projection named 'transactionFactory'.<p/>
+   *
+   * Implementation of this method will be auto generated.
+   */
+  @Inject
+  abstract TransactionFactory transactionFactory();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -32,19 +42,24 @@ public abstract class QueryBookCountSample1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  @Transactional
   public void startup(@Inject Console console) {
-    Transaction tx = Transactions.current();
-    ResultSet rs = tx.query(Queries.BOOK_COUNT);
-    rs.next();
-    console.print("Number books: ");
-    console.println(rs.integerValue("count"));
+    TransactionFactory transactionFactory = transactionFactory();
+    TransactionFunctions.transactional(transactionFactory, tx -> {
+      int bookId = 2;
+      Book book = tx.mapThru(TransactionToBookByIdentifierTransition.class, bookId);
+
+      console.print("Book title: ");
+      console.println(book.title());
+
+      console.print("Book author: ");
+      console.println(book.author());
+    });
   }
 
   /**
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(QueryBookCountSample1.class, args);
+    IntellispacesFramework.loadModule(FetchBookSample5.class, args);
   }
 }

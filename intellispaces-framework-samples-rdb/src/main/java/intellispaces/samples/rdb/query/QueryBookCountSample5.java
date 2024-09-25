@@ -36,15 +36,13 @@ public abstract class QueryBookCountSample5 {
    */
   @Startup
   public void startup(@Inject TransactionFactory transactionFactory, @Inject Console console) {
-    Action mainAction = Actions.of(() -> {
-      ResultSet rs = Transactions.current().query(QuerySql.BOOK_COUNT);
+    Action action = Actions.of(() -> {
+      ResultSet rs = Transactions.current().query(Queries.BOOK_COUNT);
       rs.next();
       console.print("Number books: ");
       console.println(rs.integerValue("count"));
     });
-
-    var transactionalAction = new TransactionalAction(transactionFactory, mainAction);
-
+    var transactionalAction = new TransactionalAction(transactionFactory, action);
     transactionalAction.execute();
   }
 

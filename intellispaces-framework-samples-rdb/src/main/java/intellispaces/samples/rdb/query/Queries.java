@@ -1,6 +1,6 @@
 package intellispaces.samples.rdb.query;
 
-public interface QuerySql {
+public interface Queries {
 
   String BOOK_COUNT = "SELECT count(*) as count FROM book.book";
 

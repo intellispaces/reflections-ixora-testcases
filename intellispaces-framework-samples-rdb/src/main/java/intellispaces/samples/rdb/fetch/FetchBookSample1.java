@@ -1,6 +1,7 @@
 package intellispaces.samples.rdb.fetch;
 
 import intellispaces.framework.core.IntellispacesFramework;
+import intellispaces.framework.core.annotation.AutoGuide;
 import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
@@ -8,13 +9,13 @@ import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.TransactionFactory;
-import intellispaces.ixora.rdb.TransactionFunctions;
+import intellispaces.ixora.rdb.Transactions;
+import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
+import intellispaces.samples.rdb.BookCrudGuide;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
-import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
 
 @Module(include = {
     CliConfiguration.class,
@@ -27,12 +28,11 @@ import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
 public abstract class FetchBookSample1 {
 
   /**
-   * This method returns projection named 'transactionFactory'.<p/>
-   *
-   * Implementation of this method will be auto generated.
+   * Book CRUD auto guide.
    */
   @Inject
-  abstract TransactionFactory transactionFactory();
+  @AutoGuide
+  abstract BookCrudGuide bookCrudGuide();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -42,18 +42,16 @@ public abstract class FetchBookSample1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
+  @Transactional
   public void startup(@Inject Console console) {
-    TransactionFactory transactionFactory = transactionFactory();
-    TransactionFunctions.transactional(transactionFactory, tx -> {
-      int bookId = 2;
-      Book book = tx.mapThru(TransactionToBookByIdentifierTransition.class, bookId);
+    int bookId = 2;
+    Book book = bookCrudGuide().getById(Transactions.current(), bookId);
 
-      console.print("Book title: ");
-      console.println(book.title());
+    console.print("Book title: ");
+    console.println(book.title());
 
-      console.print("Book author: ");
-      console.println(book.author());
-    });
+    console.print("Book author: ");
+    console.println(book.author());
   }
 
   /**

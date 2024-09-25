@@ -9,8 +9,8 @@ import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.ResultSet;
-import intellispaces.ixora.rdb.TransactionFactory;
-import intellispaces.ixora.rdb.TransactionFunctions;
+import intellispaces.ixora.rdb.Transaction;
+import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 
@@ -28,17 +28,16 @@ public abstract class QueryBookCountSample2 {
    *
    * The values of method arguments will be injected automatically.
    *
-   * @param transactionFactory transaction factory.
+   * @param tx current transaction.
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject TransactionFactory transactionFactory, @Inject Console console) {
-    TransactionFunctions.transactional(transactionFactory, tx -> {
-      ResultSet rs = tx.query(QuerySql.BOOK_COUNT);
-      rs.next();
-      console.print("Number books: ");
-      console.println(rs.integerValue("count"));
-    });
+  @Transactional
+  public void startup(@Inject Transaction tx, @Inject Console console) {
+    ResultSet rs = tx.query(Queries.BOOK_COUNT);
+    rs.next();
+    console.print("Number books: ");
+    console.println(rs.integerValue("count"));
   }
 
   /**

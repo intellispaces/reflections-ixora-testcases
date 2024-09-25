@@ -28,16 +28,19 @@ import intellispaces.samples.rdb.DefaultBookCrudGuide;
 public abstract class FetchBookSample3 {
 
   /**
+   * Book CRUD auto guide.
+   */
+  @Inject
+  @AutoGuide
+  abstract BookCrudGuide bookCrudGuide();
+
+  /**
    * This method returns projection named 'transactionFactory'.<p/>
    *
    * Implementation of this method will be auto generated.
    */
   @Inject
   abstract TransactionFactory transactionFactory();
-
-  @Inject
-  @AutoGuide
-  abstract BookCrudGuide bookCrudGuide();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
