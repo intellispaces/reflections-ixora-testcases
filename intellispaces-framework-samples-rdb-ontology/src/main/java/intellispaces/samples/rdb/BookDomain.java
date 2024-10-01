@@ -15,7 +15,7 @@ public interface BookDomain {
   @Id
   @Column(name = "id")
   @Transition("eb7f9644-760c-4d77-bc04-d83014160569")
-  int id();
+  Integer id();
 
   @Column(name = "title")
   @Transition("22319064-8b93-491e-bf62-51e64e399ff6")

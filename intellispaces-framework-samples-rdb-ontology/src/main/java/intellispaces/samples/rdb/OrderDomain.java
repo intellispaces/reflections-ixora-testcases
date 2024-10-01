@@ -19,11 +19,11 @@ public interface OrderDomain {
   @Id
   @Column(name = "id")
   @Transition("019020aa-06cf-41e3-b378-df0e7ad67728")
-  int id();
+  Integer id();
 
   @Column(name = "book_id")
   @Transition("31ab0d59-c950-4941-8597-799043550f43")
-  int bookId();
+  Integer bookId();
 
   @OneToOne
   @JoinColumn(name = "book_id", referencedColumnName = "id")
@@ -33,9 +33,9 @@ public interface OrderDomain {
   @Basic
   @Query("SELECT COUNT(*) FROM book_order bo WHERE bo.book_id = :this.bookId")
   @Transition("686b6e22-13a2-45e2-988b-8fb166b77fb2")
-  int totalCountOrderThisBook();
+  Integer totalCountOrderThisBook();
 
   @Column(name = "price")
   @Transition("a9fb5771-8d2c-473d-8129-f7e3a34fa5a4")
-  int price();
+  Integer price();
 }
