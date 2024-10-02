@@ -4,7 +4,7 @@ import intellispaces.framework.core.IntellispacesFramework;
 import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
-import intellispaces.framework.core.space.transition.TransitionFunctions;
+import intellispaces.framework.core.space.channel.ChannelFunctions;
 import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.ConsoleDomain;
 import intellispaces.ixora.cli.MovableConsole;
@@ -27,7 +27,7 @@ public class HelloWorldSample5 {
   @Startup
   public void startup(@Inject MovableConsole console) {
     // Get identifier of the transition 'Console::println'
-    String tid = TransitionFunctions.getTransitionId(ConsoleDomain.class, ConsoleDomain::println, "");
+    String tid = ChannelFunctions.getChannelId(ConsoleDomain.class, ConsoleDomain::println, "");
 
     // Move CLI console through transition defined by ID tid
     console.moveThru(tid, "Hello, world!");

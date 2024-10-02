@@ -14,7 +14,7 @@ import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
-import intellispaces.samples.rdb.TransactionToBookByIdentifierTransition;
+import intellispaces.samples.rdb.TransactionToBookByIdentifierChannel;
 
 @Module(include = {
     CliConfiguration.class,
@@ -46,7 +46,7 @@ public abstract class FetchBookSample6 {
     TransactionFactory transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
       int bookId = 2;
-      Book book = tx.mapThru(TransactionToBookByIdentifierTransition.class, bookId);
+      Book book = tx.mapThru(TransactionToBookByIdentifierChannel.class, bookId);
 
       console.print("Book title: ");
       console.println(book.title());

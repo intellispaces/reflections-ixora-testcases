@@ -1,7 +1,7 @@
 package intellispaces.samples.rdb;
 
+import intellispaces.framework.core.annotation.Channel;
 import intellispaces.framework.core.annotation.Domain;
-import intellispaces.framework.core.annotation.Transition;
 import intellispaces.ixora.rdb.annotation.Projection;
 import jakarta.persistence.Column;
 
@@ -10,10 +10,10 @@ import jakarta.persistence.Column;
 public interface BookSalesProjectionDomain {
 
   @Column(name = "title")
-  @Transition("b845b36a-0d50-498f-b9f5-c223c695397c")
+  @Channel("b845b36a-0d50-498f-b9f5-c223c695397c")
   String title();
 
   @Column(name = "sales")
-  @Transition("e0e85e8f-27e4-4138-a14b-840e2f0c4241")
+  @Channel("e0e85e8f-27e4-4138-a14b-840e2f0c4241")
   Integer sales();
 }
