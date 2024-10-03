@@ -26,11 +26,11 @@ public class HelloWorldSample5 {
    */
   @Startup
   public void startup(@Inject MovableConsole console) {
-    // Get identifier of the transition 'Console::println'
-    String tid = ChannelFunctions.getChannelId(ConsoleDomain.class, ConsoleDomain::println, "");
+    // Get identifier of the channel 'Console::println'
+    String cid = ChannelFunctions.getChannelId(ConsoleDomain.class, ConsoleDomain::println, "");
 
-    // Move CLI console through transition defined by ID tid
-    console.moveThru(tid, "Hello, world!");
+    // Move CLI console through channel defined by channel ID
+    console.moveThru(cid, "Hello, world!");
   }
 
   /**

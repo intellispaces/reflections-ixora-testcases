@@ -25,7 +25,7 @@ public class HelloWorldSample3 {
    */
   @Startup
   public void startup(@Inject MovableConsole console) {
-    // Move CLI console through the transition 'Console::println' with qualifier "Hello, world!"
+    // Move CLI console through the channel 'Console::println' with qualifier "Hello, world!"
     console.moveThru(ConsoleDomain::println, "Hello, world!");
   }
 

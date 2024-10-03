@@ -5,7 +5,7 @@ import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.ConsolePrintlnStringTransition;
+import intellispaces.ixora.cli.ConsolePrintlnStringChannel;
 import intellispaces.ixora.cli.MovableConsole;
 
 /**
@@ -25,8 +25,8 @@ public class HelloWorldSample4 {
    */
   @Startup
   public void startup(@Inject MovableConsole console) {
-    // Move CLI console through the transition 'ConsolePrintlnStringTransition' with qualifier "Hello, world!"
-    console.moveThru(ConsolePrintlnStringTransition.class, "Hello, world!");
+    // Move CLI console through the channel 'ConsolePrintlnStringChannel' with qualifier "Hello, world!"
+    console.moveThru(ConsolePrintlnStringChannel.class, "Hello, world!");
   }
 
   /**
