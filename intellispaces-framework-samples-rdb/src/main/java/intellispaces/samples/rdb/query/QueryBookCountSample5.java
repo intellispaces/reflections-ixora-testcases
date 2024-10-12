@@ -15,7 +15,7 @@ import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.Transactions;
 import intellispaces.ixora.rdb.action.TransactionalAction;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
+import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 
 @Module(include = {
     CliConfiguration.class,

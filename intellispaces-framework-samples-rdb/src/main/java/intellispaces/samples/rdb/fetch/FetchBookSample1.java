@@ -10,7 +10,7 @@ import intellispaces.ixora.cli.Console;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
+import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
 import intellispaces.samples.rdb.BookCrudGuide;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;

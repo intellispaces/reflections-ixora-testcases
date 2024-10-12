@@ -11,7 +11,7 @@ import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.TransactionFunctions;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.ixora.structures.association.IxoraPropertiesToDataGuide;
+import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.rdb.Book;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
 
