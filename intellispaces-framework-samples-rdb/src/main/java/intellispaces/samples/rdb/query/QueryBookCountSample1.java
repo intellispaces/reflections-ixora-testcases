@@ -6,7 +6,10 @@ import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.hikary.HikariConfiguration;
+import intellispaces.ixora.rdb.MovableResultSet;
+import intellispaces.ixora.rdb.MovableTransaction;
 import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.ResultSet;
 import intellispaces.ixora.rdb.Transaction;
@@ -33,9 +36,9 @@ public abstract class QueryBookCountSample1 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject Console console) {
-    Transaction tx = Transactions.current();
-    ResultSet rs = tx.query(Queries.BOOK_COUNT);
+  public void startup(@Inject MovableConsole console) {
+    MovableTransaction tx = Transactions.current();
+    MovableResultSet rs = tx.query(Queries.BOOK_COUNT);
     rs.next();
     console.print("Number books: ");
     console.println(rs.integerValue("count"));

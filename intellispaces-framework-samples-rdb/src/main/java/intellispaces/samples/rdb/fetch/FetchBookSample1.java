@@ -6,7 +6,7 @@ import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
@@ -40,7 +40,7 @@ public abstract class FetchBookSample1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject Console console) {
+  public void startup(@Inject MovableConsole console) {
     int bookId = 2;
     Book book = bookCrudGuide().getById(bookId);
 

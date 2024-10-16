@@ -5,10 +5,10 @@ import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.hikary.HikariConfiguration;
+import intellispaces.ixora.rdb.MovableTransactionFactory;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.TransactionFunctions;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
@@ -32,7 +32,7 @@ public abstract class FetchBookSample6 {
    * Implementation of this method will be auto generated.
    */
   @Inject
-  abstract TransactionFactory transactionFactory();
+  abstract MovableTransactionFactory transactionFactory();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -42,8 +42,8 @@ public abstract class FetchBookSample6 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject Console console) {
-    TransactionFactory transactionFactory = transactionFactory();
+  public void startup(@Inject MovableConsole console) {
+    MovableTransactionFactory transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
       int bookId = 2;
       Book book = tx.mapThru(TransactionToBookByIdentifierChannel.class, bookId);

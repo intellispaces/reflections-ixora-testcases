@@ -6,7 +6,7 @@ import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.hikary.HikariConfiguration;
 import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.Transactions;
@@ -43,7 +43,7 @@ public abstract class FetchBookSample2 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject Console console) {
+  public void startup(@Inject MovableConsole console) {
     int bookId = 2;
     Book book = bookCrudGuide().getById(Transactions.current(), bookId);
 

@@ -7,11 +7,11 @@ import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.hikary.HikariConfiguration;
+import intellispaces.ixora.rdb.MovableResultSet;
+import intellispaces.ixora.rdb.MovableTransactionFactory;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.ResultSet;
-import intellispaces.ixora.rdb.TransactionFactory;
 import intellispaces.ixora.rdb.Transactions;
 import intellispaces.ixora.rdb.action.TransactionalAction;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
@@ -35,9 +35,9 @@ public abstract class QueryBookCountSample5 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject TransactionFactory transactionFactory, @Inject Console console) {
+  public void startup(@Inject MovableTransactionFactory transactionFactory, @Inject MovableConsole console) {
     Action action = Actions.of(() -> {
-      ResultSet rs = Transactions.current().query(Queries.BOOK_COUNT);
+      MovableResultSet rs = Transactions.current().query(Queries.BOOK_COUNT);
       rs.next();
       console.print("Number books: ");
       console.println(rs.integerValue("count"));

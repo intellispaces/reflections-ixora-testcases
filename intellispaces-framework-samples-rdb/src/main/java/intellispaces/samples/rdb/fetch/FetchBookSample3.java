@@ -6,10 +6,10 @@ import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.hikary.HikariConfiguration;
+import intellispaces.ixora.rdb.MovableTransaction;
 import intellispaces.ixora.rdb.RdbConfiguration;
-import intellispaces.ixora.rdb.Transaction;
 import intellispaces.ixora.rdb.annotation.Transactional;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
@@ -44,7 +44,7 @@ public abstract class FetchBookSample3 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject Transaction tx, @Inject Console console) {
+  public void startup(@Inject MovableTransaction tx, @Inject MovableConsole console) {
     int bookId = 2;
     Book book = bookCrudGuide().getById(tx, bookId);
 

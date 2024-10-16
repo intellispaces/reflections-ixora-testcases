@@ -7,7 +7,7 @@ import intellispaces.framework.core.annotation.Projection;
 import intellispaces.framework.core.annotation.Properties;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 import intellispaces.samples.moduleproperties.Address;
@@ -44,7 +44,7 @@ public abstract class YamlPropertiesSample3 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject Console console, @Inject Address ownerAddress) {
+  public void startup(@Inject MovableConsole console, @Inject Address ownerAddress) {
     console.println("City: " + ownerAddress.city());
     console.println("Street: " + ownerAddress.street());
   }

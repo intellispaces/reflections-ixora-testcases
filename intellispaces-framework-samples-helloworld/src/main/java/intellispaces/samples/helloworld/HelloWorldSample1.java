@@ -5,7 +5,7 @@ import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.Console;
+import intellispaces.ixora.cli.MovableConsole;
 
 /**
  * This module demonstrates the output to the console.<p/>
@@ -23,7 +23,7 @@ public class HelloWorldSample1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject Console console) {
+  public void startup(@Inject MovableConsole console) {
     console.println("Hello, world!");
   }
 
