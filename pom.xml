@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>intellispaces-core</groupId>
+  <groupId>intellispaces-samples</groupId>
   <artifactId>intellispaces-samples-parent</artifactId>
   <packaging>pom</packaging>
 
