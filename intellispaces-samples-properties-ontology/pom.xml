@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>intellispaces-framework</groupId>
-        <artifactId>intellispaces-framework-samples-parent</artifactId>
+        <groupId>intellispaces-core</groupId>
+        <artifactId>intellispaces-samples-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>intellispaces-framework-samples-properties-ontology</artifactId>
+    <artifactId>intellispaces-samples-properties-ontology</artifactId>
     <packaging>jar</packaging>
 </project>

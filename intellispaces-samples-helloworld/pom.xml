@@ -3,21 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>intellispaces-framework</groupId>
-        <artifactId>intellispaces-framework-samples-parent</artifactId>
+        <groupId>intellispaces-core</groupId>
+        <artifactId>intellispaces-samples-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>intellispaces-framework-samples-properties</artifactId>
+    <artifactId>intellispaces-samples-helloworld</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>intellispaces-framework</groupId>
-            <artifactId>intellispaces-framework-samples-properties-ontology</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
         <!-- Intellispaces -->
         <dependency>
             <groupId>intellispaces-ixora</groupId>
@@ -26,12 +20,12 @@
         </dependency>
         <dependency>
             <groupId>intellispaces-ixora</groupId>
-            <artifactId>intellispaces-ixora-cli</artifactId>
+            <artifactId>intellispaces-ixora-cli-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>intellispaces-ixora</groupId>
-            <artifactId>intellispaces-ixora-snakeyaml</artifactId>
+            <artifactId>intellispaces-ixora-cli</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
