@@ -19,7 +19,7 @@ import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
  * Unit {@link SnakeyamlGuide} provides guide to load YAML properties.
  * Unit {@link IxoraPropertiesToDataGuide} provides guide to map properties to data.
  */
-@Module(include = {
+@Module({
     CliConfiguration.class,
     SnakeyamlGuide.class,
     IxoraPropertiesToDataGuide.class

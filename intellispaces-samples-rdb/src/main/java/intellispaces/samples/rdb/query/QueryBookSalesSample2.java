@@ -16,7 +16,7 @@ import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 import intellispaces.ixora.data.collection.List;
 import intellispaces.samples.rdb.BookSalesProjection;
 
-@Module(include = {
+@Module({
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,

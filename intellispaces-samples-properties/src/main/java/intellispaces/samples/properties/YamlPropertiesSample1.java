@@ -17,7 +17,7 @@ import intellispaces.ixora.data.association.Properties;
  * Unit {@link CliConfiguration} defines the projection with name 'console' and referred to the module CLI console.
  * And unit {@link SnakeyamlGuide} provides guide to load YAML properties.
  */
-@Module(include = {
+@Module({
     CliConfiguration.class,
     SnakeyamlGuide.class
 })

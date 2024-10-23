@@ -15,7 +15,7 @@ import intellispaces.samples.rdb.Book;
 import intellispaces.samples.rdb.BookCrudGuide;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
 
-@Module(include = {
+@Module({
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,

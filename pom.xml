@@ -18,6 +18,7 @@
     <module>intellispaces-samples-properties-ontology</module>
     <module>intellispaces-samples-rdb</module>
     <module>intellispaces-samples-rdb-ontology</module>
+    <module>intellispaces-samples-http</module>
   </modules>
 
   <build>

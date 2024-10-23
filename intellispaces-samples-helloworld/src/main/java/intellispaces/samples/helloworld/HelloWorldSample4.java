@@ -5,7 +5,7 @@ import intellispaces.framework.core.annotation.Inject;
 import intellispaces.framework.core.annotation.Module;
 import intellispaces.framework.core.annotation.Startup;
 import intellispaces.ixora.cli.CliConfiguration;
-import intellispaces.ixora.cli.ConsolePrintlnStringChannel;
+import intellispaces.ixora.cli.ConsoleDomain;
 import intellispaces.ixora.cli.MovableConsole;
 
 /**
@@ -13,7 +13,7 @@ import intellispaces.ixora.cli.MovableConsole;
  *
  * Unit {@link CliConfiguration} is included to this module. In this unit the projection with name 'console' and referred to module CLI console is defined.
  */
-@Module(include = CliConfiguration.class)
+@Module(CliConfiguration.class)
 public class HelloWorldSample4 {
 
   /**
@@ -25,8 +25,8 @@ public class HelloWorldSample4 {
    */
   @Startup
   public void startup(@Inject MovableConsole console) {
-    // Move CLI console through the channel 'ConsolePrintlnStringChannel' with qualifier "Hello, world!"
-    console.moveThru(ConsolePrintlnStringChannel.class, "Hello, world!");
+    // Move CLI console through the channel 'Console::println' with qualifier "Hello, world!"
+    console.moveThru(ConsoleDomain::println, "Hello, world!");
   }
 
   /**

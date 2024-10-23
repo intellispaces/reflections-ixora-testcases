@@ -16,7 +16,7 @@ import intellispaces.samples.rdb.Book;
 import intellispaces.samples.rdb.DefaultBookCrudGuide;
 import intellispaces.samples.rdb.TransactionToBookByIdentifierChannel;
 
-@Module(include = {
+@Module({
     CliConfiguration.class,
     RdbConfiguration.class,
     HikariConfiguration.class,
