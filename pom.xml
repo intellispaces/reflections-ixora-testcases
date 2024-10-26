@@ -19,6 +19,7 @@
     <module>intellispaces-samples-rdb</module>
     <module>intellispaces-samples-rdb-ontology</module>
     <module>intellispaces-samples-http</module>
+    <module>intellispaces-samples-http-ontology</module>
   </modules>
 
   <build>

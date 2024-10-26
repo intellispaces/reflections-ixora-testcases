@@ -1,0 +1,45 @@
+package intellispaces.samples.http.echo;
+
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.LoggerContext;
+import intellispaces.framework.core.IntellispacesFramework;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.slf4j.LoggerFactory;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+/**
+ * Tests for Hello World samples.
+ */
+public class EchoPortTest {
+
+  @BeforeAll
+  public static void disableLogging() {
+    var lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+    lc.getLogger("ROOT").setLevel(Level.ERROR);
+  }
+
+  @ParameterizedTest
+  @ValueSource(classes = {
+      EchoPortSample1.class
+  })
+  void testOutput(Class<?> moduleClass) {
+    // Given
+    var os = new ByteArrayOutputStream();
+    var ps = new PrintStream(os, true, StandardCharsets.UTF_8);
+    System.setOut(ps);
+
+    // When
+    IntellispacesFramework.loadModule(moduleClass);
+
+    // Then
+    String output = os.toString(StandardCharsets.UTF_8);
+    assertThat(output).isEqualTo("Hello!" + System.lineSeparator());
+  }
+}
