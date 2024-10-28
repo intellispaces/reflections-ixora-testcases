@@ -4,11 +4,11 @@ import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.data.association.Properties;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.jaquarius.IntellispacesFramework;
 import intellispaces.jaquarius.annotation.Inject;
 import intellispaces.jaquarius.annotation.Module;
 import intellispaces.jaquarius.annotation.Projection;
 import intellispaces.jaquarius.annotation.Startup;
+import intellispaces.jaquarius.system.Modules;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>
@@ -49,6 +49,6 @@ public abstract class YamlPropertiesSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(YamlPropertiesSample1.class, args);
+    Modules.get(YamlPropertiesSample1.class, args).start();
   }
 }

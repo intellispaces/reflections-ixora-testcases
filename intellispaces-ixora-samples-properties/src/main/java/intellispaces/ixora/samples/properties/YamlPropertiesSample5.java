@@ -5,13 +5,13 @@ import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 import intellispaces.ixora.samples.moduleproperties.Address;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.jaquarius.IntellispacesFramework;
 import intellispaces.jaquarius.annotation.Configuration;
 import intellispaces.jaquarius.annotation.Inject;
 import intellispaces.jaquarius.annotation.Module;
 import intellispaces.jaquarius.annotation.Projection;
 import intellispaces.jaquarius.annotation.Properties;
 import intellispaces.jaquarius.annotation.Startup;
+import intellispaces.jaquarius.system.Modules;
 
 public interface YamlPropertiesSample5 {
 
@@ -56,7 +56,7 @@ public interface YamlPropertiesSample5 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
     public static void main(String[] args) {
-      IntellispacesFramework.loadModule(MainUnit.class, args);
+      Modules.get(MainUnit.class, args).start();
     }
   }
 

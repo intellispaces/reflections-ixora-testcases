@@ -12,11 +12,11 @@ import intellispaces.ixora.http.HttpResponse;
 import intellispaces.ixora.http.MovableInboundHttpPort;
 import intellispaces.ixora.http.MovableOutboundHttpPort;
 import intellispaces.ixora.internet.UrlToQueryParamValuesGuideImpl;
-import intellispaces.jaquarius.IntellispacesFramework;
 import intellispaces.jaquarius.annotation.Inject;
 import intellispaces.jaquarius.annotation.Module;
 import intellispaces.jaquarius.annotation.Projection;
 import intellispaces.jaquarius.annotation.Startup;
+import intellispaces.jaquarius.system.Modules;
 import intellispaces.jaquarius.object.ObjectFunctions;
 
 import java.nio.charset.StandardCharsets;
@@ -69,6 +69,6 @@ public class EchoPortSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(EchoPortSample1.class, args);
+    Modules.get(EchoPortSample1.class, args).start();
   }
 }

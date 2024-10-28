@@ -2,7 +2,7 @@ package intellispaces.ixora.samples.properties;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
-import intellispaces.jaquarius.IntellispacesFramework;
+import intellispaces.jaquarius.system.Modules;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -40,7 +40,7 @@ public class PropertiesTest {
     System.setOut(ps);
 
     // When
-    IntellispacesFramework.loadModule(moduleClass);
+    Modules.get(moduleClass).start();
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

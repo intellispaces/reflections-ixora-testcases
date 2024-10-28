@@ -2,7 +2,7 @@ package intellispaces.ixora.samples.rdb.fetch;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
-import intellispaces.jaquarius.IntellispacesFramework;
+import intellispaces.jaquarius.system.Modules;
 import org.dbunit.DataSourceBasedDBTestCase;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.yaml.YamlDataSet;
@@ -77,7 +77,7 @@ public class FetchBookSampleTest extends DataSourceBasedDBTestCase {
     System.setOut(ps);
 
     // When
-    IntellispacesFramework.loadModule(moduleClass);
+    Modules.get(moduleClass).start();
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

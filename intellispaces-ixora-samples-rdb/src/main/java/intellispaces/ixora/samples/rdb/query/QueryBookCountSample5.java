@@ -12,10 +12,10 @@ import intellispaces.ixora.rdb.RdbConfiguration;
 import intellispaces.ixora.rdb.Transactions;
 import intellispaces.ixora.rdb.action.TransactionalAction;
 import intellispaces.ixora.snakeyaml.SnakeyamlGuide;
-import intellispaces.jaquarius.IntellispacesFramework;
 import intellispaces.jaquarius.annotation.Inject;
 import intellispaces.jaquarius.annotation.Module;
 import intellispaces.jaquarius.annotation.Startup;
+import intellispaces.jaquarius.system.Modules;
 
 @Module({
     CliConfiguration.class,
@@ -50,6 +50,6 @@ public abstract class QueryBookCountSample5 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(QueryBookCountSample5.class, args);
+    Modules.get(QueryBookCountSample5.class, args).start();
   }
 }

@@ -3,10 +3,10 @@ package intellispaces.ixora.samples.helloworld;
 import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.ConsoleDomain;
 import intellispaces.ixora.cli.MovableConsole;
-import intellispaces.jaquarius.IntellispacesFramework;
 import intellispaces.jaquarius.annotation.Inject;
 import intellispaces.jaquarius.annotation.Module;
 import intellispaces.jaquarius.annotation.Startup;
+import intellispaces.jaquarius.system.Modules;
 import intellispaces.jaquarius.space.channel.ChannelFunctions;
 
 /**
@@ -37,6 +37,6 @@ public class HelloWorldSample5 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    IntellispacesFramework.loadModule(HelloWorldSample5.class, args);
+    Modules.get(HelloWorldSample5.class, args).start();
   }
 }
