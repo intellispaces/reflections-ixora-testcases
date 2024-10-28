@@ -8,18 +8,18 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>intellispaces-samples</groupId>
-  <artifactId>intellispaces-samples-parent</artifactId>
+  <groupId>intellispaces-ixora-samples</groupId>
+  <artifactId>intellispaces-ixora-samples-parent</artifactId>
   <packaging>pom</packaging>
 
   <modules>
-    <module>intellispaces-samples-helloworld</module>
-    <module>intellispaces-samples-properties</module>
-    <module>intellispaces-samples-properties-ontology</module>
-    <module>intellispaces-samples-rdb</module>
-    <module>intellispaces-samples-rdb-ontology</module>
-    <module>intellispaces-samples-http</module>
-    <module>intellispaces-samples-http-ontology</module>
+    <module>intellispaces-ixora-samples-helloworld</module>
+    <module>intellispaces-ixora-samples-properties</module>
+    <module>intellispaces-ixora-samples-properties-ontology</module>
+    <module>intellispaces-ixora-samples-rdb</module>
+    <module>intellispaces-ixora-samples-rdb-ontology</module>
+    <module>intellispaces-ixora-samples-http</module>
+    <module>intellispaces-ixora-samples-http-ontology</module>
   </modules>
 
   <build>
@@ -38,8 +38,8 @@
   <dependencies>
     <!-- Intellispaces -->
     <dependency>
-      <groupId>intellispaces-framework</groupId>
-      <artifactId>intellispaces-framework-core</artifactId>
+      <groupId>intellispaces-jaquarius</groupId>
+      <artifactId>intellispaces-jaquarius-core</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
