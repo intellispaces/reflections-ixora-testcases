@@ -1,7 +1,9 @@
-package intellispaces.ixora.samples.http.echo;
+package intellispaces.ixora.samples.http.simple;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
+import intellispaces.ixora.samples.http.simple.sample1.SimpleHttpSample1;
+import intellispaces.ixora.samples.http.simple.sample2.SimpleHttpSample2;
 import intellispaces.jaquarius.system.Modules;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,13 +13,15 @@ import org.slf4j.LoggerFactory;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for Hello World samples.
+ * Tests for simple port samples.
  */
-public class EchoPortTest {
+public class SimpleHttpPortTest {
 
   @BeforeAll
   public static void disableLogging() {
@@ -27,7 +31,8 @@ public class EchoPortTest {
 
   @ParameterizedTest
   @ValueSource(classes = {
-      EchoPortSample1.class
+      SimpleHttpSample1.class,
+      SimpleHttpSample2.class
   })
   void testOutput(Class<?> moduleClass) {
     // Given
@@ -40,6 +45,9 @@ public class EchoPortTest {
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
-    assertThat(output).isEqualTo("Hello!" + System.lineSeparator());
+    assertThat(output).isEqualTo(
+        "Current date: " + LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE) + System.lineSeparator() +
+        "Welcome message: Hello, John!" + System.lineSeparator()
+    );
   }
 }

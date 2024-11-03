@@ -15,7 +15,7 @@
         <!-- Intellispaces -->
         <dependency>
             <groupId>intellispaces-ixora</groupId>
-            <artifactId>intellispaces-ixora-http-ontology</artifactId>
+            <artifactId>intellispaces-ixora-http</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
