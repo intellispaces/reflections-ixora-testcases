@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>intellispaces-parent</groupId>
-    <artifactId>intellispaces-base-pom</artifactId>
+    <groupId>tech.intellispaces.parent</groupId>
+    <artifactId>intellispaces-parent-pom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
@@ -48,8 +48,8 @@
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>intellispaces-common</groupId>
-      <artifactId>intellispaces-action</artifactId>
+      <groupId>tech.intellispaces.common</groupId>
+      <artifactId>intellispaces-actions</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>

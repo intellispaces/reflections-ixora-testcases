@@ -1,7 +1,5 @@
 package intellispaces.ixora.samples.rdb.query;
 
-import intellispaces.common.action.Action;
-import intellispaces.common.action.Actions;
 import intellispaces.ixora.cli.CliConfiguration;
 import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
@@ -16,6 +14,8 @@ import intellispaces.jaquarius.annotation.Inject;
 import intellispaces.jaquarius.annotation.Module;
 import intellispaces.jaquarius.annotation.Startup;
 import intellispaces.jaquarius.system.Modules;
+import tech.intellispaces.action.Action;
+import tech.intellispaces.action.Actions;
 
 @Module({
     CliConfiguration.class,
@@ -36,7 +36,7 @@ public abstract class QueryBookCountSample5 {
    */
   @Startup
   public void startup(@Inject MovableTransactionFactory transactionFactory, @Inject MovableConsole console) {
-    Action action = Actions.of(() -> {
+    Action action = Actions.get(() -> {
       MovableResultSet rs = Transactions.current().query(Queries.BOOK_COUNT);
       rs.next();
       console.print("Number books: ");

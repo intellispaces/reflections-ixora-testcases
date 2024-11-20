@@ -6,8 +6,8 @@ import intellispaces.ixora.cli.MovableConsole;
 import intellispaces.jaquarius.annotation.Inject;
 import intellispaces.jaquarius.annotation.Module;
 import intellispaces.jaquarius.annotation.Startup;
-import intellispaces.jaquarius.system.Modules;
 import intellispaces.jaquarius.space.channel.ChannelFunctions;
+import intellispaces.jaquarius.system.Modules;
 
 /**
  * This module demonstrates the output to the console.<p/>
