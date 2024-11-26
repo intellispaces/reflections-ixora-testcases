@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>intellispaces-ixora-samples</groupId>
+        <groupId>tech.intellispaces.ixora</groupId>
         <artifactId>intellispaces-ixora-samples-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -13,39 +13,39 @@
 
     <dependencies>
         <dependency>
-            <groupId>intellispaces-ixora-samples</groupId>
+            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-samples-rdb-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <!-- Intellispaces -->
         <dependency>
-            <groupId>intellispaces-ixora</groupId>
+            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-space-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces-ixora</groupId>
+            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-cli</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces-ixora</groupId>
+            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-snakeyaml</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces-ixora</groupId>
+            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-rdb</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces-ixora</groupId>
+            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-hikariCP</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces-ixora-samples</groupId>
+            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-samples-rdb-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

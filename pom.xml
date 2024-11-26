@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>intellispaces-ixora-samples</groupId>
+  <groupId>tech.intellispaces.ixora</groupId>
   <artifactId>intellispaces-ixora-samples-parent</artifactId>
   <packaging>pom</packaging>
 
@@ -38,12 +38,12 @@
   <dependencies>
     <!-- Intellispaces -->
     <dependency>
-      <groupId>intellispaces-jaquarius</groupId>
+      <groupId>tech.intellispaces.jaquarius</groupId>
       <artifactId>intellispaces-jaquarius-core</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>intellispaces-jaquarius</groupId>
+      <groupId>tech.intellispaces.jaquarius</groupId>
       <artifactId>intellispaces-jaquarius-engine</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
@@ -53,8 +53,8 @@
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>intellispaces-common</groupId>
-      <artifactId>intellispaces-dynamicproxy-bytebuddy</artifactId>
+      <groupId>tech.intellispaces.common</groupId>
+      <artifactId>intellispaces-proxy-bytebuddy</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
 

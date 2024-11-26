@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>intellispaces-ixora-samples</groupId>
+        <groupId>tech.intellispaces.ixora</groupId>
         <artifactId>intellispaces-ixora-samples-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -19,7 +19,7 @@
         </dependency>
 
         <dependency>
-            <groupId>intellispaces-ixora</groupId>
+            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-rdb</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
