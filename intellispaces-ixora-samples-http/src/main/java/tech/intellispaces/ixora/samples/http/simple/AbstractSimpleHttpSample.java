@@ -11,7 +11,7 @@ import tech.intellispaces.ixora.http.MovableOutboundHttpPort;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.jaquarius.object.ObjectFunctions;
+import tech.intellispaces.jaquarius.object.ObjectHandleFunctions;
 import tech.intellispaces.entity.collection.ArraysFunctions;
 
 import java.nio.charset.StandardCharsets;
@@ -54,7 +54,7 @@ public abstract class AbstractSimpleHttpSample {
       byte[] responseBodyBytes = ArraysFunctions.toByteArray(response.bodyStream().readAll().nativeList());
       return new String(responseBodyBytes, StandardCharsets.UTF_8);
     } finally {
-      ObjectFunctions.releaseSilently(response);
+      ObjectHandleFunctions.releaseSilently(response);
     }
   }
 }
