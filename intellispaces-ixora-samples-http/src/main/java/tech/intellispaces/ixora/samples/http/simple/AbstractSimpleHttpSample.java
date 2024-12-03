@@ -12,7 +12,7 @@ import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.object.ObjectHandleFunctions;
-import tech.intellispaces.entity.collection.ArraysFunctions;
+import tech.intellispaces.general.collection.ArraysFunctions;
 
 import java.nio.charset.StandardCharsets;
 
