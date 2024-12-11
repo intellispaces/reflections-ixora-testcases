@@ -18,6 +18,12 @@
             <artifactId>jakarta.persistence-api</artifactId>
         </dependency>
 
+        <!-- Intellispaces -->
+        <dependency>
+            <groupId>tech.intellispaces.jaquarius</groupId>
+            <artifactId>intellispaces-jaquarius-annotationprocessor</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-rdb</artifactId>
