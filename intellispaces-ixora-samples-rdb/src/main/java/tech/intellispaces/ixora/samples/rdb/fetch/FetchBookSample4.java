@@ -68,6 +68,6 @@ public abstract class FetchBookSample4 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.get(FetchBookSample4.class, args).start();
+    Modules.load(FetchBookSample4.class, args).start();
   }
 }

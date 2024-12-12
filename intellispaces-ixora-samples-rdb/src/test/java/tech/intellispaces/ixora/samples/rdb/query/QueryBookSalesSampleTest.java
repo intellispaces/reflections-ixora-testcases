@@ -61,7 +61,7 @@ public class QueryBookSalesSampleTest extends DataSourceBasedDBTestCase {
     System.setOut(ps);
 
     // When
-    Modules.get(moduleClass).start();
+    Modules.flash(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

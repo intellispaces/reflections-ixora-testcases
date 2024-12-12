@@ -1,9 +1,7 @@
-package tech.intellispaces.ixora.samples.http.simple;
+package tech.intellispaces.ixora.samples.settings;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
-import tech.intellispaces.ixora.samples.http.simple.sample1.SimpleHttpSample1;
-import tech.intellispaces.ixora.samples.http.simple.sample2.SimpleHttpSample2;
 import tech.intellispaces.jaquarius.system.Modules;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,15 +11,13 @@ import org.slf4j.LoggerFactory;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for simple port samples.
+ * Tests for module settings samples.
  */
-public class SimpleHttpPortTest {
+public class SettingsTest {
 
   @BeforeAll
   public static void disableLogging() {
@@ -31,8 +27,11 @@ public class SimpleHttpPortTest {
 
   @ParameterizedTest
   @ValueSource(classes = {
-      SimpleHttpSample1.class,
-      SimpleHttpSample2.class
+      YamlSettingsSample1.class,
+      YamlSettingsSample2.class,
+      YamlSettingsSample3.class,
+      YamlSettingsSample4.class,
+      YamlSettingsSample5.MainUnit.class
   })
   void testOutput(Class<?> moduleClass) {
     // Given
@@ -45,9 +44,7 @@ public class SimpleHttpPortTest {
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
-    assertThat(output).isEqualTo(
-        "Current date: " + LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE) + System.lineSeparator() +
-        "Welcome message: Hello, John!" + System.lineSeparator()
-    );
+    assertThat(output).isEqualTo("City: East Centerville" + System.lineSeparator() +
+        "Street: 123 Tornado Alley" + System.lineSeparator());
   }
 }

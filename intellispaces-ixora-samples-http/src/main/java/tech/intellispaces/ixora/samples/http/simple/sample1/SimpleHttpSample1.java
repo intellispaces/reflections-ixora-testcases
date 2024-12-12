@@ -28,6 +28,6 @@ public class SimpleHttpSample1 extends AbstractSimpleHttpSample {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.get(SimpleHttpSample1.class, args).start();
+    Modules.load(SimpleHttpSample1.class, args).start();
   }
 }

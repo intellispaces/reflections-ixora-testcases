@@ -48,6 +48,6 @@ public abstract class QueryBookSalesSample1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.get(QueryBookSalesSample1.class, args).start();
+    Modules.load(QueryBookSalesSample1.class, args).start();
   }
 }

@@ -44,6 +44,6 @@ public abstract class QueryBookCountSample2 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.get(QueryBookCountSample2.class, args).start();
+    Modules.load(QueryBookCountSample2.class, args).start();
   }
 }
