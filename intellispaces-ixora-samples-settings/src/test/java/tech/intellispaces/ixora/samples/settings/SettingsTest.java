@@ -40,7 +40,7 @@ public class SettingsTest {
     System.setOut(ps);
 
     // When
-    Modules.flash(moduleClass);
+    Modules.flare(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
