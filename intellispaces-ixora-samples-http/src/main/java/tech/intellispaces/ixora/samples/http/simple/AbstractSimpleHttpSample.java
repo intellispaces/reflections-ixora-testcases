@@ -11,7 +11,7 @@ import tech.intellispaces.ixora.http.MovableOutboundHttpPort;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.jaquarius.object.ObjectHandleFunctions;
+import tech.intellispaces.jaquarius.object.handle.ObjectHandleFunctions;
 import tech.intellispaces.general.collection.ArraysFunctions;
 
 import java.nio.charset.StandardCharsets;
