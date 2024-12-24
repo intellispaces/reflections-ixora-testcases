@@ -35,11 +35,6 @@
         </dependency>
         <dependency>
             <groupId>tech.intellispaces.ixora</groupId>
-            <artifactId>intellispaces-ixora-space-ontology</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>tech.intellispaces.ixora</groupId>
             <artifactId>intellispaces-ixora-cli-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
