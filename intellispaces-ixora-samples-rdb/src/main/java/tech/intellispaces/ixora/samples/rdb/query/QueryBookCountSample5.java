@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.samples.rdb.query;
 
-import tech.intellispaces.ixora.cli.CliConfiguration;
-import tech.intellispaces.ixora.cli.MovableConsole;
+import tech.intellispaces.action.Action;
+import tech.intellispaces.action.Actions;
 import tech.intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 import tech.intellispaces.ixora.hikary.HikariConfiguration;
 import tech.intellispaces.ixora.rdb.MovableResultSet;
@@ -13,9 +13,9 @@ import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
+import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
 import tech.intellispaces.jaquarius.system.Modules;
-import tech.intellispaces.action.Action;
-import tech.intellispaces.action.Actions;
 
 @Module({
     CliConfiguration.class,

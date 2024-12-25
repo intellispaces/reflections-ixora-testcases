@@ -1,7 +1,5 @@
 package tech.intellispaces.ixora.samples.rdb.fetch;
 
-import tech.intellispaces.ixora.cli.CliConfiguration;
-import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 import tech.intellispaces.ixora.hikary.HikariConfiguration;
 import tech.intellispaces.ixora.rdb.RdbConfiguration;
@@ -15,6 +13,8 @@ import tech.intellispaces.jaquarius.annotation.AutoGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
+import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({

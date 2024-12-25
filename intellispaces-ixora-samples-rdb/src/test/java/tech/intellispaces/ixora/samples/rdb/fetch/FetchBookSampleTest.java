@@ -2,12 +2,12 @@ package tech.intellispaces.ixora.samples.rdb.fetch;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
-import tech.intellispaces.jaquarius.system.Modules;
 import org.dbunit.DataSourceBasedDBTestCase;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.yaml.YamlDataSet;
 import org.h2.jdbcx.JdbcDataSource;
 import org.slf4j.LoggerFactory;
+import tech.intellispaces.jaquarius.system.Modules;
 
 import javax.sql.DataSource;
 import java.io.ByteArrayOutputStream;

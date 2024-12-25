@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.samples.http.simple;
 
 import tech.intellispace.ixora.okhttp.OkHttpPorts;
-import tech.intellispaces.ixora.cli.MovableConsole;
+import tech.intellispaces.general.collection.ArraysFunctions;
 import tech.intellispaces.ixora.http.HttpMethods;
 import tech.intellispaces.ixora.http.HttpRequest;
 import tech.intellispaces.ixora.http.HttpRequests;
@@ -11,8 +11,8 @@ import tech.intellispaces.ixora.http.MovableOutboundHttpPort;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Startup;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
 import tech.intellispaces.jaquarius.object.handle.ObjectHandleFunctions;
-import tech.intellispaces.general.collection.ArraysFunctions;
 
 import java.nio.charset.StandardCharsets;
 

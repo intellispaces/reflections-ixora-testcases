@@ -2,13 +2,13 @@ package tech.intellispaces.ixora.samples.http.simple;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
-import tech.intellispaces.ixora.samples.http.simple.sample1.SimpleHttpSample1;
-import tech.intellispaces.ixora.samples.http.simple.sample2.SimpleHttpSample2;
-import tech.intellispaces.jaquarius.system.Modules;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.LoggerFactory;
+import tech.intellispaces.ixora.samples.http.simple.sample1.SimpleHttpSample1;
+import tech.intellispaces.ixora.samples.http.simple.sample2.SimpleHttpSample2;
+import tech.intellispaces.jaquarius.system.Modules;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

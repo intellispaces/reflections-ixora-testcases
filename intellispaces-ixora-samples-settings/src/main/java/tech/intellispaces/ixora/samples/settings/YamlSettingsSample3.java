@@ -1,7 +1,5 @@
 package tech.intellispaces.ixora.samples.settings;
 
-import tech.intellispaces.ixora.cli.CliConfiguration;
-import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
 import tech.intellispaces.ixora.samples.settings.Address;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
@@ -10,6 +8,8 @@ import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Settings;
 import tech.intellispaces.jaquarius.annotation.Startup;
+import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**

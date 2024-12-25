@@ -1,11 +1,11 @@
 package tech.intellispaces.ixora.samples.http.simple.sample1;
 
 import tech.intellispace.ixora.jetty.JettyServerPorts;
-import tech.intellispaces.ixora.cli.CliConfiguration;
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.ixora.internet.UriToQueryParamGuideImpl;
 import tech.intellispaces.ixora.samples.http.simple.AbstractSimpleHttpSample;
 import tech.intellispaces.jaquarius.annotation.Module;
+import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({

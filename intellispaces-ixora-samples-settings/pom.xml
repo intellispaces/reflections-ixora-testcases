@@ -20,8 +20,8 @@
 
         <!-- Intellispaces -->
         <dependency>
-            <groupId>tech.intellispaces.ixora</groupId>
-            <artifactId>intellispaces-ixora-cli</artifactId>
+            <groupId>tech.intellispaces.jaquarius</groupId>
+            <artifactId>intellispaces-jaquarius-ixora-cli-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
