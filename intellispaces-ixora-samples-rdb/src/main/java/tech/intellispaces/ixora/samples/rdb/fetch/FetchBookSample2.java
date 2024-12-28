@@ -1,6 +1,6 @@
 package tech.intellispaces.ixora.samples.rdb.fetch;
 
-import tech.intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
+import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
 import tech.intellispaces.ixora.hikary.HikariConfiguration;
 import tech.intellispaces.ixora.rdb.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.Transactions;
@@ -22,7 +22,7 @@ import tech.intellispaces.jaquarius.system.Modules;
     RdbConfiguration.class,
     HikariConfiguration.class,
     SnakeyamlGuide.class,
-    IxoraPropertiesToDataGuide.class,
+    IxoraDictionaryToDataGuide.class,
     DefaultBookCrudGuide.class
 })
 public abstract class FetchBookSample2 {

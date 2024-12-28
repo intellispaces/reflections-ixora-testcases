@@ -1,6 +1,6 @@
 package tech.intellispaces.ixora.samples.settings;
 
-import tech.intellispaces.ixora.data.association.IxoraPropertiesToDataGuide;
+import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
@@ -14,15 +14,15 @@ import tech.intellispaces.jaquarius.system.Modules;
 /**
  * This module demonstrates reading module YAML properties.<p/>
  *
- * Three units {@link CliConfiguration}, {@link SnakeyamlGuide} and {@link IxoraPropertiesToDataGuide} are included to module.
+ * Three units {@link CliConfiguration}, {@link SnakeyamlGuide} and {@link IxoraDictionaryToDataGuide} are included to module.
  * Unit {@link CliConfiguration} defines the projection named 'console' referred to the module CLI console.
  * Unit {@link SnakeyamlGuide} provides guide to load YAML properties.
- * Unit {@link IxoraPropertiesToDataGuide} provides guide to map properties to data.
+ * Unit {@link IxoraDictionaryToDataGuide} provides guide to map properties to data.
  */
 @Module({
     CliConfiguration.class,
     SnakeyamlGuide.class,
-    IxoraPropertiesToDataGuide.class
+    IxoraDictionaryToDataGuide.class
 })
 public abstract class YamlSettingsSample4 {
 

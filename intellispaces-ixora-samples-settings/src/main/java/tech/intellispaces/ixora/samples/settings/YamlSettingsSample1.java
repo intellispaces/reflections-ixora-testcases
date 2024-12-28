@@ -1,6 +1,6 @@
 package tech.intellispaces.ixora.samples.settings;
 
-import tech.intellispaces.ixora.data.association.Properties;
+import tech.intellispaces.ixora.data.association.Dictionary;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
@@ -31,7 +31,7 @@ public abstract class YamlSettingsSample1 {
    */
   @Projection
   @Settings
-  public abstract Properties moduleSettings();
+  public abstract Dictionary moduleSettings();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
