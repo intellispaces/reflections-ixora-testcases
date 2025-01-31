@@ -4,7 +4,7 @@ import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
-import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
@@ -21,7 +21,7 @@ public abstract class HelloWorldSample2 {
    * Implementation of this method will be auto generated.
    */
   @Inject
-  abstract MovableConsole console();
+  abstract MovableConsoleHandle console();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>

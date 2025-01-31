@@ -1,19 +1,19 @@
 package tech.intellispaces.ixora.samples.rdb.query;
 
 import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
-import tech.intellispaces.ixora.data.collection.List;
+import tech.intellispaces.ixora.data.collection.ListHandle;
 import tech.intellispaces.ixora.hikary.HikariConfiguration;
-import tech.intellispaces.ixora.rdb.MovableResultSet;
-import tech.intellispaces.ixora.rdb.MovableTransaction;
+import tech.intellispaces.ixora.rdb.MovableResultSetHandle;
+import tech.intellispaces.ixora.rdb.MovableTransactionHandle;
 import tech.intellispaces.ixora.rdb.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
-import tech.intellispaces.ixora.samples.rdb.BookSalesProjection;
+import tech.intellispaces.ixora.samples.rdb.BookSalesProjectionHandle;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
-import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
@@ -34,10 +34,10 @@ public abstract class QueryBookSalesSample2 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject MovableTransaction tx, @Inject MovableConsole console) {
-    MovableResultSet rs = tx.query(Queries.BOOK_SALES_SQL);
-    List<BookSalesProjection> bookSales = rs.dataValues(BookSalesProjection.class);
-    for (BookSalesProjection bookSale : bookSales.nativeList()) {
+  public void startup(@Inject MovableTransactionHandle tx, @Inject MovableConsoleHandle console) {
+    MovableResultSetHandle rs = tx.query(Queries.BOOK_SALES_SQL);
+    ListHandle<BookSalesProjectionHandle> bookSales = rs.dataValues(BookSalesProjectionHandle.class);
+    for (BookSalesProjectionHandle bookSale : bookSales.nativeList()) {
       console.print("Book title: ");
       console.print(bookSale.title());
       console.print(". Sales: ");

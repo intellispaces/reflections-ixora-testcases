@@ -1,6 +1,6 @@
 package tech.intellispaces.ixora.samples.settings;
 
-import tech.intellispaces.ixora.data.association.Dictionary;
+import tech.intellispaces.ixora.data.association.DictionaryHandle;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
@@ -8,7 +8,7 @@ import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Settings;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
-import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
@@ -31,7 +31,7 @@ public abstract class YamlSettingsSample1 {
    */
   @Projection
   @Settings
-  public abstract Dictionary moduleSettings();
+  public abstract DictionaryHandle moduleSettings();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -41,7 +41,7 @@ public abstract class YamlSettingsSample1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableConsole console) {
+  public void startup(@Inject MovableConsoleHandle console) {
     console.println("City: " + moduleSettings().stringValue("owner.address.city"));
     console.println("Street: " + moduleSettings().stringValue("owner.address.street"));
   }

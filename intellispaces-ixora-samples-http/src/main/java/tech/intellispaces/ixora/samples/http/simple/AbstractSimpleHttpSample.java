@@ -3,36 +3,36 @@ package tech.intellispaces.ixora.samples.http.simple;
 import tech.intellispace.ixora.okhttp.OkHttpPorts;
 import tech.intellispaces.general.collection.ArraysFunctions;
 import tech.intellispaces.ixora.http.HttpMethods;
-import tech.intellispaces.ixora.http.HttpRequest;
+import tech.intellispaces.ixora.http.HttpRequestHandle;
 import tech.intellispaces.ixora.http.HttpRequests;
-import tech.intellispaces.ixora.http.HttpResponse;
-import tech.intellispaces.ixora.http.MovableInboundHttpPort;
-import tech.intellispaces.ixora.http.MovableOutboundHttpPort;
+import tech.intellispaces.ixora.http.HttpResponseHandle;
+import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
+import tech.intellispaces.ixora.http.MovableOutboundHttpPortHandle;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
-import tech.intellispaces.jaquarius.object.handle.ObjectHandleFunctions;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.jaquarius.object.reference.ObjectHandleFunctions;
 
 import java.nio.charset.StandardCharsets;
 
 public abstract class AbstractSimpleHttpSample {
   private static final int PORT_NUMBER = 8080;
 
-  protected abstract MovableInboundHttpPort getInboundPort(int portNumber);
+  protected abstract MovableInboundHttpPortHandle getInboundPort(int portNumber);
 
   @Projection
-  public MovableInboundHttpPort inboundPort() {
+  public MovableInboundHttpPortHandle inboundPort() {
     return getInboundPort(PORT_NUMBER);
   }
 
   @Projection
-  public MovableOutboundHttpPort outboundPort() {
+  public MovableOutboundHttpPortHandle outboundPort() {
     return OkHttpPorts.get().asOutboundHttpPort();
   }
 
   @Startup
-  public void startup(@Inject MovableConsole console) {
+  public void startup(@Inject MovableConsoleHandle console) {
     // Open inbound port
     inboundPort().open();
 
@@ -45,9 +45,9 @@ public abstract class AbstractSimpleHttpSample {
   }
 
   private String call(String endpoint) {
-    HttpRequest request = HttpRequests.get(HttpMethods.get(), "http://localhost:" + PORT_NUMBER + endpoint);
+    HttpRequestHandle request = HttpRequests.get(HttpMethods.get(), "http://localhost:" + PORT_NUMBER + endpoint);
 
-    HttpResponse response = null;
+    HttpResponseHandle response = null;
     try {
       response = outboundPort().exchange(request);
 

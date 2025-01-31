@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.samples.settings;
 
 import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
-import tech.intellispaces.ixora.samples.settings.Address;
+import tech.intellispaces.ixora.samples.settings.AddressHandle;
 import tech.intellispaces.ixora.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.annotation.Configuration;
 import tech.intellispaces.jaquarius.annotation.Inject;
@@ -10,7 +10,7 @@ import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Settings;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
-import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 public interface YamlSettingsSample5 {
@@ -37,7 +37,7 @@ public interface YamlSettingsSample5 {
      * This abstract method will be auto implemented in wrapper class.
      */
     @Inject
-    public abstract Address ownerAddress();
+    public abstract AddressHandle ownerAddress();
 
     /**
      * This method will be invoked automatically after the module is started.<p/>
@@ -47,7 +47,7 @@ public interface YamlSettingsSample5 {
      * @param console value of the projection named 'console'.
      */
     @Startup
-    public void startup(@Inject MovableConsole console) {
+    public void startup(@Inject MovableConsoleHandle console) {
       console.println("City: " + ownerAddress().city());
       console.println("Street: " + ownerAddress().street());
     }
@@ -69,6 +69,6 @@ public interface YamlSettingsSample5 {
      */
     @Projection
     @Settings("owner.address")
-    public abstract Address ownerAddress();
+    public abstract AddressHandle ownerAddress();
   }
 }

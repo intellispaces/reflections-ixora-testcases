@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.samples.http.simple.sample2;
 
 import tech.intellispace.ixora.jetty.JettyServerPorts;
-import tech.intellispaces.ixora.http.MovableInboundHttpPort;
+import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
 import tech.intellispaces.ixora.internet.JoinUrlGuideImpl;
 import tech.intellispaces.ixora.internet.SplitUriPathGuideImpl;
 import tech.intellispaces.ixora.internet.UriToQueryParamGuideImpl;
@@ -20,11 +20,11 @@ import tech.intellispaces.jaquarius.system.Modules;
 public class SimpleHttpSample2 extends AbstractSimpleHttpSample {
 
   @Override
-  protected MovableInboundHttpPort getInboundPort(int portNumber) {
-    MovableInboundHttpPort operativePort = JettyServerPorts.get(
+  protected MovableInboundHttpPortHandle getInboundPort(int portNumber) {
+    MovableInboundHttpPortHandle operativePort = JettyServerPorts.get(
         portNumber, SimplePortExchangeChannel.class
     ).asInboundHttpPort();
-    MovableSimpleHttpPort logicalPort = SimpleHttpPorts.getAndLink(operativePort);
+    MovableSimpleHttpPortHandle logicalPort = SimpleHttpPorts.getAndLink(operativePort);
     return logicalPort.asInboundHttpPort();
   }
 

@@ -1,15 +1,15 @@
 package tech.intellispaces.ixora.samples.http.simple.sample1;
 
-import tech.intellispaces.ixora.http.MovableInboundHttpPort;
+import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
 
 public interface SimplePorts {
 
-  static MovableSimpleHttpPort get(MovableInboundHttpPort operativePort) {
-    return new SimpleHttpPortHandleImpl(operativePort);
+  static MovableSimpleHttpPortHandle get(MovableInboundHttpPortHandle operativePort) {
+    return new SimpleHttpPortHandleDefaultImpl(operativePort);
   }
 
-  static MovableSimpleHttpPort getAndLink(MovableInboundHttpPort operativePort) {
-    MovableSimpleHttpPort logicalPort = SimplePorts.get(operativePort);
+  static MovableSimpleHttpPortHandle getAndLink(MovableInboundHttpPortHandle operativePort) {
+    MovableSimpleHttpPortHandle logicalPort = SimplePorts.get(operativePort);
     operativePort.addProjection(SimpleHttpPortDomain.class, logicalPort);
     return logicalPort;
   }

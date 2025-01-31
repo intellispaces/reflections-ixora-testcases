@@ -5,7 +5,7 @@ import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
 import tech.intellispaces.jaquarius.ixora.cli.ConsoleDomain;
-import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.space.channel.ChannelFunctions;
 import tech.intellispaces.jaquarius.system.Modules;
 
@@ -25,7 +25,7 @@ public class HelloWorldSample5 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableConsole console) {
+  public void startup(@Inject MovableConsoleHandle console) {
     // Get identifier of the channel 'Console::println'
     String cid = ChannelFunctions.getChannelId(ConsoleDomain.class, ConsoleDomain::println, "");
 

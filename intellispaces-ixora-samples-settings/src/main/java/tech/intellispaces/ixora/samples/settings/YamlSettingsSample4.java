@@ -8,7 +8,7 @@ import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Settings;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
-import tech.intellispaces.jaquarius.ixora.cli.MovableConsole;
+import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
@@ -52,7 +52,7 @@ public abstract class YamlSettingsSample4 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableConsole console) {
+  public void startup(@Inject MovableConsoleHandle console) {
     console.println("City: " + ownerCity());
     console.println("Street: " + ownerStreet());
   }
