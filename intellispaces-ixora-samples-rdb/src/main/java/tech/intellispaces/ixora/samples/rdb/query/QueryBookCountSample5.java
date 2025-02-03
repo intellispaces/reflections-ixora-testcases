@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.samples.rdb.query;
 
-import tech.intellispaces.action.Action;
-import tech.intellispaces.action.Actions;
+import tech.intellispaces.commons.action.Action;
+import tech.intellispaces.commons.action.Actions;
 import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
 import tech.intellispaces.ixora.hikary.HikariConfiguration;
 import tech.intellispaces.ixora.rdb.MovableResultSetHandle;

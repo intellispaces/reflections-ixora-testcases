@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.samples.http.simple;
 
 import tech.intellispace.ixora.okhttp.OkHttpPorts;
-import tech.intellispaces.general.collection.ArraysFunctions;
+import tech.intellispaces.commons.base.collection.ArraysFunctions;
 import tech.intellispaces.ixora.http.HttpMethods;
 import tech.intellispaces.ixora.http.HttpRequestHandle;
 import tech.intellispaces.ixora.http.HttpRequests;

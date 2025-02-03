@@ -48,13 +48,13 @@
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>tech.intellispaces.common</groupId>
-      <artifactId>intellispaces-actions</artifactId>
+      <groupId>tech.intellispaces.commons</groupId>
+      <artifactId>intellispaces-commons-action</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>tech.intellispaces.common</groupId>
-      <artifactId>intellispaces-proxy-bytebuddy</artifactId>
+      <groupId>tech.intellispaces.commons</groupId>
+      <artifactId>intellispaces-commons-proxy-bytebuddy</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
