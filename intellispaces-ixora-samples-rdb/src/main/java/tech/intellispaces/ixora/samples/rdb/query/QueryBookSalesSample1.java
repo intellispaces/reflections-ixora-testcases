@@ -1,8 +1,7 @@
 package tech.intellispaces.ixora.samples.rdb.query;
 
+import tech.intellispaces.commons.base.type.Types;
 import tech.intellispaces.ixora.hikary.HikariConfiguration;
-import tech.intellispaces.ixora.rdb.MovableResultSetHandle;
-import tech.intellispaces.ixora.rdb.MovableTransactionHandle;
 import tech.intellispaces.ixora.rdb.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.samples.rdb.BookSalesProjectionHandle;
@@ -13,6 +12,8 @@ import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
 import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.ixora.data.association.IxoraDictionaryToDataGuide;
 import tech.intellispaces.jaquarius.ixora.data.snakeyaml.SnakeyamlGuide;
+import tech.intellispaces.jaquarius.ixora.rdb.MovableResultSetHandle;
+import tech.intellispaces.jaquarius.ixora.rdb.MovableTransactionHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
@@ -36,7 +37,7 @@ public abstract class QueryBookSalesSample1 {
   public void startup(@Inject MovableTransactionHandle tx, @Inject MovableConsoleHandle console) {
     MovableResultSetHandle rs = tx.query(Queries.BOOK_SALES_SQL);
     while (rs.next()) {
-      BookSalesProjectionHandle bookSales = rs.dataValue(BookSalesProjectionHandle.class);
+      BookSalesProjectionHandle bookSales = rs.dataValue(Types.get(BookSalesProjectionHandle.class));
       console.print("Book title: ");
       console.print(bookSales.title());
       console.print(". Sales: ");

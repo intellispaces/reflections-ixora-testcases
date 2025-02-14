@@ -3,8 +3,6 @@ package tech.intellispaces.ixora.samples.rdb.query;
 import tech.intellispaces.commons.action.Action;
 import tech.intellispaces.commons.action.Actions;
 import tech.intellispaces.ixora.hikary.HikariConfiguration;
-import tech.intellispaces.ixora.rdb.MovableResultSetHandle;
-import tech.intellispaces.ixora.rdb.MovableTransactionFactoryHandle;
 import tech.intellispaces.ixora.rdb.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.Transactions;
 import tech.intellispaces.ixora.rdb.action.TransactionalAction;
@@ -15,6 +13,8 @@ import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
 import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.ixora.data.association.IxoraDictionaryToDataGuide;
 import tech.intellispaces.jaquarius.ixora.data.snakeyaml.SnakeyamlGuide;
+import tech.intellispaces.jaquarius.ixora.rdb.MovableResultSetHandle;
+import tech.intellispaces.jaquarius.ixora.rdb.MovableTransactionFactoryHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
@@ -40,7 +40,7 @@ public abstract class QueryBookCountSample5 {
       MovableResultSetHandle rs = Transactions.current().query(Queries.BOOK_COUNT);
       rs.next();
       console.print("Number books: ");
-      console.println(rs.integerValue("count"));
+      console.println(rs.integer32Value("count"));
     });
     var transactionalAction = new TransactionalAction(transactionFactory, action);
     transactionalAction.execute();
