@@ -1,10 +1,10 @@
 package tech.intellispaces.ixora.samples.settings;
 
 import tech.intellispaces.jaquarius.annotation.Channel;
-import tech.intellispaces.jaquarius.annotation.Data;
+import tech.intellispaces.jaquarius.annotation.Dataset;
 import tech.intellispaces.jaquarius.annotation.Domain;
 
-@Data
+@Dataset
 @Domain("4e7b79a6-c386-4bb7-8687-e91b15adadfd")
 public interface AddressDomain {
 

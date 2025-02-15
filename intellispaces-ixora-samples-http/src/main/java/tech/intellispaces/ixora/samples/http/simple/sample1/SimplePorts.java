@@ -5,7 +5,7 @@ import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
 public interface SimplePorts {
 
   static MovableSimpleHttpPortHandle get(MovableInboundHttpPortHandle operativePort) {
-    return new SimpleHttpPortHandleDefaultImpl(operativePort);
+    return new SimpleHttpPortHandleImplWrapper(operativePort);
   }
 
   static MovableSimpleHttpPortHandle getAndLink(MovableInboundHttpPortHandle operativePort) {

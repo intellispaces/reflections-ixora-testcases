@@ -3,9 +3,9 @@ package tech.intellispaces.ixora.samples.rdb;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import tech.intellispaces.ixora.rdb.annotation.Entity;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;
+import tech.intellispaces.jaquarius.ixora.rdb.annotation.Entity;
 
 @Entity
 @Table(schema = "book", name = "book")

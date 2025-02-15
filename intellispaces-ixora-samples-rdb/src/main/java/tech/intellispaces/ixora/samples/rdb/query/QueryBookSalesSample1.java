@@ -1,9 +1,6 @@
 package tech.intellispaces.ixora.samples.rdb.query;
 
 import tech.intellispaces.commons.base.type.Types;
-import tech.intellispaces.ixora.hikary.HikariConfiguration;
-import tech.intellispaces.ixora.rdb.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.samples.rdb.BookSalesProjectionHandle;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
@@ -12,14 +9,17 @@ import tech.intellispaces.jaquarius.ixora.cli.CliConfiguration;
 import tech.intellispaces.jaquarius.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.jaquarius.ixora.data.association.IxoraDictionaryToDataGuide;
 import tech.intellispaces.jaquarius.ixora.data.snakeyaml.SnakeyamlGuide;
-import tech.intellispaces.jaquarius.ixora.rdb.MovableResultSetHandle;
-import tech.intellispaces.jaquarius.ixora.rdb.MovableTransactionHandle;
+import tech.intellispaces.jaquarius.ixora.hikaricp.configuration.HikariCpConfiguration;
+import tech.intellispaces.jaquarius.ixora.rdb.annotation.Transactional;
+import tech.intellispaces.jaquarius.ixora.rdb.configuration.RdbConfiguration;
+import tech.intellispaces.jaquarius.ixora.rdb.statement.MovableResultSetHandle;
+import tech.intellispaces.jaquarius.ixora.rdb.transaction.MovableTransactionHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
     CliConfiguration.class,
     RdbConfiguration.class,
-    HikariConfiguration.class,
+    HikariCpConfiguration.class,
     SnakeyamlGuide.class,
     IxoraDictionaryToDataGuide.class
 })

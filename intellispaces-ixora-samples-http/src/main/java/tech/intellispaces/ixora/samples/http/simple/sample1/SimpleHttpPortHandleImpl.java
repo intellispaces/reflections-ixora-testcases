@@ -5,10 +5,10 @@ import tech.intellispaces.jaquarius.annotation.Mover;
 import tech.intellispaces.jaquarius.annotation.ObjectHandle;
 
 @ObjectHandle(SimpleHttpPortDomain.class)
-public abstract class SimpleHttpPortHandleDefault implements MovableSimpleHttpPortHandle {
+public abstract class SimpleHttpPortHandleImpl implements MovableSimpleHttpPortHandle {
   private final MovableInboundHttpPortHandle operativePort;
 
-  public SimpleHttpPortHandleDefault(MovableInboundHttpPortHandle operativePort) {
+  public SimpleHttpPortHandleImpl(MovableInboundHttpPortHandle operativePort) {
     this.operativePort = operativePort;
   }
 
