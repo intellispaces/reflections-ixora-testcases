@@ -8,18 +8,18 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>tech.intellispaces.ixora</groupId>
-  <artifactId>intellispaces-ixora-samples-parent</artifactId>
+  <groupId>tech.intellispaces.jaquarius</groupId>
+  <artifactId>intellispaces-jaquarius-ixora-samples-parent</artifactId>
   <packaging>pom</packaging>
 
   <modules>
-    <module>intellispaces-ixora-samples-helloworld</module>
-    <module>intellispaces-ixora-samples-settings</module>
-    <module>intellispaces-ixora-samples-settings-ontology</module>
-    <module>intellispaces-ixora-samples-rdb</module>
-    <module>intellispaces-ixora-samples-rdb-ontology</module>
-    <module>intellispaces-ixora-samples-http</module>
-    <module>intellispaces-ixora-samples-http-ontology</module>
+    <module>intellispaces-jaquarius-ixora-samples-helloworld</module>
+    <module>intellispaces-jaquarius-ixora-samples-settings</module>
+    <module>intellispaces-jaquarius-ixora-samples-settings-ontology</module>
+    <module>intellispaces-jaquarius-ixora-samples-rdb</module>
+    <module>intellispaces-jaquarius-ixora-samples-rdb-ontology</module>
+    <module>intellispaces-jaquarius-ixora-samples-http</module>
+    <module>intellispaces-jaquarius-ixora-samples-http-ontology</module>
   </modules>
 
   <build>
