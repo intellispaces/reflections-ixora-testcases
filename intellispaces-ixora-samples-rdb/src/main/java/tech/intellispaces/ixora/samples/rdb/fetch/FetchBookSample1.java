@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.samples.rdb.fetch;
 
-import tech.intellispaces.ixora.cli.CliConfiguration;
 import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;

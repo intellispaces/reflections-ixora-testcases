@@ -1,8 +1,8 @@
 package tech.intellispaces.ixora.samples.helloworld;
 
-import tech.intellispaces.ixora.cli.CliConfiguration;
 import tech.intellispaces.ixora.cli.ConsolePrintlnStringChannel;
 import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;

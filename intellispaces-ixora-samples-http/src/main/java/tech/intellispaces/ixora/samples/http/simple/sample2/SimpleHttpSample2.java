@@ -1,6 +1,6 @@
 package tech.intellispaces.ixora.samples.http.simple.sample2;
 
-import tech.intellispaces.ixora.cli.CliConfiguration;
+import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuideImpl;
 import tech.intellispaces.ixora.internet.uri.JoinBasePathStringWithEndpointStringGuideImpl;

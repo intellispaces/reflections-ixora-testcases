@@ -1,8 +1,8 @@
 package tech.intellispaces.ixora.samples.rdb.query;
 
 import tech.intellispaces.commons.base.type.Types;
-import tech.intellispaces.ixora.cli.CliConfiguration;
 import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
 import tech.intellispaces.ixora.data.collection.ListHandle;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
