@@ -6,10 +6,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import tech.intellispaces.jaquarius.annotation.Channel;
-import tech.intellispaces.jaquarius.annotation.Domain;
 import tech.intellispaces.ixora.rdb.annotation.Entity;
 import tech.intellispaces.ixora.rdb.annotation.Query;
+import tech.intellispaces.jaquarius.annotation.Channel;
+import tech.intellispaces.jaquarius.annotation.Domain;
 
 @Entity
 @Table(schema = "book", name = "book_order")

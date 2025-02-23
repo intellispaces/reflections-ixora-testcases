@@ -1,11 +1,11 @@
 package tech.intellispaces.ixora.samples.helloworld;
 
-import tech.intellispaces.jaquarius.annotation.Inject;
-import tech.intellispaces.jaquarius.annotation.Module;
-import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.ixora.cli.CliConfiguration;
 import tech.intellispaces.ixora.cli.ConsoleDomain;
 import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.jaquarius.annotation.Inject;
+import tech.intellispaces.jaquarius.annotation.Module;
+import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**

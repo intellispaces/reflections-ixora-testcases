@@ -1,8 +1,8 @@
 package tech.intellispaces.ixora.samples.http.simple.sample2;
 
-import tech.intellispaces.jaquarius.annotation.Guide;
 import tech.intellispaces.ixora.http.HttpResponseHandle;
 import tech.intellispaces.ixora.http.HttpResponses;
+import tech.intellispaces.jaquarius.annotation.Guide;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

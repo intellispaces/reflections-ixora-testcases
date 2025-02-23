@@ -1,8 +1,8 @@
 package tech.intellispaces.ixora.samples.http.simple.sample1;
 
+import tech.intellispaces.ixora.http.InboundHttpPortDomain;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;
-import tech.intellispaces.ixora.http.InboundHttpPortDomain;
 import tech.intellispaces.jaquarius.traverse.TraverseTypes;
 
 @Domain("f440030a-c859-4a99-b44f-7105ea34dbec")

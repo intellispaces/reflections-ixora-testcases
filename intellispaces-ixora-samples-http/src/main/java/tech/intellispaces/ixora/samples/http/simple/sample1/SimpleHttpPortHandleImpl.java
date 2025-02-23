@@ -1,8 +1,8 @@
 package tech.intellispaces.ixora.samples.http.simple.sample1;
 
+import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
 import tech.intellispaces.jaquarius.annotation.Mover;
 import tech.intellispaces.jaquarius.annotation.ObjectHandle;
-import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
 
 @ObjectHandle(SimpleHttpPortDomain.class)
 public abstract class SimpleHttpPortHandleImpl implements MovableSimpleHttpPortHandle {

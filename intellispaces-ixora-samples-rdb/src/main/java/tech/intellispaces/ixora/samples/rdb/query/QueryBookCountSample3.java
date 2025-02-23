@@ -1,8 +1,5 @@
 package tech.intellispaces.ixora.samples.rdb.query;
 
-import tech.intellispaces.jaquarius.annotation.Inject;
-import tech.intellispaces.jaquarius.annotation.Module;
-import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.ixora.cli.CliConfiguration;
 import tech.intellispaces.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
@@ -12,6 +9,9 @@ import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.statement.MovableResultSetHandle;
 import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactoryHandle;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
+import tech.intellispaces.jaquarius.annotation.Inject;
+import tech.intellispaces.jaquarius.annotation.Module;
+import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({

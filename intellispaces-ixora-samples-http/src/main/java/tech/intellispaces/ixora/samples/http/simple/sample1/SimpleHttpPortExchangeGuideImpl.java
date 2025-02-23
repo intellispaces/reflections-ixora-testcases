@@ -1,12 +1,12 @@
 package tech.intellispaces.ixora.samples.http.simple.sample1;
 
-import tech.intellispaces.jaquarius.annotation.AutoGuide;
-import tech.intellispaces.jaquarius.annotation.Guide;
-import tech.intellispaces.jaquarius.annotation.Mapper;
 import tech.intellispaces.ixora.http.HttpRequestHandle;
 import tech.intellispaces.ixora.http.HttpResponseHandle;
 import tech.intellispaces.ixora.http.HttpResponses;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuide;
+import tech.intellispaces.jaquarius.annotation.AutoGuide;
+import tech.intellispaces.jaquarius.annotation.Guide;
+import tech.intellispaces.jaquarius.annotation.Mapper;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

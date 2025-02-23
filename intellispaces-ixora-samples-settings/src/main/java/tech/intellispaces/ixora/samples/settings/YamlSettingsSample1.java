@@ -1,15 +1,15 @@
 package tech.intellispaces.ixora.samples.settings;
 
+import tech.intellispaces.ixora.cli.CliConfiguration;
+import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.data.dictionary.DictionaryHandle;
+import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Settings;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.ixora.cli.CliConfiguration;
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
-import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.system.Modules;
-import tech.intellispaces.ixora.data.dictionary.DictionaryHandle;
 
 /**
  * This module demonstrates reading module YAML properties.<p/>

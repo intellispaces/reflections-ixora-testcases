@@ -1,11 +1,11 @@
 package tech.intellispaces.ixora.samples.http.simple.sample2;
 
-import tech.intellispaces.jaquarius.annotation.Channel;
-import tech.intellispaces.jaquarius.annotation.Domain;
 import tech.intellispaces.ixora.http.HttpRequestDomain;
 import tech.intellispaces.ixora.http.HttpResponseDomain;
 import tech.intellispaces.ixora.http.InboundHttpPortDomain;
 import tech.intellispaces.ixora.http.annotation.HttpPort;
+import tech.intellispaces.jaquarius.annotation.Channel;
+import tech.intellispaces.jaquarius.annotation.Domain;
 import tech.intellispaces.jaquarius.traverse.TraverseTypes;
 
 @HttpPort(SimpleHttpPortOntology.class)

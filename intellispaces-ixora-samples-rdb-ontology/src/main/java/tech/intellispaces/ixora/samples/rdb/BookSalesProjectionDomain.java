@@ -1,9 +1,9 @@
 package tech.intellispaces.ixora.samples.rdb;
 
 import jakarta.persistence.Column;
+import tech.intellispaces.ixora.rdb.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;
-import tech.intellispaces.ixora.rdb.annotation.Projection;
 
 @Projection
 @Domain("cf3a572e-b571-46dc-aee6-9cd448d50cc7")
