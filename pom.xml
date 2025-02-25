@@ -36,7 +36,7 @@
   </build>
 
   <dependencies>
-    <!-- Intellispaces -->
+    <!-- Intellispaces Jaquarius -->
     <dependency>
       <groupId>tech.intellispaces.jaquarius</groupId>
       <artifactId>intellispaces-jaquarius-core</artifactId>

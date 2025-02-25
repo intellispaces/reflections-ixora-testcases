@@ -8,23 +8,27 @@ import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
- * This module demonstrates the output to the console.<p/>
- *
- * Unit {@link CliConfiguration} is included to this module. In this unit the projection with name 'console' and referred to module CLI console is defined.
+ * This module demonstrates printing a string to the module console.
+ * <p>
+ * The module includes the configuration unit {@link CliConfiguration}. In this unit, a projection called "console"
+ * is added to module. The "console" projection refers to the current CLI console of the module.
  */
 @Module(CliConfiguration.class)
 public abstract class HelloWorldSample2 {
 
   /**
-   * This method will be return projection named 'console' of the module to CLI console. Value of this projection is defined in unit {@link CliUnit}.<p/>
-   *
-   * Implementation of this method will be auto generated.
+   * The implementation of this method will be injected automatically.
+   * <p>
+   * In this case, this method will return the target of the module's "console" projection.
    */
   @Inject
   abstract MovableConsoleHandle console();
 
   /**
-   * This method will be invoked automatically after the module is started.<p/>
+   * The module startup method.
+   * This method will be invoked automatically after the module is started.
+   * <p>
+   * Inside the method, the "console" method is called to get the current console.
    */
   @Startup
   public void startup() {
@@ -32,7 +36,7 @@ public abstract class HelloWorldSample2 {
   }
 
   /**
-   * In the main method, we load and run the IntelliSpaces framework module.
+   * The main method of the application loads and starts the module.
    */
   public static void main(String[] args) {
     Modules.load(HelloWorldSample2.class, args).start();
