@@ -14,8 +14,8 @@
 
   <modules>
     <module>intellispaces-ixora-samples-helloworld</module>
-    <module>intellispaces-ixora-samples-settings</module>
-    <module>intellispaces-ixora-samples-settings-ontology</module>
+    <module>intellispaces-ixora-samples-properties</module>
+    <module>intellispaces-ixora-samples-properties-ontology</module>
     <module>intellispaces-ixora-samples-rdb</module>
     <module>intellispaces-ixora-samples-rdb-ontology</module>
     <module>intellispaces-ixora-samples-http</module>

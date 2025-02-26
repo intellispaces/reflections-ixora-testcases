@@ -2,7 +2,7 @@ package tech.intellispaces.ixora.samples.rdb.query;
 
 import tech.intellispaces.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.ixora.data.association.IxoraDictionaryToDataGuide;
+import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
@@ -19,7 +19,7 @@ import tech.intellispaces.jaquarius.system.Modules;
     RdbConfiguration.class,
     HikariCpConfiguration.class,
     SnakeyamlGuide.class,
-    IxoraDictionaryToDataGuide.class
+    SimplePropertiesToDataGuide.class
 })
 public abstract class QueryBookCountSample3 {
 
