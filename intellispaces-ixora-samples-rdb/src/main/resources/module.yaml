@@ -1,5 +1,5 @@
 datasource:
   driverClassName: org.postgresql.Driver
-  url: "jdbc:postgresql://localhost:5432/samples?currentSchema=book"
+  url: "jdbc:postgresql://localhost:5432/samples?currentSchema=books"
   username: "postgres"
   password: "postgres"
