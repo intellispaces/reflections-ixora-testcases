@@ -5,7 +5,13 @@ import tech.intellispaces.ixora.rdb.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;
 
-@Projection
+@Projection(query = """
+      SELECT b.title as title, SUM(bo.price) as sales
+      FROM books.book b
+      LEFT JOIN books.book_order bo ON bo.book_id = b.id
+      GROUP BY b.id, b.title
+      ORDER BY b.id
+    """)
 @Domain("cf3a572e-b571-46dc-aee6-9cd448d50cc7")
 public interface BookSalesProjectionDomain {
 

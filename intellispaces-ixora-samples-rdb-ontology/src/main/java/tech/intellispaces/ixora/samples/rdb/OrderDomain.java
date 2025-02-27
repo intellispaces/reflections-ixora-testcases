@@ -7,6 +7,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import tech.intellispaces.ixora.rdb.annotation.PersistableEntity;
 import tech.intellispaces.ixora.rdb.annotation.Projection;
+import tech.intellispaces.ixora.rdb.transaction.TransactionalEntityDomain;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;
 
@@ -16,7 +17,7 @@ import tech.intellispaces.jaquarius.annotation.Domain;
 @PersistableEntity
 @Table(schema = "books", name = "book_order")
 @Domain("d278ea68-26a3-4b78-901e-92b6f64d3b15")
-public interface OrderDomain {
+public interface OrderDomain extends TransactionalEntityDomain {
 
   @Id
   @Column(name = "id")
@@ -39,4 +40,7 @@ public interface OrderDomain {
   @Projection(query = "SELECT COUNT(*) FROM book_order bo WHERE bo.book_id = :this.bookId")
   @Channel("686b6e22-13a2-45e2-988b-8fb166b77fb2")
   Integer totalCountOrderForBook();
+
+  @Channel("7d99e151-2493-4114-9a44-4df37db3d63a")
+  TransactionalEntityDomain asTransactionalEntity();
 }
