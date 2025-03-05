@@ -1,6 +1,6 @@
 package tech.intellispaces.ixora.testcases.http.simple.testcase2;
 
-import tech.intellispaces.ixora.http.HttpResponseHandle;
+import tech.intellispaces.ixora.http.HttpResponse;
 import tech.intellispaces.ixora.http.HttpResponses;
 import tech.intellispaces.jaquarius.annotation.Guide;
 
@@ -11,12 +11,12 @@ import java.time.format.DateTimeFormatter;
 public abstract class SimpleHttpPortGuideImpl extends SimpleHttpPortGuide {
 
   @Override
-  public HttpResponseHandle currentDate() {
+  public HttpResponse currentDate() {
     return HttpResponses.ok(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
   }
 
   @Override
-  public HttpResponseHandle hello(String name) {
+  public HttpResponse hello(String name) {
     return HttpResponses.ok("Hello, " + name + "!");
   }
 }

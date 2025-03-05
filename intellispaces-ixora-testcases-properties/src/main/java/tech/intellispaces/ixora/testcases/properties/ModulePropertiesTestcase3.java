@@ -1,6 +1,7 @@
 package tech.intellispaces.ixora.testcases.properties;
 
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsole;
+import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
@@ -12,7 +13,7 @@ import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
- * This module demonstrates reading YAML properties.
+ * This testcase demonstrates reading YAML properties.
  * <p>
  * Three units are included to this module.
  * <p>
@@ -36,7 +37,7 @@ public abstract class ModulePropertiesTestcase3 {
    */
   @Projection
   @Properties("owner.address")
-  public abstract AddressHandle ownerAddress();
+  public abstract Address ownerAddress();
 
   /**
    * The module startup method.
@@ -45,7 +46,7 @@ public abstract class ModulePropertiesTestcase3 {
    * The values of method arguments will be injected automatically.
    */
   @Startup
-  public void startup(@Inject MovableConsoleHandle console, @Inject AddressHandle ownerAddress) {
+  public void startup(@Inject MovableConsole console, @Inject Address ownerAddress) {
     console.println("City: " + ownerAddress.city());
     console.println("Street: " + ownerAddress.street());
   }

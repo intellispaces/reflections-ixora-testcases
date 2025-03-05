@@ -6,8 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.LoggerFactory;
-import tech.intellispaces.ixora.testcases.http.simple.testcase1.SimpleHttpSample1;
-import tech.intellispaces.ixora.testcases.http.simple.testcase2.SimpleHttpSample2;
+import tech.intellispaces.ixora.testcases.http.simple.testcase1.HttpSampleTestcase1;
+import tech.intellispaces.ixora.testcases.http.simple.testcase2.HttpTestcase2;
 import tech.intellispaces.jaquarius.system.Modules;
 
 import java.io.ByteArrayOutputStream;
@@ -31,8 +31,8 @@ public class SimpleHttpPortTest {
 
   @ParameterizedTest
   @ValueSource(classes = {
-      SimpleHttpSample1.class,
-      SimpleHttpSample2.class
+      HttpSampleTestcase1.class,
+      HttpTestcase2.class
   })
   void testOutput(Class<?> moduleClass) {
     // Given

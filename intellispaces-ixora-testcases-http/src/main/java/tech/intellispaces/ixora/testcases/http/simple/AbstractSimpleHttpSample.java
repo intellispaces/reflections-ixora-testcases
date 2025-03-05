@@ -1,38 +1,39 @@
 package tech.intellispaces.ixora.testcases.http.simple;
 
 import tech.intellispaces.commons.base.collection.ArraysFunctions;
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.http.HttpMethods;
-import tech.intellispaces.ixora.http.HttpRequestHandle;
+import tech.intellispaces.ixora.http.HttpRequest;
 import tech.intellispaces.ixora.http.HttpRequests;
-import tech.intellispaces.ixora.http.HttpResponseHandle;
-import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
-import tech.intellispaces.ixora.http.MovableOutboundHttpPortHandle;
+import tech.intellispaces.ixora.http.HttpResponse;
+import tech.intellispaces.ixora.http.MovableInboundHttpPort;
+import tech.intellispaces.ixora.http.MovableOutboundHttpPort;
 import tech.intellispaces.ixora.okhttp.OkHttpPorts;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.object.reference.ObjectHandleFunctions;
+import tech.intellispaces.jaquarius.object.reference.ObjectHandles;
 
 import java.nio.charset.StandardCharsets;
 
 public abstract class AbstractSimpleHttpSample {
   private static final int PORT_NUMBER = 8080;
 
-  protected abstract MovableInboundHttpPortHandle getInboundPort(int portNumber);
+  protected abstract MovableInboundHttpPort getInboundPort(int portNumber);
 
   @Projection
-  public MovableInboundHttpPortHandle inboundPort() {
+  public MovableInboundHttpPort inboundPort() {
     return getInboundPort(PORT_NUMBER);
   }
 
   @Projection
-  public MovableOutboundHttpPortHandle outboundPort() {
+  public MovableOutboundHttpPort outboundPort() {
     return OkHttpPorts.get().asOutboundHttpPort();
   }
 
   @Startup
-  public void startup(@Inject MovableConsoleHandle console) {
+  public void startup(@Inject MovableConsole console) {
     // Open inbound port
     inboundPort().open();
 
@@ -45,16 +46,16 @@ public abstract class AbstractSimpleHttpSample {
   }
 
   private String call(String endpoint) {
-    HttpRequestHandle request = HttpRequests.get(HttpMethods.get(), "http://localhost:" + PORT_NUMBER + endpoint);
+    HttpRequest request = HttpRequests.get(HttpMethods.get(), "http://localhost:" + PORT_NUMBER + endpoint);
 
-    HttpResponseHandle response = null;
+    HttpResponse response = null;
     try {
       response = outboundPort().exchange(request);
 
       byte[] responseBodyBytes = ArraysFunctions.toByteArray(response.bodyStream().readAll().nativeList());
       return new String(responseBodyBytes, StandardCharsets.UTF_8);
     } finally {
-      ObjectHandleFunctions.releaseSilently(response);
+      ObjectHandleFunctions.releaseSilently(ObjectHandles.handle(response));
     }
   }
 }

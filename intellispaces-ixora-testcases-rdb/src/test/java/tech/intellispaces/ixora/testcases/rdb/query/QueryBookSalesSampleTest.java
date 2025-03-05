@@ -51,7 +51,7 @@ public class QueryBookSalesSampleTest extends DataSourceBasedDBTestCase {
   }
 
   public void testQueryBookSalesSample2() {
-    test(QueryBookSalesSample2.class);
+    test(QueryBookSalesTestcase2.class);
   }
 
   private void test(Class<?> moduleClass) {

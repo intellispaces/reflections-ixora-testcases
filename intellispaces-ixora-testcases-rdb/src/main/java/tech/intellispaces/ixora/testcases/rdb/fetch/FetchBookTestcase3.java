@@ -1,15 +1,15 @@
 package tech.intellispaces.ixora.testcases.rdb.fetch;
 
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.transaction.MovableTransactionHandle;
+import tech.intellispaces.ixora.rdb.transaction.MovableTransaction;
 import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
-import tech.intellispaces.ixora.testcases.rdb.BookHandle;
+import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
 import tech.intellispaces.jaquarius.annotation.AutoGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
@@ -44,9 +44,9 @@ public abstract class FetchBookTestcase3 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject MovableTransactionHandle tx, @Inject MovableConsoleHandle console) {
+  public void startup(@Inject MovableTransaction tx, @Inject MovableConsole console) {
     int bookId = 2;
-    BookHandle book = bookCrudGuide().getById(tx, bookId);
+    Book book = bookCrudGuide().getById(tx, bookId);
 
     console.print("Book title: ");
     console.println(book.title());

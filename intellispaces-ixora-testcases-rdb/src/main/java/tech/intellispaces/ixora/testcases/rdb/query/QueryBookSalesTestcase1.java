@@ -1,16 +1,16 @@
 package tech.intellispaces.ixora.testcases.rdb.query;
 
 import tech.intellispaces.commons.base.type.Types;
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.statement.MovableResultSetHandle;
-import tech.intellispaces.ixora.rdb.transaction.MovableTransactionHandle;
-import tech.intellispaces.ixora.testcases.rdb.BookSalesProjectionHandle;
+import tech.intellispaces.ixora.rdb.statement.MovableResultSet;
+import tech.intellispaces.ixora.rdb.transaction.MovableTransaction;
+import tech.intellispaces.ixora.testcases.rdb.BookSalesProjection;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
@@ -34,10 +34,10 @@ public abstract class QueryBookSalesTestcase1 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject MovableTransactionHandle tx, @Inject MovableConsoleHandle console) {
-    MovableResultSetHandle rs = tx.query(Queries.BOOK_SALES_SQL);
+  public void startup(@Inject MovableTransaction tx, @Inject MovableConsole console) {
+    MovableResultSet rs = tx.query(Queries.BOOK_SALES_SQL);
     while (rs.next()) {
-      BookSalesProjectionHandle bookSales = rs.dataValue(Types.get(BookSalesProjectionHandle.class));
+      BookSalesProjection bookSales = rs.dataValue(Types.get(BookSalesProjection.class));
       console.print("Book title: ");
       console.print(bookSales.title());
       console.print(". Sales: ");

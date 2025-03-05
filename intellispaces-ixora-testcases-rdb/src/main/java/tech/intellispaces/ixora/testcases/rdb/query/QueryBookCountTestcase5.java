@@ -2,14 +2,14 @@ package tech.intellispaces.ixora.testcases.rdb.query;
 
 import tech.intellispaces.commons.action.Action;
 import tech.intellispaces.commons.action.Actions;
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.statement.MovableResultSetHandle;
-import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactoryHandle;
+import tech.intellispaces.ixora.rdb.statement.MovableResultSet;
+import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionalAction;
 import tech.intellispaces.ixora.rdb.transaction.Transactions;
 import tech.intellispaces.jaquarius.annotation.Inject;
@@ -35,9 +35,9 @@ public abstract class QueryBookCountTestcase5 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableTransactionFactoryHandle transactionFactory, @Inject MovableConsoleHandle console) {
+  public void startup(@Inject MovableTransactionFactory transactionFactory, @Inject MovableConsole console) {
     Action action = Actions.get(() -> {
-      MovableResultSetHandle rs = Transactions.current().query(Queries.BOOK_COUNT);
+      MovableResultSet rs = Transactions.current().query(Queries.BOOK_COUNT);
       rs.next();
       console.print("Number books: ");
       console.println(rs.integer32Value("count"));

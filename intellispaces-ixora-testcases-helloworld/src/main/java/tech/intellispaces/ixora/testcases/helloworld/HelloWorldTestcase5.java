@@ -1,16 +1,16 @@
 package tech.intellispaces.ixora.testcases.helloworld;
 
 import tech.intellispaces.ixora.cli.ConsoleDomain;
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
+import tech.intellispaces.jaquarius.object.reference.MovableObjectHandle;
 import tech.intellispaces.jaquarius.space.channel.ChannelIds;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
- * This module demonstrates printing a string to the module console.
+ * This testcase demonstrates printing a string to the module console.
  * <p>
  * The module includes the configuration unit {@link CliConfiguration}. In this unit, a projection called "console"
  * is added to module. The "console" projection refers to the current CLI console of the module.
@@ -28,7 +28,7 @@ public class HelloWorldTestcase5 {
    * Inside the method, the console moves through the channel referenced by channel identifier (CID) with qualifier "Hello, world!".
    */
   @Startup
-  public void startup(@Inject MovableConsoleHandle console) {
+  public void startup(@Inject MovableObjectHandle<ConsoleDomain> console) {
     // Gets identifier of the channel
     String cid = ChannelIds.get(ConsoleDomain.class, ConsoleDomain::println, "");
 

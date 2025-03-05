@@ -1,16 +1,17 @@
 package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 
-import tech.intellispaces.ixora.http.MovableInboundHttpPortHandle;
+import tech.intellispaces.ixora.http.MovableInboundHttpPort;
+import tech.intellispaces.jaquarius.object.reference.ObjectHandles;
 
 public interface SimplePorts {
 
-  static MovableSimpleHttpPortHandle get(MovableInboundHttpPortHandle operativePort) {
-    return new SimpleHttpPortHandleImplWrapper(operativePort);
+  static MovableSimpleHttpPort get(MovableInboundHttpPort operativePort) {
+    return new SimpleHttpPortImplWrapper(operativePort);
   }
 
-  static MovableSimpleHttpPortHandle getAndLink(MovableInboundHttpPortHandle operativePort) {
-    MovableSimpleHttpPortHandle logicalPort = SimplePorts.get(operativePort);
-    operativePort.addProjection(SimpleHttpPortDomain.class, logicalPort);
+  static MovableSimpleHttpPort getAndLink(MovableInboundHttpPort operativePort) {
+    MovableSimpleHttpPort logicalPort = SimplePorts.get(operativePort);
+    ObjectHandles.handle(operativePort).addProjection(SimpleHttpPortDomain.class, logicalPort);
     return logicalPort;
   }
 }

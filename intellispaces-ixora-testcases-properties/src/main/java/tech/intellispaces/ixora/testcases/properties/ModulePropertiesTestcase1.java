@@ -1,18 +1,17 @@
 package tech.intellispaces.ixora.testcases.properties;
 
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.ixora.data.association.PropertiesHandle;
+import tech.intellispaces.ixora.data.association.Properties;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Projection;
-import tech.intellispaces.jaquarius.annotation.Properties;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
- * This module demonstrates reading YAML properties.
+ * This testcase demonstrates reading YAML properties.
  * <p>
  * The module includes the configuration unit {@link CliConfiguration}. In this unit, a projection called "console"
  * is added to module. The "console" projection refers to the current CLI console of the module.
@@ -31,8 +30,8 @@ public abstract class ModulePropertiesTestcase1 {
    * The implementation of this method will be injected automatically.
    */
   @Projection
-  @Properties
-  public abstract PropertiesHandle moduleProperties();
+  @tech.intellispaces.jaquarius.annotation.Properties
+  public abstract Properties moduleProperties();
 
   /**
    * The module startup method.
@@ -41,7 +40,7 @@ public abstract class ModulePropertiesTestcase1 {
    * The values of method arguments will be injected automatically.
    */
   @Startup
-  public void startup(@Inject MovableConsoleHandle console) {
+  public void startup(@Inject MovableConsole console) {
     console.println("City: " + moduleProperties().stringValue("owner.address.city"));
     console.println("Street: " + moduleProperties().stringValue("owner.address.street"));
   }

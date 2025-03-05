@@ -1,19 +1,20 @@
 package tech.intellispaces.ixora.testcases.rdb.fetch;
 
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactoryHandle;
+import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
-import tech.intellispaces.ixora.testcases.rdb.BookHandle;
+import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.TransactionToBookByIdentifierChannel;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
+import tech.intellispaces.jaquarius.object.reference.ObjectHandles;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
@@ -32,7 +33,7 @@ public abstract class FetchBookTestcase6 {
    * Implementation of this method will be auto generated.
    */
   @Inject
-  abstract MovableTransactionFactoryHandle transactionFactory();
+  abstract MovableTransactionFactory transactionFactory();
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -42,11 +43,11 @@ public abstract class FetchBookTestcase6 {
    * @param console value of the projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableConsoleHandle console) {
-    MovableTransactionFactoryHandle transactionFactory = transactionFactory();
+  public void startup(@Inject MovableConsole console) {
+    MovableTransactionFactory transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
       int bookId = 2;
-      BookHandle book = tx.mapThru(TransactionToBookByIdentifierChannel.class, bookId);
+      Book book = ObjectHandles.handle(tx).mapThru(TransactionToBookByIdentifierChannel.class, bookId);
 
       console.print("Book title: ");
       console.println(book.title());
