@@ -1,4 +1,4 @@
-package tech.intellispaces.ixora.testcases.rdb.query;
+package tech.intellispaces.ixora.testcases.rdb.fetch;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
@@ -17,9 +17,9 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for query book count samples.
+ * Tests for fetch book.
  */
-public class QueryBookCountSampleTest extends DataSourceBasedDBTestCase {
+public class FetchBookTest extends DataSourceBasedDBTestCase {
 
   private static final String DATABASE_URL = "jdbc:h2:mem:sample;" +
       "DB_CLOSE_DELAY=-1;" +
@@ -36,7 +36,7 @@ public class QueryBookCountSampleTest extends DataSourceBasedDBTestCase {
 
   @Override
   protected IDataSet getDataSet() throws Exception {
-    return new YamlDataSet(QueryBookCountSampleTest.class.getResourceAsStream("/book_data.yaml"));
+    return new YamlDataSet(FetchBookTest.class.getResourceAsStream("/book_data.yaml"));
   }
 
   @Override
@@ -46,24 +46,28 @@ public class QueryBookCountSampleTest extends DataSourceBasedDBTestCase {
     super.setUp();
   }
 
-  public void testQueryBookCountSample1() {
-    test(QueryBookCountTestcase1.class);
+  public void testFetchBookSample1() {
+    test(FetchBookTestcase1.class);
   }
 
-  public void testQueryBookCountSample2() {
-    test(QueryBookCountTestcase2.class);
+  public void testFetchBookSample2() {
+    test(FetchBookTestcase2.class);
   }
 
-  public void testQueryBookCountSample3() {
-    test(QueryBookCountTestcase3.class);
+  public void testFetchBookSample3() {
+    test(FetchBookTestcase3.class);
   }
 
-  public void testQueryBookCountSample4() {
-    test(QueryBookCountTestcase4.class);
+  public void testFetchBookSample4() {
+    test(FetchBookTestcase4.class);
   }
 
-  public void testQueryBookCountSample5() {
-    test(QueryBookCountTestcase5.class);
+  public void testFetchBookSample5() {
+    test(FetchBookTestcase5.class);
+  }
+
+  public void testFetchBookSample6() {
+    test(FetchBookTestcase6.class);
   }
 
   private void test(Class<?> moduleClass) {
@@ -77,6 +81,9 @@ public class QueryBookCountSampleTest extends DataSourceBasedDBTestCase {
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
-    assertThat(output).isEqualTo("Number books: 4" + System.lineSeparator());
+    assertThat(output).isEqualTo(
+        "Book title: The Hobbit" + System.lineSeparator() +
+        "Book author: J. R. R. Tolkien" + System.lineSeparator()
+    );
   }
 }

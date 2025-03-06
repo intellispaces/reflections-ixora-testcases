@@ -22,11 +22,11 @@ public interface OrderDomain extends TransactionalEntityDomain {
   @Id
   @Column(name = "id")
   @Channel("019020aa-06cf-41e3-b378-df0e7ad67728")
-  Integer id();
+  int id();
 
   @Column(name = "book_id")
   @Channel("b9508e41-2f01-4c56-93b0-5b513e99ec17")
-  Integer bookId();
+  int bookId();
 
   @ManyToOne
   @JoinColumn(name = "book_id", referencedColumnName = "id")
@@ -35,11 +35,11 @@ public interface OrderDomain extends TransactionalEntityDomain {
 
   @Column(name = "price")
   @Channel("a9fb5771-8d2c-473d-8129-f7e3a34fa5a4")
-  Integer price();
+  int price();
 
   @Projection(query = "SELECT COUNT(*) FROM book_order bo WHERE bo.book_id = :this.bookId")
   @Channel("686b6e22-13a2-45e2-988b-8fb166b77fb2")
-  Integer totalCountOrderForBook();
+  int totalCountOrderForBook();
 
   @Channel("7d99e151-2493-4114-9a44-4df37db3d63a")
   TransactionalEntityDomain asTransactionalEntity();

@@ -18,7 +18,7 @@ public interface BookDomain {
   @Id
   @Column(name = "id")
   @Channel("eb7f9644-760c-4d77-bc04-d83014160569")
-  Integer id();
+  int id();
 
   @Column(name = "title")
   @Channel("22319064-8b93-491e-bf62-51e64e399ff6")

@@ -17,9 +17,9 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for query book sales samples.
+ * Tests for query book count.
  */
-public class QueryBookSalesSampleTest extends DataSourceBasedDBTestCase {
+public class QueryBookCountTest extends DataSourceBasedDBTestCase {
 
   private static final String DATABASE_URL = "jdbc:h2:mem:sample;" +
       "DB_CLOSE_DELAY=-1;" +
@@ -36,7 +36,7 @@ public class QueryBookSalesSampleTest extends DataSourceBasedDBTestCase {
 
   @Override
   protected IDataSet getDataSet() throws Exception {
-    return new YamlDataSet(QueryBookSalesSampleTest.class.getResourceAsStream("/book_data.yaml"));
+    return new YamlDataSet(QueryBookCountTest.class.getResourceAsStream("/book_data.yaml"));
   }
 
   @Override
@@ -46,12 +46,24 @@ public class QueryBookSalesSampleTest extends DataSourceBasedDBTestCase {
     super.setUp();
   }
 
-  public void testQueryBookSalesSample1() {
-    test(QueryBookSalesTestcase1.class);
+  public void testQueryBookCountSample1() {
+    test(QueryBookCountTestcase1.class);
   }
 
-  public void testQueryBookSalesSample2() {
-    test(QueryBookSalesTestcase2.class);
+  public void testQueryBookCountSample2() {
+    test(QueryBookCountTestcase2.class);
+  }
+
+  public void testQueryBookCountSample3() {
+    test(QueryBookCountTestcase3.class);
+  }
+
+  public void testQueryBookCountSample4() {
+    test(QueryBookCountTestcase4.class);
+  }
+
+  public void testQueryBookCountSample5() {
+    test(QueryBookCountTestcase5.class);
   }
 
   private void test(Class<?> moduleClass) {
@@ -65,11 +77,6 @@ public class QueryBookSalesSampleTest extends DataSourceBasedDBTestCase {
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
-    assertThat(output).isEqualTo(
-        "Book title: Winnie-the-Pooh. Sales: 10" + System.lineSeparator() +
-        "Book title: The Hobbit. Sales: 50" + System.lineSeparator() +
-        "Book title: The Bridges of Madison County. Sales: 0" + System.lineSeparator() +
-        "Book title: The Eye of the Moon. Sales: 15" + System.lineSeparator()
-    );
+    assertThat(output).isEqualTo("Number books: 4" + System.lineSeparator());
   }
 }

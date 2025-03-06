@@ -4,6 +4,7 @@ import tech.intellispaces.commons.base.type.Types;
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
+import tech.intellispaces.ixora.data.collection.List;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
@@ -23,7 +24,7 @@ import tech.intellispaces.jaquarius.system.Modules;
     SnakeyamlGuide.class,
     SimplePropertiesToDataGuide.class
 })
-public abstract class QueryBookSalesTestcase1 {
+public abstract class QueryBookSalesTestcase2 {
 
   /**
    * This method will be invoked automatically after the module is started.<p/>
@@ -36,12 +37,12 @@ public abstract class QueryBookSalesTestcase1 {
   @Transactional
   public void startup(@Inject MovableTransaction tx, @Inject MovableConsole console) {
     MovableResultSet rs = tx.query(Queries.BOOK_SALES_SQL);
-    while (rs.next()) {
-      BookSalesProjection bookSales = rs.dataValue(Types.get(BookSalesProjection.class));
+    List<BookSalesProjection> bookSales = rs.dataList(Types.get(BookSalesProjection.class));
+    for (BookSalesProjection bookSale : bookSales.nativeList()) {
       console.print("Book title: ");
-      console.print(bookSales.title());
+      console.print(bookSale.title());
       console.print(". Sales: ");
-      console.println(bookSales.sales());
+      console.println(bookSale.sales());
     }
   }
 
@@ -49,6 +50,6 @@ public abstract class QueryBookSalesTestcase1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.load(QueryBookSalesTestcase1.class, args).start();
+    Modules.load(QueryBookSalesTestcase2.class, args).start();
   }
 }

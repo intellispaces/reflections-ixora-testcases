@@ -21,5 +21,5 @@ public interface BookSalesProjectionDomain {
 
   @Column(name = "sales")
   @Channel("e0e85e8f-27e4-4138-a14b-840e2f0c4241")
-  Integer sales();
+  int sales();
 }
