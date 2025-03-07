@@ -1,6 +1,6 @@
 package tech.intellispaces.ixora.testcases.rdb.query;
 
-import tech.intellispaces.commons.base.type.Types;
+import tech.intellispaces.commons.type.Types;
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
