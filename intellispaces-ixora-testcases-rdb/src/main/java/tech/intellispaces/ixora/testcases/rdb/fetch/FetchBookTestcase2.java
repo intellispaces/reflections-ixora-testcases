@@ -7,7 +7,7 @@ import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.transaction.Transactions;
+import tech.intellispaces.ixora.rdb.transaction.MovableTransaction;
 import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
@@ -39,13 +39,14 @@ public abstract class FetchBookTestcase2 {
    *
    * The values of method arguments will be injected automatically.
    *
+   * @param tx current transaction.
    * @param console value of the projection named 'console'.
    */
   @Startup
   @Transactional
-  public void startup(@Inject MovableConsole console) {
+  public void startup(@Inject MovableTransaction tx, @Inject MovableConsole console) {
     int bookId = 2;
-    Book book = bookCrudGuide().getById(Transactions.current(), bookId);
+    Book book = bookCrudGuide().getById(tx, bookId);
 
     console.print("Book title: ");
     console.println(book.title());

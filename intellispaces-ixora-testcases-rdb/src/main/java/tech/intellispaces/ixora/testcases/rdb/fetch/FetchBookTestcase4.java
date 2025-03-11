@@ -8,10 +8,8 @@ import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
-import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
-import tech.intellispaces.jaquarius.annotation.AutoGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
@@ -28,11 +26,10 @@ import tech.intellispaces.jaquarius.system.Modules;
 public abstract class FetchBookTestcase4 {
 
   /**
-   * Book CRUD auto guide.
+   * Book CRUD default guide.
    */
   @Inject
-  @AutoGuide
-  abstract BookCrudGuide bookCrudGuide();
+  abstract DefaultBookCrudGuide bookCrudGuide();
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>

@@ -10,9 +10,11 @@ import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
+import tech.intellispaces.ixora.testcases.rdb.TransactionToBookByIdentifierChannel;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
+import tech.intellispaces.jaquarius.object.reference.ObjectHandles;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
@@ -24,12 +26,6 @@ import tech.intellispaces.jaquarius.system.Modules;
     DefaultBookCrudGuide.class
 })
 public abstract class FetchBookTestcase5 {
-
-  /**
-   * Book CRUD default guide.
-   */
-  @Inject
-  abstract DefaultBookCrudGuide bookCrudGuide();
 
   /**
    * This method returns projection named 'transactionFactory'.<p/>
@@ -51,7 +47,7 @@ public abstract class FetchBookTestcase5 {
     MovableTransactionFactory transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
       int bookId = 2;
-      Book book = bookCrudGuide().getById(tx, bookId);
+      Book book = ObjectHandles.handle(tx).mapThru(TransactionToBookByIdentifierChannel.class, bookId);
 
       console.print("Book title: ");
       console.println(book.title());

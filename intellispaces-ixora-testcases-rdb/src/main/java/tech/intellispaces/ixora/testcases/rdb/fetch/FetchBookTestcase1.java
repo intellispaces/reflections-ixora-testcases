@@ -5,7 +5,9 @@ import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
+import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
+import tech.intellispaces.ixora.rdb.transaction.Transactions;
 import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
@@ -40,9 +42,10 @@ public abstract class FetchBookTestcase1 {
    * @param console value of the projection named 'console'.
    */
   @Startup
+  @Transactional
   public void startup(@Inject MovableConsole console) {
     int bookId = 2;
-    Book book = bookCrudGuide().getById(bookId);
+    Book book = bookCrudGuide().getById(Transactions.current(), bookId);
 
     console.print("Book title: ");
     console.println(book.title());
