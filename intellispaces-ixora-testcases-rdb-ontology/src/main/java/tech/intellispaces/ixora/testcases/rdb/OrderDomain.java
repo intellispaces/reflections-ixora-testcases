@@ -5,16 +5,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import tech.intellispaces.ixora.rdb.annotation.PersistableEntity;
+import tech.intellispaces.ixora.rdb.annotation.PersistedEntity;
 import tech.intellispaces.ixora.rdb.annotation.Projection;
 import tech.intellispaces.ixora.rdb.transaction.TransactionalEntityDomain;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;
 
 /**
- * This domain represents the Book Order persistable entity.
+ * This domain represents the Book Order persisted entity.
  */
-@PersistableEntity
+@PersistedEntity
 @Table(schema = "books", name = "book_order")
 @Domain("d278ea68-26a3-4b78-901e-92b6f64d3b15")
 public interface OrderDomain extends TransactionalEntityDomain {
@@ -37,7 +37,7 @@ public interface OrderDomain extends TransactionalEntityDomain {
   @Channel("a9fb5771-8d2c-473d-8129-f7e3a34fa5a4")
   int price();
 
-  @Projection(query = "SELECT COUNT(*) FROM book_order bo WHERE bo.book_id = :this.bookId")
+  @Projection(query = "SELECT COUNT(*) FROM book_order bo WHERE bo.book_id = @bookId")
   @Channel("686b6e22-13a2-45e2-988b-8fb166b77fb2")
   int totalCountOrderForBook();
 

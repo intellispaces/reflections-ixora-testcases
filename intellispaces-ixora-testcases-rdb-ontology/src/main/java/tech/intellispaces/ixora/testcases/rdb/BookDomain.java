@@ -3,14 +3,14 @@ package tech.intellispaces.ixora.testcases.rdb;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import tech.intellispaces.ixora.rdb.annotation.PersistableEntity;
+import tech.intellispaces.ixora.rdb.annotation.PersistedEntity;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;
 
 /**
- * This domain represents the Book persistable entity.
+ * This domain represents the Book persisted entity.
  */
-@PersistableEntity
+@PersistedEntity
 @Table(schema = "books", name = "book")
 @Domain("f80a3457-66ad-42c9-8372-715a9f7dd5f4")
 public interface BookDomain {
