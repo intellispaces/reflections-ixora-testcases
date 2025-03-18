@@ -2,6 +2,7 @@ package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 
 import tech.intellispaces.ixora.http.HttpRequest;
 import tech.intellispaces.ixora.http.HttpResponse;
+import tech.intellispaces.ixora.http.HttpResponseHandle;
 import tech.intellispaces.ixora.http.HttpResponses;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuide;
 import tech.intellispaces.jaquarius.annotation.AutoGuide;
@@ -19,10 +20,10 @@ public abstract class SimpleHttpPortExchangeGuideImpl implements SimpleHttpPortE
 
   @Mapper
   @Override
-  public HttpResponse exchange(SimpleHttpPort port, HttpRequest request) {
+  public HttpResponseHandle exchange(SimpleHttpPort port, HttpRequest request) {
     String path = request.requestURI().path();
 
-    HttpResponse response;
+    HttpResponseHandle response;
     switch (path) {
       case "/date/current":
         response = HttpResponses.ok(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
