@@ -8,6 +8,7 @@ import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.transaction.MovableTransaction;
+import tech.intellispaces.ixora.rdb.transaction.Transactions;
 import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
@@ -17,6 +18,11 @@ import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
+/**
+ * This testcase demonstrates getting a persisted entity from the database.
+ * <p>
+ * The CRUD auto guide is used for this. The specific guide will be selected automatically.
+ */
 @Module({
     CliConfiguration.class,
     RdbConfiguration.class,
@@ -28,19 +34,21 @@ import tech.intellispaces.jaquarius.system.Modules;
 public abstract class FetchBookTestcase2 {
 
   /**
-   * Book CRUD auto guide.
+   * The book CRUD auto guide.
    */
   @Inject
   @AutoGuide
   abstract BookCrudGuide bookCrudGuide();
 
   /**
-   * This method will be invoked automatically after the module is started.<p/>
-   *
+   * This method will be invoked automatically after the module is started.
+   * <p>
+   * The method is executed inside a transaction, as the {@link Transactional} annotation is specified.
+   * <p>
    * The values of method arguments will be injected automatically.
    *
-   * @param tx current transaction.
-   * @param console value of the projection named 'console'.
+   * @param tx the current transaction
+   * @param console value of the module projection named 'console'.
    */
   @Startup
   @Transactional

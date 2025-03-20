@@ -54,6 +54,10 @@ public class QueryBookSalesTest extends DataSourceBasedDBTestCase {
     test(QueryBookSalesTestcase2.class);
   }
 
+  public void testQueryBookSalesSample3() {
+    test(QueryBookSalesTestcase3.class);
+  }
+
   private void test(Class<?> moduleClass) {
     // Given
     var os = new ByteArrayOutputStream();

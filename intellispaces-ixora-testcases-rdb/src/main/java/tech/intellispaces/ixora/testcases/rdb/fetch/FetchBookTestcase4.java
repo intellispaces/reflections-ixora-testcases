@@ -15,6 +15,11 @@ import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
+/**
+ * This testcase demonstrates getting a persisted entity from the database.
+ * <p>
+ * The default implementation of CRUD guide is used for this.
+ */
 @Module({
     CliConfiguration.class,
     RdbConfiguration.class,
@@ -26,7 +31,7 @@ import tech.intellispaces.jaquarius.system.Modules;
 public abstract class FetchBookTestcase4 {
 
   /**
-   * Book CRUD default guide.
+   * The book default implementation of the CRUD guide.
    */
   @Inject
   abstract DefaultBookCrudGuide bookCrudGuide();
@@ -40,11 +45,13 @@ public abstract class FetchBookTestcase4 {
   abstract MovableTransactionFactory transactionFactory();
 
   /**
-   * This method will be invoked automatically after the module is started.<p/>
-   *
+   * This method will be invoked automatically after the module is started.
+   * <p>
+   * The transaction factory {@link #transactionFactory()} is used to create a transaction.
+   * <p>
    * The values of method arguments will be injected automatically.
    *
-   * @param console value of the projection named 'console'.
+   * @param console value of the module projection named 'console'.
    */
   @Startup
   public void startup(@Inject MovableConsole console) {

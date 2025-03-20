@@ -17,6 +17,8 @@ import tech.intellispaces.jaquarius.object.reference.ObjectReferenceFunctions;
 
 import java.nio.charset.StandardCharsets;
 
+import static tech.intellispaces.commons.collection.CollectionFunctions.toList;
+
 public abstract class AbstractSimpleHttpSample {
   private static final int PORT_NUMBER = 8080;
 
@@ -52,7 +54,7 @@ public abstract class AbstractSimpleHttpSample {
     try {
       response = outboundPort().exchange(request);
 
-      byte[] responseBodyBytes = ArraysFunctions.toByteArray(response.bodyStream().readAll().nativeList());
+      byte[] responseBodyBytes = ArraysFunctions.toByteArray(toList(response.bodyStream().readAll().iterator()));
       return new String(responseBodyBytes, StandardCharsets.UTF_8);
     } finally {
       ObjectReferenceFunctions.releaseSilently(ObjectHandles.handle(response));

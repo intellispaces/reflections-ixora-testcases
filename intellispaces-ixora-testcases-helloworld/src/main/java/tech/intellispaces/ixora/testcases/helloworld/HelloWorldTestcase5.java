@@ -6,7 +6,6 @@ import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.object.reference.MovableObjectHandle;
-import tech.intellispaces.jaquarius.space.channel.ChannelIds;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
@@ -25,15 +24,14 @@ public class HelloWorldTestcase5 {
    * All arguments of the startup method will be injected automatically.
    * In this case, the value of the namesake projection of the module will be inserted into the "console" parameter.
    * <p>
-   * Inside the method, the console moves through the channel referenced by channel identifier (CID) with qualifier "Hello, world!".
+   * Inside the method, the console moves through the channel referenced by the method reference {@link ConsoleDomain#println(String)}
+   * with qualifier "Hello, world!".
+   *
+   * @param console value of the module projection named 'console'.
    */
   @Startup
   public void startup(@Inject MovableObjectHandle<ConsoleDomain> console) {
-    // Gets identifier of the channel
-    String cid = ChannelIds.get(ConsoleDomain.class, ConsoleDomain::println, "");
-
-    // Moves console through channel
-    console.moveThru(cid, "Hello, world!");
+    console.moveThru(ConsoleDomain::println, "Hello, world!");
   }
 
   /**

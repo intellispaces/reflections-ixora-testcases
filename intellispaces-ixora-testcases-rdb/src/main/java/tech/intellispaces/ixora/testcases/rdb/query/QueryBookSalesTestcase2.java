@@ -5,21 +5,23 @@ import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.collection.List;
-import tech.intellispaces.ixora.data.collection.ListHandle;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.statement.MovableResultSet;
-import tech.intellispaces.ixora.rdb.statement.MovableResultSetHandle;
 import tech.intellispaces.ixora.rdb.transaction.MovableTransaction;
-import tech.intellispaces.ixora.rdb.transaction.MovableTransactionHandle;
 import tech.intellispaces.ixora.testcases.rdb.BookSalesProjection;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
+import static tech.intellispaces.ixora.testcases.rdb.query.QueryBookSql.SELECT_BOOK_SALES;
+
+/**
+ * This testcase demonstrates querying from the database.
+ */
 @Module({
     CliConfiguration.class,
     RdbConfiguration.class,
@@ -30,18 +32,21 @@ import tech.intellispaces.jaquarius.system.Modules;
 public abstract class QueryBookSalesTestcase2 {
 
   /**
-   * This method will be invoked automatically after the module is started.<p/>
-   *
+   * This method will be invoked automatically after the module is started.
+   * <p>
+   * The method is executed inside a transaction, as the {@link Transactional} annotation is specified.
+   * <p>
    * The values of method arguments will be injected automatically.
    *
-   * @param console value of the projection named 'console'.
+   * @param tx the current transaction
+   * @param console value of the module projection named 'console'.
    */
   @Startup
   @Transactional
-  public void startup(@Inject MovableTransactionHandle tx, @Inject MovableConsole console) {
-    MovableResultSetHandle rs = tx.query(Queries.BOOK_SALES_SQL);
-    ListHandle<BookSalesProjection> bookSales = rs.dataList(Types.get(BookSalesProjection.class));
-    for (BookSalesProjection bookSale : bookSales.nativeList()) {
+  public void startup(@Inject MovableTransaction tx, @Inject MovableConsole console) {
+    MovableResultSet rs = tx.query(SELECT_BOOK_SALES);
+    List<BookSalesProjection> bookSales = rs.dataList(Types.get(BookSalesProjection.class));
+    for (BookSalesProjection bookSale : bookSales) {
       console.print("Book title: ");
       console.print(bookSale.title());
       console.print(". Sales: ");

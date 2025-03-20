@@ -1,11 +1,10 @@
 package tech.intellispaces.ixora.testcases.helloworld;
 
-import tech.intellispaces.ixora.cli.ConsoleDomain;
+import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.jaquarius.object.reference.MovableObjectHandle;
 import tech.intellispaces.jaquarius.system.Modules;
 
 /**
@@ -15,21 +14,25 @@ import tech.intellispaces.jaquarius.system.Modules;
  * is added to module. The "console" projection refers to the current CLI console of the module.
  */
 @Module(CliConfiguration.class)
-public class HelloWorldTestcase4 {
+public abstract class HelloWorldTestcase4 {
+
+  /**
+   * The implementation of this method will be injected automatically.
+   * <p>
+   * In this case, this method will return the target of the module's "console" projection.
+   */
+  @Inject
+  abstract MovableConsole console();
 
   /**
    * The module startup method.
    * This method will be invoked automatically after the module is started.
    * <p>
-   * All arguments of the startup method will be injected automatically.
-   * In this case, the value of the namesake projection of the module will be inserted into the "console" parameter.
-   * <p>
-   * Inside the method, the console moves through the channel referenced by the method reference {@link ConsoleDomain#println(String)}
-   * with qualifier "Hello, world!".
+   * Inside the method, the "console" method is called to get the current console.
    */
   @Startup
-  public void startup(@Inject MovableObjectHandle<ConsoleDomain> console) {
-    console.moveThru(ConsoleDomain::println, "Hello, world!");
+  public void startup() {
+    console().println("Hello, world!");
   }
 
   /**

@@ -27,6 +27,8 @@ public class HelloWorldTestcase3 {
    * <p>
    * Inside the method, the console moves through the channel referenced by the class {@link ConsolePrintlnStringChannel}
    * with qualifier "Hello, world!".
+   *
+   * @param console value of the module projection named 'console'.
    */
   @Startup
   public void startup(@Inject MovableObjectHandle<ConsoleDomain> console) {

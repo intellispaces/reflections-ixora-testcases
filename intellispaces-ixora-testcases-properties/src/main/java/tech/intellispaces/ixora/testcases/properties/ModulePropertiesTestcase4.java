@@ -55,6 +55,8 @@ public abstract class ModulePropertiesTestcase4 {
    * This method will be invoked automatically after the module is started.
    * <p>
    * The values of method arguments will be injected automatically.
+   *
+   * @param console value of the module projection named 'console'.
    */
   @Startup
   public void startup(@Inject MovableConsole console) {

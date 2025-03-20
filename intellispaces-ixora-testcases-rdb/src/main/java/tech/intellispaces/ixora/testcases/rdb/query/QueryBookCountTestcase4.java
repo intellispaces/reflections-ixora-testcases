@@ -14,6 +14,11 @@ import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
+import static tech.intellispaces.ixora.testcases.rdb.query.QueryBookSql.SELECT_BOOK_COUNT;
+
+/**
+ * This testcase demonstrates querying from the database.
+ */
 @Module({
     CliConfiguration.class,
     RdbConfiguration.class,
@@ -24,17 +29,17 @@ import tech.intellispaces.jaquarius.system.Modules;
 public abstract class QueryBookCountTestcase4 {
 
   /**
-   * This method will be invoked automatically after the module is started.<p/>
-   *
+   * This method will be invoked automatically after the module is started.
+   * <p>
    * The values of method arguments will be injected automatically.
    *
-   * @param transactionFactory transaction factory.
-   * @param console value of the projection named 'console'.
+   * @param transactionFactory the value of the module projection named 'transactionFactory' (transaction factory).
+   * @param console the value of the module projection named 'console'.
    */
   @Startup
   public void startup(@Inject MovableTransactionFactory transactionFactory, @Inject MovableConsole console) {
     TransactionFunctions.transactional(transactionFactory, tx -> {
-      MovableResultSet rs = tx.query(Queries.BOOK_COUNT);
+      MovableResultSet rs = tx.query(SELECT_BOOK_COUNT);
       rs.next();
       console.print("Number books: ");
       console.println(rs.integer32Value("count"));

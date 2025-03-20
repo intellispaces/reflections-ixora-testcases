@@ -5,9 +5,11 @@ import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
+import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
+import tech.intellispaces.ixora.rdb.transaction.Transactions;
 import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
@@ -17,6 +19,11 @@ import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.system.Modules;
 
+/**
+ * This testcase demonstrates getting a persisted entity from the database.
+ * <p>
+ * The CRUD auto guide is used for this. The specific guide will be selected automatically.
+ */
 @Module({
     CliConfiguration.class,
     RdbConfiguration.class,
@@ -28,14 +35,14 @@ import tech.intellispaces.jaquarius.system.Modules;
 public abstract class FetchBookTestcase3 {
 
   /**
-   * Book CRUD auto guide.
+   * The book CRUD auto guide.
    */
   @Inject
   @AutoGuide
   abstract BookCrudGuide bookCrudGuide();
 
   /**
-   * This method returns projection named 'transactionFactory'.<p/>
+   * This method returns module projection named 'transactionFactory'.<p/>
    *
    * Implementation of this method will be auto generated.
    */
@@ -43,11 +50,13 @@ public abstract class FetchBookTestcase3 {
   abstract MovableTransactionFactory transactionFactory();
 
   /**
-   * This method will be invoked automatically after the module is started.<p/>
-   *
+   * This method will be invoked automatically after the module is started.
+   * <p>
+   * The transaction factory {@link #transactionFactory()} is used to create a transaction.
+   * <p>
    * The values of method arguments will be injected automatically.
    *
-   * @param console value of the projection named 'console'.
+   * @param console value of the module projection named 'console'.
    */
   @Startup
   public void startup(@Inject MovableConsole console) {
