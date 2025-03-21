@@ -24,7 +24,7 @@ public class SimpleHttpTestcase2 extends AbstractSimpleHttpSample {
     MovableInboundHttpPort operativePort = JettyServerPorts.get(
         portNumber, SimplePortExchangeChannel.class
     ).asInboundHttpPort();
-    MovableSimpleHttpPort logicalPort = SimpleHttpPorts.getAndLink(operativePort);
+    MovableSimpleHttpPort logicalPort = SimpleHttpPorts2.getAndLink(operativePort);
     return logicalPort.asInboundHttpPort();
   }
 
