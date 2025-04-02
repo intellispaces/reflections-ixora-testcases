@@ -8,6 +8,7 @@ import tech.intellispaces.ixora.internet.uri.SplitUriPathStringToPartsGuideImpl;
 import tech.intellispaces.ixora.jetty.JettyServerPorts;
 import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpSample;
 import tech.intellispaces.jaquarius.annotation.Module;
+import tech.intellispaces.jaquarius.object.reference.ObjectHandles;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
@@ -24,7 +25,9 @@ public class SimpleHttpTestcase2 extends AbstractSimpleHttpSample {
     MovableInboundHttpPort operativePort = JettyServerPorts.create(
         portNumber, SimplePortExchangeChannel.class
     ).asInboundHttpPort();
-    MovableSimpleHttpPort logicalPort = SimpleHttpPorts2.getAndLink(operativePort);
+
+    MovableSimpleHttpPort logicalPort = SimpleHttpPorts.create(operativePort);
+    ObjectHandles.handle(operativePort).addProjection(SimpleHttpPortDomain.class, logicalPort);
     return logicalPort.asInboundHttpPort();
   }
 
