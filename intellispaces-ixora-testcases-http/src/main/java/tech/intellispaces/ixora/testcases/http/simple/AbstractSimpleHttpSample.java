@@ -3,10 +3,8 @@ package tech.intellispaces.ixora.testcases.http.simple;
 import tech.intellispaces.commons.collection.ArraysFunctions;
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.http.HttpMethods;
-import tech.intellispaces.ixora.http.HttpMethodsCustomizer;
 import tech.intellispaces.ixora.http.HttpRequest;
 import tech.intellispaces.ixora.http.HttpRequests;
-import tech.intellispaces.ixora.http.HttpRequestsCustomizer;
 import tech.intellispaces.ixora.http.HttpResponseHandle;
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.ixora.http.MovableOutboundHttpPortHandle;
@@ -33,7 +31,7 @@ public abstract class AbstractSimpleHttpSample {
 
   @Projection
   public MovableOutboundHttpPortHandle outboundPort() {
-    return OkHttpPorts.get().asOutboundHttpPort();
+    return OkHttpPorts.create().asOutboundHttpPort();
   }
 
   @Startup
@@ -50,7 +48,7 @@ public abstract class AbstractSimpleHttpSample {
   }
 
   private String call(String endpoint) {
-    HttpRequest request = HttpRequestsCustomizer.get(HttpMethodsCustomizer.get(), "http://localhost:" + PORT_NUMBER + endpoint);
+    HttpRequest request = HttpRequests.create(HttpMethods.get(), "http://localhost:" + PORT_NUMBER + endpoint);
 
     HttpResponseHandle response = null;
     try {
