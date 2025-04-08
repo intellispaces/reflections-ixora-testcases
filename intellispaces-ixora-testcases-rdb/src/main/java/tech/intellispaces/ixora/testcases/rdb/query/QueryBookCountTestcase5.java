@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.testcases.rdb.query;
 
-import tech.intellispaces.commons.action.Action;
-import tech.intellispaces.commons.action.Actions;
+import tech.intellispaces.actions.Action;
+import tech.intellispaces.actions.Actions;
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
