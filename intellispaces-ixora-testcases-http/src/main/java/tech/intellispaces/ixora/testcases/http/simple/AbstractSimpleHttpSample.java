@@ -57,7 +57,7 @@ public abstract class AbstractSimpleHttpSample {
       byte[] responseBodyBytes = ArraysFunctions.toByteArray(toList(response.bodyStream().readAll().iterator()));
       return new String(responseBodyBytes, StandardCharsets.UTF_8);
     } finally {
-      ObjectReferenceFunctions.releaseSilently(ObjectHandles.handle(response));
+      ObjectReferenceFunctions.unbindSilently(ObjectHandles.handle(response));
     }
   }
 }
