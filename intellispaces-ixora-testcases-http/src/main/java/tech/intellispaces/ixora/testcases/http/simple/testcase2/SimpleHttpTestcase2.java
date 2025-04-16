@@ -5,10 +5,9 @@ import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuideImpl;
 import tech.intellispaces.ixora.internet.uri.JoinBasePathStringWithEndpointStringGuideImpl;
 import tech.intellispaces.ixora.internet.uri.SplitUriPathStringToPartsGuideImpl;
-import tech.intellispaces.ixora.jetty.JettyServerPorts;
-import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpSample;
+import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpModule;
 import tech.intellispaces.jaquarius.annotation.Module;
-import tech.intellispaces.jaquarius.object.reference.ObjectHandles;
+import tech.intellispaces.jaquarius.object.reference.DownwardObjectFactory;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
@@ -18,17 +17,13 @@ import tech.intellispaces.jaquarius.system.Modules;
     CliConfiguration.class,
     SimpleHttpPortGuideImpl.class
 })
-public class SimpleHttpTestcase2 extends AbstractSimpleHttpSample {
+public class SimpleHttpTestcase2 extends AbstractSimpleHttpModule {
 
   @Override
-  protected MovableInboundHttpPort getInboundPort(int portNumber) {
-    MovableInboundHttpPort operativePort = JettyServerPorts.create(
-        portNumber, SimplePortExchangeChannel.class
-    ).asInboundHttpPort();
-
-    MovableSimpleHttpPort logicalPort = SimpleHttpPorts.create(operativePort);
-    ObjectHandles.handle(operativePort).addProjection(SimpleHttpPortDomain.class, logicalPort);
-    return logicalPort.asInboundHttpPort();
+  protected MovableInboundHttpPort createInboundPort(
+      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortHandleFactory
+  ) {
+    return SimpleHttpPorts.create(underlyingPortHandleFactory).asInboundHttpPort();
   }
 
   /**

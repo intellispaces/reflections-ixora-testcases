@@ -21,7 +21,7 @@ public interface SimpleHttpPortDomain extends InboundHttpPortDomain {
 
   @Override
   @Channel(value = "2092e749-cd80-4788-aa23-4f6784e26000", allowedTraverse = TraverseTypes.Moving)
-  SimpleHttpPortDomain close();
+  SimpleHttpPortDomain shut();
 
   @Override
   @Channel(

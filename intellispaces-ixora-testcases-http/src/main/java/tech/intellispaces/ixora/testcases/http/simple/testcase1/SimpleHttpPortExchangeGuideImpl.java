@@ -1,7 +1,6 @@
 package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 
 import tech.intellispaces.ixora.http.HttpRequest;
-import tech.intellispaces.ixora.http.HttpResponse;
 import tech.intellispaces.ixora.http.HttpResponseHandle;
 import tech.intellispaces.ixora.http.HttpResponses;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuide;
@@ -22,19 +21,14 @@ public abstract class SimpleHttpPortExchangeGuideImpl implements SimpleHttpPortE
   @Override
   public HttpResponseHandle exchange(SimpleHttpPort port, HttpRequest request) {
     String path = request.requestURI().path();
-
-    HttpResponseHandle response;
-    switch (path) {
-      case "/date/current":
-        response = HttpResponses.ok(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
-        break;
-      case "/welcome/hello":
+    return switch (path) {
+      case "/date/current" -> HttpResponses.ok(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
+      case "/welcome/hello" -> {
         String name = getUriQueryParamGuide().map(request.requestURI(), "name").get(0);
-        response = HttpResponses.ok("Hello, " + name + "!");
-        break;
-      default:
-        response = HttpResponses.notFound();
-    }
-    return response;
+        yield HttpResponses.ok("Hello, " + name + "!");
+      }
+      default -> HttpResponses.notFound();
+    };
   }
 }
+

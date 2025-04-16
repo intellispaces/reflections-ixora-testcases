@@ -3,9 +3,9 @@ package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuideImpl;
-import tech.intellispaces.ixora.jetty.JettyServerPorts;
-import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpSample;
+import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpModule;
 import tech.intellispaces.jaquarius.annotation.Module;
+import tech.intellispaces.jaquarius.object.reference.DownwardObjectFactory;
 import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
@@ -13,15 +13,13 @@ import tech.intellispaces.jaquarius.system.Modules;
     GetUriQueryParamGuideImpl.class,
     CliConfiguration.class
 })
-public class SimpleHttpTestcase1 extends AbstractSimpleHttpSample {
+public class SimpleHttpTestcase1 extends AbstractSimpleHttpModule {
 
   @Override
-  protected MovableInboundHttpPort getInboundPort(int portNumber) {
-    MovableInboundHttpPort operativePort = JettyServerPorts.create(
-        portNumber, SimpleHttpPortExchangeChannel.class
-    ).asInboundHttpPort();
-    MovableSimpleHttpPort logicalPort = SimplePortsCustomizer.getAndLink(operativePort);
-    return logicalPort.asInboundHttpPort();
+  protected MovableInboundHttpPort createInboundPort(
+      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortHandleFactory
+  ) {
+    return SimpleHttpPorts.create(underlyingPortHandleFactory);
   }
 
   /**

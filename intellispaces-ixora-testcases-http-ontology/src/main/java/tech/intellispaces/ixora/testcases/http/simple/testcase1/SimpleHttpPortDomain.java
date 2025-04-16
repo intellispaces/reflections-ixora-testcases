@@ -1,5 +1,7 @@
 package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 
+import tech.intellispaces.ixora.http.HttpRequestDomain;
+import tech.intellispaces.ixora.http.HttpResponseDomain;
 import tech.intellispaces.ixora.http.InboundHttpPortDomain;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;
@@ -15,5 +17,13 @@ public interface SimpleHttpPortDomain extends InboundHttpPortDomain {
   SimpleHttpPortDomain open();
 
   @Channel(value = "19df3550-16cc-4ea4-a34b-fb59674e973a", allowedTraverse = TraverseTypes.Moving)
-  SimpleHttpPortDomain close();
+  SimpleHttpPortDomain shut();
+
+  @Override
+  @Channel(
+      value = "fd0fdb02-f405-4a27-813c-40980f48c55b",
+      name = "SimpleHttpPortExchangeChannel",
+      allowedTraverse = {TraverseTypes.MappingOfMoving}
+  )
+  HttpResponseDomain exchange(HttpRequestDomain request);
 }

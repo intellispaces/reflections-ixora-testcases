@@ -8,26 +8,29 @@ import tech.intellispaces.ixora.http.HttpRequests;
 import tech.intellispaces.ixora.http.HttpResponseHandle;
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.ixora.http.MovableOutboundHttpPortHandle;
+import tech.intellispaces.ixora.jetty.JettyServerPorts;
 import tech.intellispaces.ixora.okhttp.OkHttpPorts;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.jaquarius.object.reference.ObjectHandles;
+import tech.intellispaces.jaquarius.object.reference.DownwardObjectFactory;
 import tech.intellispaces.jaquarius.object.reference.ObjectReferenceFunctions;
 
 import java.nio.charset.StandardCharsets;
 
 import static tech.intellispaces.commons.collection.CollectionFunctions.toList;
 
-public abstract class AbstractSimpleHttpSample {
+public abstract class AbstractSimpleHttpModule {
   private static final int PORT_NUMBER = 8080;
-
-  protected abstract MovableInboundHttpPort getInboundPort(int portNumber);
 
   @Projection
   public MovableInboundHttpPort inboundPort() {
-    return getInboundPort(PORT_NUMBER);
+    return createInboundPort(JettyServerPorts.factory(PORT_NUMBER));
   }
+
+  protected abstract MovableInboundHttpPort createInboundPort(
+      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortHandleFactory
+  );
 
   @Projection
   public MovableOutboundHttpPortHandle outboundPort() {
@@ -44,20 +47,19 @@ public abstract class AbstractSimpleHttpSample {
     console.println("Welcome message: " + call("/welcome/hello?name=John"));
 
     // Close inbound port
-    inboundPort().close();
+    inboundPort().shut();
   }
 
   private String call(String endpoint) {
-    HttpRequest request = HttpRequests.create(HttpMethods.get(), "http://localhost:" + PORT_NUMBER + endpoint);
+    HttpRequest req = HttpRequests.create(HttpMethods.get(), "http://localhost:" + PORT_NUMBER + endpoint);
 
-    HttpResponseHandle response = null;
+    HttpResponseHandle res = null;
     try {
-      response = outboundPort().exchange(request);
-
-      byte[] responseBodyBytes = ArraysFunctions.toByteArray(toList(response.bodyStream().readAll().iterator()));
-      return new String(responseBodyBytes, StandardCharsets.UTF_8);
+      res = outboundPort().exchange(req);
+      byte[] bodyBytes = ArraysFunctions.toByteArray(toList(res.bodyStream().readAll().iterator()));
+      return new String(bodyBytes, StandardCharsets.UTF_8);
     } finally {
-      ObjectReferenceFunctions.unbindSilently(ObjectHandles.handle(response));
+      ObjectReferenceFunctions.unbindSilently(res);
     }
   }
 }

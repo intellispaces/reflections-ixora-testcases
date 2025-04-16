@@ -3,30 +3,29 @@ package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.jaquarius.annotation.Mover;
 import tech.intellispaces.jaquarius.annotation.ObjectHandle;
+import tech.intellispaces.jaquarius.object.reference.DownwardObjectFactory;
 
 @ObjectHandle(SimpleHttpPortDomain.class)
-public abstract class SimpleHttpPortImpl implements MovableSimpleHttpPort {
-  private final MovableInboundHttpPort operativePort;
+public abstract class SimpleHttpPortImpl implements MovableSimpleHttpPortHandle {
+  private final MovableInboundHttpPort underlyingPort;
 
-  public SimpleHttpPortImpl(MovableInboundHttpPort operativePort) {
-    this.operativePort = operativePort;
-  }
-
-  public MovableInboundHttpPort getOperativePort() {
-    return operativePort;
+  public SimpleHttpPortImpl(
+      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortHandleFactory
+  ) {
+    this.underlyingPort = underlyingPortHandleFactory.create(this);
   }
 
   @Mover
   @Override
-  public MovableSimpleHttpPort open() {
-    operativePort.open();
+  public MovableSimpleHttpPortHandle open() {
+    underlyingPort.open();
     return this;
   }
 
   @Mover
   @Override
-  public MovableSimpleHttpPort close() {
-    operativePort.close();
+  public MovableSimpleHttpPortHandle shut() {
+    underlyingPort.shut();
     return this;
   }
 }
