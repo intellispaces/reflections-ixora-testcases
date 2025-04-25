@@ -35,7 +35,7 @@ public abstract class ModulePropertiesTestcase6 {
    * The implementation of this method will be injected automatically.
    */
   @Projection
-  @Properties(filename = "/module2.yaml", value = "owner.address")
+  @Properties(path = "/module2.yaml", value = "owner.address")
   public abstract Address ownerAddress();
 
   /**
