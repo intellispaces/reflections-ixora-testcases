@@ -10,10 +10,10 @@ import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
+import tech.intellispaces.jaquarius.Jaquarius;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.jaquarius.system.Modules;
 
 /**
  * This testcase demonstrates getting a persisted entity from the database.
@@ -72,6 +72,6 @@ public abstract class FetchBookTestcase4 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.load(FetchBookTestcase4.class, args).start();
+    Jaquarius.createModule(FetchBookTestcase4.class, args).start();
   }
 }

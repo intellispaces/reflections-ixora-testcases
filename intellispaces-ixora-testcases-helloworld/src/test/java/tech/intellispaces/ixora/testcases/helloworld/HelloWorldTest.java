@@ -1,16 +1,17 @@
 package tech.intellispaces.ixora.testcases.helloworld;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.LoggerFactory;
-import tech.intellispaces.jaquarius.system.Modules;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
+import tech.intellispaces.jaquarius.Jaquarius;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -41,7 +42,7 @@ public class HelloWorldTest {
     System.setOut(ps);
 
     // When
-    Modules.flare(moduleClass);
+    Jaquarius.createStartAndStopModule(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

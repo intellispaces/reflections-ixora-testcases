@@ -1,5 +1,7 @@
 package tech.intellispaces.ixora.testcases.http.simple;
 
+import java.nio.charset.StandardCharsets;
+
 import tech.intellispaces.commons.collection.ArraysFunctions;
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.http.HttpMethods;
@@ -15,8 +17,6 @@ import tech.intellispaces.jaquarius.annotation.Projection;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.object.reference.DownwardObjectFactory;
 import tech.intellispaces.jaquarius.object.reference.ObjectReferenceFunctions;
-
-import java.nio.charset.StandardCharsets;
 
 import static tech.intellispaces.commons.collection.CollectionFunctions.toList;
 

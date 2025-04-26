@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+
 import tech.intellispaces.ixora.rdb.annotation.PersistedEntity;
 import tech.intellispaces.ixora.rdb.annotation.Projection;
 import tech.intellispaces.ixora.rdb.entity.TransactionalEntityDomain;

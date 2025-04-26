@@ -2,11 +2,11 @@ package tech.intellispaces.ixora.testcases.helloworld;
 
 import tech.intellispaces.ixora.cli.ConsoleDomain;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
+import tech.intellispaces.jaquarius.Jaquarius;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
 import tech.intellispaces.jaquarius.object.reference.MovableObjectHandle;
-import tech.intellispaces.jaquarius.system.Modules;
 
 /**
  * This testcase demonstrates printing a string to the module console.
@@ -38,6 +38,6 @@ public class HelloWorldTestcase5 {
    * The main method of the application loads and starts the module.
    */
   public static void main(String[] args) {
-    Modules.load(HelloWorldTestcase5.class, args).start();
+    Jaquarius.createModule(HelloWorldTestcase5.class, args).start();
   }
 }

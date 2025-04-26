@@ -1,20 +1,21 @@
 package tech.intellispaces.ixora.testcases.http.simple;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.LoggerFactory;
+
 import tech.intellispaces.ixora.testcases.http.simple.testcase1.SimpleHttpTestcase1;
 import tech.intellispaces.ixora.testcases.http.simple.testcase2.SimpleHttpTestcase2;
-import tech.intellispaces.jaquarius.system.Modules;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import tech.intellispaces.jaquarius.Jaquarius;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -41,7 +42,7 @@ public class SimpleHttpPortTest {
     System.setOut(ps);
 
     // When
-    Modules.flare(moduleClass);
+    Jaquarius.createStartAndStopModule(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

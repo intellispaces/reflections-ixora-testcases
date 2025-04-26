@@ -12,11 +12,11 @@ import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.Books;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
+import tech.intellispaces.jaquarius.Jaquarius;
 import tech.intellispaces.jaquarius.annotation.AutoGuide;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.jaquarius.system.Modules;
 
 /**
  * This testcase demonstrates creating a persisted entity in the database.
@@ -68,6 +68,6 @@ public abstract class CreateBookTestcase1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.load(CreateBookTestcase1.class, args).start();
+    Jaquarius.createModule(CreateBookTestcase1.class, args).start();
   }
 }

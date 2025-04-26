@@ -3,6 +3,7 @@ package tech.intellispaces.ixora.testcases.rdb;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import tech.intellispaces.ixora.rdb.annotation.PersistedEntity;
 import tech.intellispaces.jaquarius.annotation.Channel;
 import tech.intellispaces.jaquarius.annotation.Domain;

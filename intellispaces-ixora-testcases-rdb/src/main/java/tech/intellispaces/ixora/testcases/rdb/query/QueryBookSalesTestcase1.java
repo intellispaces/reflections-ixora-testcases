@@ -11,10 +11,10 @@ import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.statement.MovableResultSet;
 import tech.intellispaces.ixora.rdb.transaction.MovableTransaction;
 import tech.intellispaces.ixora.testcases.rdb.BookSalesProjection;
+import tech.intellispaces.jaquarius.Jaquarius;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Startup;
-import tech.intellispaces.jaquarius.system.Modules;
 
 import static tech.intellispaces.ixora.testcases.rdb.query.QueryBookSql.SELECT_BOOK_SALES;
 
@@ -57,6 +57,6 @@ public abstract class QueryBookSalesTestcase1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.load(QueryBookSalesTestcase1.class, args).start();
+    Jaquarius.createModule(QueryBookSalesTestcase1.class, args).start();
   }
 }

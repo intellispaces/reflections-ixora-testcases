@@ -6,9 +6,9 @@ import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuideImpl;
 import tech.intellispaces.ixora.internet.uri.JoinBasePathStringWithEndpointStringGuideImpl;
 import tech.intellispaces.ixora.internet.uri.SplitUriPathStringToPartsGuideImpl;
 import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpModule;
+import tech.intellispaces.jaquarius.Jaquarius;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.object.reference.DownwardObjectFactory;
-import tech.intellispaces.jaquarius.system.Modules;
 
 @Module({
     JoinBasePathStringWithEndpointStringGuideImpl.class,
@@ -30,6 +30,6 @@ public class SimpleHttpTestcase2 extends AbstractSimpleHttpModule {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Modules.load(SimpleHttpTestcase2.class, args).start();
+    Jaquarius.createModule(SimpleHttpTestcase2.class, args).start();
   }
 }

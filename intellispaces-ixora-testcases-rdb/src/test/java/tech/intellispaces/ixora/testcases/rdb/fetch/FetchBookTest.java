@@ -1,5 +1,10 @@
 package tech.intellispaces.ixora.testcases.rdb.fetch;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+import javax.sql.DataSource;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 import org.dbunit.DataSourceBasedDBTestCase;
@@ -7,12 +12,8 @@ import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.yaml.YamlDataSet;
 import org.h2.jdbcx.JdbcDataSource;
 import org.slf4j.LoggerFactory;
-import tech.intellispaces.jaquarius.system.Modules;
 
-import javax.sql.DataSource;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
+import tech.intellispaces.jaquarius.Jaquarius;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -77,7 +78,7 @@ public class FetchBookTest extends DataSourceBasedDBTestCase {
     System.setOut(ps);
 
     // When
-    Modules.flare(moduleClass);
+    Jaquarius.createStartAndStopModule(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
