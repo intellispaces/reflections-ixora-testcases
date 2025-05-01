@@ -2,7 +2,7 @@ package tech.intellispaces.ixora.testcases.properties;
 
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
+import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.Jaquarius;
 import tech.intellispaces.jaquarius.annotation.Inject;
@@ -21,9 +21,9 @@ import tech.intellispaces.jaquarius.annotation.Startup;
  * <p>
  * The guide {@link SnakeyamlGuide} implements parsing YAML strings.
  * <p>
- * The guide {@link SimplePropertiesToDataGuide} implements map of properties to data.
+ * The guide {@link SimplePropertiesSetToDataGuide} implements map of properties to data.
  */
-@Module({ CliConfiguration.class, SnakeyamlGuide.class, SimplePropertiesToDataGuide.class })
+@Module({ CliConfiguration.class, SnakeyamlGuide.class, SimplePropertiesSetToDataGuide.class })
 public abstract class ModulePropertiesTestcase3 {
 
   /**

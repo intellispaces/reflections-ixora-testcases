@@ -2,7 +2,7 @@ package tech.intellispaces.ixora.testcases.rdb.query;
 
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
+import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
@@ -25,7 +25,7 @@ import static tech.intellispaces.ixora.testcases.rdb.query.QueryBookSql.SELECT_B
     RdbConfiguration.class,
     HikariCpConfiguration.class,
     SnakeyamlGuide.class,
-    SimplePropertiesToDataGuide.class
+    SimplePropertiesSetToDataGuide.class
 })
 public abstract class QueryBookCountTestcase1 {
 

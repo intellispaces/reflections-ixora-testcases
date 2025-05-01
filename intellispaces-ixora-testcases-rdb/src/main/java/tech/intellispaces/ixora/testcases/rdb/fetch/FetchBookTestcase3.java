@@ -2,7 +2,7 @@ package tech.intellispaces.ixora.testcases.rdb.fetch;
 
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.ixora.data.association.SimplePropertiesToDataGuide;
+import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
@@ -27,7 +27,7 @@ import tech.intellispaces.jaquarius.annotation.Startup;
     RdbConfiguration.class,
     HikariCpConfiguration.class,
     SnakeyamlGuide.class,
-    SimplePropertiesToDataGuide.class,
+    SimplePropertiesSetToDataGuide.class,
     DefaultBookCrudGuide.class
 })
 public abstract class FetchBookTestcase3 {

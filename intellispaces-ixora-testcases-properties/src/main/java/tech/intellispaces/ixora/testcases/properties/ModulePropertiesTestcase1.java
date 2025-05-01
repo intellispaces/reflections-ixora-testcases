@@ -2,12 +2,13 @@ package tech.intellispaces.ixora.testcases.properties;
 
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.ixora.data.association.Properties;
+import tech.intellispaces.ixora.data.association.PropertiesSet;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.jaquarius.Jaquarius;
 import tech.intellispaces.jaquarius.annotation.Inject;
 import tech.intellispaces.jaquarius.annotation.Module;
 import tech.intellispaces.jaquarius.annotation.Projection;
+import tech.intellispaces.jaquarius.annotation.Properties;
 import tech.intellispaces.jaquarius.annotation.Startup;
 
 /**
@@ -24,14 +25,14 @@ public abstract class ModulePropertiesTestcase1 {
   /**
    * Declares module projection called 'moduleProperties'.
    * <p>
-   * In this case, the method will return the module properties, since the {@link Properties} annotation is specified.
+   * In this case, the method will return the module properties, since the {@link PropertiesSet} annotation is specified.
    * By default, properties are read from the 'module.yaml' file.
    * <p>
    * The implementation of this method will be injected automatically.
    */
   @Projection
-  @tech.intellispaces.jaquarius.annotation.Properties
-  public abstract Properties moduleProperties();
+  @Properties
+  public abstract PropertiesSet moduleProperties();
 
   /**
    * The module startup method.
