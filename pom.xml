@@ -3,11 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>tech.intellispaces</groupId>
+    <groupId>tech.intellispaces.commons</groupId>
     <artifactId>intellispaces-parent-pom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
+  <groupId>tech.intellispaces.reflections.ixora</groupId>
   <artifactId>intellispaces-ixora-testcases-parent</artifactId>
   <packaging>pom</packaging>
 
@@ -37,22 +38,22 @@
   <dependencies>
     <!-- Intellispaces Jaquarius -->
     <dependency>
-      <groupId>tech.intellispaces</groupId>
-      <artifactId>intellispaces-jaquarius-core</artifactId>
+      <groupId>tech.intellispaces.reflections</groupId>
+      <artifactId>intellispaces-reflections-core</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>tech.intellispaces</groupId>
-      <artifactId>intellispaces-jaquarius-engine</artifactId>
+      <groupId>tech.intellispaces.reflections</groupId>
+      <artifactId>intellispaces-reflections-engine</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>tech.intellispaces</groupId>
+      <groupId>tech.intellispaces.commons</groupId>
       <artifactId>intellispaces-actions</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>tech.intellispaces</groupId>
+      <groupId>tech.intellispaces.commons</groupId>
       <artifactId>intellispaces-proxies-bytebuddy</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>

@@ -13,7 +13,7 @@ import org.dbunit.dataset.yaml.YamlDataSet;
 import org.h2.jdbcx.JdbcDataSource;
 import org.slf4j.LoggerFactory;
 
-import tech.intellispaces.jaquarius.Jaquarius;
+import tech.intellispaces.reflections.Jaquarius;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 import tech.intellispaces.ixora.http.HttpResponse;
 import tech.intellispaces.ixora.http.HttpResponses;
-import tech.intellispaces.jaquarius.annotation.Guide;
+import tech.intellispaces.reflections.annotation.Guide;
 
 @Guide
 public abstract class SimpleHttpPortGuideImpl extends SimpleHttpPortGuide {

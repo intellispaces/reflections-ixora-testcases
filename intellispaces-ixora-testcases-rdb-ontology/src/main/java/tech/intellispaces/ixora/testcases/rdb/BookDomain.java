@@ -5,8 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import tech.intellispaces.ixora.rdb.annotation.PersistedEntity;
-import tech.intellispaces.jaquarius.annotation.Channel;
-import tech.intellispaces.jaquarius.annotation.Domain;
+import tech.intellispaces.reflections.annotation.Channel;
+import tech.intellispaces.reflections.annotation.Domain;
 
 /**
  * This domain represents the Book persisted entity.

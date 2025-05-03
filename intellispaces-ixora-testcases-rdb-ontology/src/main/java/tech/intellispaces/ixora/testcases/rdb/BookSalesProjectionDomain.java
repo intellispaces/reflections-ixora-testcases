@@ -3,8 +3,8 @@ package tech.intellispaces.ixora.testcases.rdb;
 import jakarta.persistence.Column;
 
 import tech.intellispaces.ixora.rdb.annotation.Projection;
-import tech.intellispaces.jaquarius.annotation.Channel;
-import tech.intellispaces.jaquarius.annotation.Domain;
+import tech.intellispaces.reflections.annotation.Channel;
+import tech.intellispaces.reflections.annotation.Domain;
 
 /**
  * This domain represents the book sales projection.

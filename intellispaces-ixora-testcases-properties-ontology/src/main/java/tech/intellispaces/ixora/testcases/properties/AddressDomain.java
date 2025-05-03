@@ -1,8 +1,8 @@
 package tech.intellispaces.ixora.testcases.properties;
 
-import tech.intellispaces.jaquarius.annotation.Channel;
-import tech.intellispaces.jaquarius.annotation.Dataset;
-import tech.intellispaces.jaquarius.annotation.Domain;
+import tech.intellispaces.reflections.annotation.Channel;
+import tech.intellispaces.reflections.annotation.Dataset;
+import tech.intellispaces.reflections.annotation.Domain;
 
 @Dataset
 @Domain("4e7b79a6-c386-4bb7-8687-e91b15adadfd")

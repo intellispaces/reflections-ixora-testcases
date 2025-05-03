@@ -10,10 +10,10 @@ import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
-import tech.intellispaces.jaquarius.Jaquarius;
-import tech.intellispaces.jaquarius.annotation.Inject;
-import tech.intellispaces.jaquarius.annotation.Module;
-import tech.intellispaces.jaquarius.annotation.Startup;
+import tech.intellispaces.reflections.Jaquarius;
+import tech.intellispaces.reflections.annotation.Inject;
+import tech.intellispaces.reflections.annotation.Module;
+import tech.intellispaces.reflections.annotation.Startup;
 
 /**
  * This testcase demonstrates getting a persisted entity from the database.
