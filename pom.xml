@@ -9,17 +9,17 @@
   </parent>
 
   <groupId>tech.intellispaces.reflections.ixora</groupId>
-  <artifactId>intellispaces-ixora-testcases-parent</artifactId>
+  <artifactId>reflections-ixora-testcases-parent</artifactId>
   <packaging>pom</packaging>
 
   <modules>
-    <module>intellispaces-ixora-testcases-helloworld</module>
-    <module>intellispaces-ixora-testcases-properties</module>
-    <module>intellispaces-ixora-testcases-properties-ontology</module>
-    <module>intellispaces-ixora-testcases-rdb</module>
-    <module>intellispaces-ixora-testcases-rdb-ontology</module>
-    <module>intellispaces-ixora-testcases-http</module>
-    <module>intellispaces-ixora-testcases-http-ontology</module>
+    <module>reflections-ixora-testcases-helloworld</module>
+    <module>reflections-ixora-testcases-properties</module>
+    <module>reflections-ixora-testcases-properties-ontology</module>
+    <module>reflections-ixora-testcases-rdb</module>
+    <module>reflections-ixora-testcases-rdb-ontology</module>
+    <module>reflections-ixora-testcases-http</module>
+    <module>reflections-ixora-testcases-http-ontology</module>
   </modules>
 
   <build>
@@ -39,12 +39,12 @@
     <!-- Intellispaces Jaquarius -->
     <dependency>
       <groupId>tech.intellispaces.reflections</groupId>
-      <artifactId>intellispaces-reflections-core</artifactId>
+      <artifactId>reflections-core</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>tech.intellispaces.reflections</groupId>
-      <artifactId>intellispaces-reflections-engine</artifactId>
+      <artifactId>reflections-engine</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>

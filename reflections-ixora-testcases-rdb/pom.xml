@@ -4,54 +4,54 @@
 
     <parent>
         <groupId>tech.intellispaces.reflections.ixora</groupId>
-        <artifactId>intellispaces-ixora-testcases-parent</artifactId>
+        <artifactId>reflections-ixora-testcases-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>intellispaces-ixora-testcases-rdb</artifactId>
+    <artifactId>reflections-ixora-testcases-rdb</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>tech.intellispaces.reflections.ixora</groupId>
-            <artifactId>intellispaces-ixora-testcases-rdb-ontology</artifactId>
+            <artifactId>reflections-ixora-testcases-rdb-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <!-- Intellispaces -->
         <dependency>
             <groupId>tech.intellispaces.reflections.ixora</groupId>
-            <artifactId>intellispaces-ixora-cli-kit</artifactId>
+            <artifactId>reflections-ixora-cli-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>tech.intellispaces.reflections.ixora</groupId>
-            <artifactId>intellispaces-ixora-data-association-kit</artifactId>
+            <artifactId>reflections-ixora-data-association-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>tech.intellispaces.reflections.ixora</groupId>
-            <artifactId>intellispaces-ixora-data-snakeyaml</artifactId>
+            <artifactId>reflections-ixora-data-snakeyaml</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>tech.intellispaces.reflections.ixora</groupId>
-            <artifactId>intellispaces-ixora-hikaricp-kit</artifactId>
+            <artifactId>reflections-ixora-hikaricp-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>tech.intellispaces.reflections.ixora</groupId>
-            <artifactId>intellispaces-ixora-data-ontology</artifactId>
+            <artifactId>reflections-ixora-data-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>tech.intellispaces.reflections.ixora</groupId>
-            <artifactId>intellispaces-ixora-rdb-ontology</artifactId>
+            <artifactId>reflections-ixora-rdb-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>tech.intellispaces.reflections.ixora</groupId>
-            <artifactId>intellispaces-ixora-hikaricp-ontology</artifactId>
+            <artifactId>reflections-ixora-hikaricp-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
