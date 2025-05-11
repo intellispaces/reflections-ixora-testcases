@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>tech.intellispaces.reflections.ixora</groupId>
+  <groupId>tech.intellispaces.reflections</groupId>
   <artifactId>reflections-ixora-testcases-parent</artifactId>
   <packaging>pom</packaging>
 
@@ -39,12 +39,12 @@
     <!-- Intellispaces Jaquarius -->
     <dependency>
       <groupId>tech.intellispaces.reflections</groupId>
-      <artifactId>reflections-core</artifactId>
+      <artifactId>reflections-framework</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>tech.intellispaces.reflections</groupId>
-      <artifactId>reflections-engine</artifactId>
+      <artifactId>reflections-framework-engine</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>

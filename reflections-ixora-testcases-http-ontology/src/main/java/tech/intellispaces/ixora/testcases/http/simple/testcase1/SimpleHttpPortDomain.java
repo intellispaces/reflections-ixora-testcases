@@ -3,9 +3,9 @@ package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 import tech.intellispaces.ixora.http.HttpRequestDomain;
 import tech.intellispaces.ixora.http.HttpResponseDomain;
 import tech.intellispaces.ixora.http.InboundHttpPortDomain;
-import tech.intellispaces.reflections.annotation.Channel;
-import tech.intellispaces.reflections.annotation.Domain;
-import tech.intellispaces.reflections.traverse.TraverseTypes;
+import tech.intellispaces.reflections.framework.annotation.Channel;
+import tech.intellispaces.reflections.framework.annotation.Domain;
+import tech.intellispaces.reflections.framework.traverse.TraverseTypes;
 
 @Domain("f440030a-c859-4a99-b44f-7105ea34dbec")
 public interface SimpleHttpPortDomain extends InboundHttpPortDomain {

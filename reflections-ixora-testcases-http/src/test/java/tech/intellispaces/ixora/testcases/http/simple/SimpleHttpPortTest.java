@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import tech.intellispaces.ixora.testcases.http.simple.testcase1.SimpleHttpTestcase1;
 import tech.intellispaces.ixora.testcases.http.simple.testcase2.SimpleHttpTestcase2;
-import tech.intellispaces.reflections.Jaquarius;
+import tech.intellispaces.reflections.framework.Jaquarius;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

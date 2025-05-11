@@ -2,10 +2,10 @@ package tech.intellispaces.ixora.testcases.helloworld;
 
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.reflections.Jaquarius;
-import tech.intellispaces.reflections.annotation.Inject;
-import tech.intellispaces.reflections.annotation.Module;
-import tech.intellispaces.reflections.annotation.Startup;
+import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.annotation.Inject;
+import tech.intellispaces.reflections.framework.annotation.Module;
+import tech.intellispaces.reflections.framework.annotation.Startup;
 
 /**
  * This testcase demonstrates printing a string to the module console.

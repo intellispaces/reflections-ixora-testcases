@@ -7,9 +7,9 @@ import tech.intellispaces.ixora.http.HttpRequest;
 import tech.intellispaces.ixora.http.HttpResponseHandle;
 import tech.intellispaces.ixora.http.HttpResponses;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuide;
-import tech.intellispaces.reflections.annotation.AutoGuide;
-import tech.intellispaces.reflections.annotation.Guide;
-import tech.intellispaces.reflections.annotation.Mapper;
+import tech.intellispaces.reflections.framework.annotation.AutoGuide;
+import tech.intellispaces.reflections.framework.annotation.Guide;
+import tech.intellispaces.reflections.framework.annotation.Mapper;
 
 @Guide
 public abstract class SimpleHttpPortExchangeGuideImpl implements SimpleHttpPortExchangeGuide {

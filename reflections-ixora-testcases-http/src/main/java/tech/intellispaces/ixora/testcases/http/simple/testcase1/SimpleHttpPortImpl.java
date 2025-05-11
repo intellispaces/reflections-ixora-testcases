@@ -1,9 +1,9 @@
 package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
-import tech.intellispaces.reflections.annotation.Mover;
-import tech.intellispaces.reflections.annotation.ObjectHandle;
-import tech.intellispaces.reflections.object.reference.DownwardObjectFactory;
+import tech.intellispaces.reflections.framework.annotation.Mover;
+import tech.intellispaces.reflections.framework.annotation.ObjectHandle;
+import tech.intellispaces.reflections.framework.object.reference.DownwardObjectFactory;
 
 @ObjectHandle(SimpleHttpPortDomain.class)
 public abstract class SimpleHttpPortImpl implements MovableSimpleHttpPortHandle {

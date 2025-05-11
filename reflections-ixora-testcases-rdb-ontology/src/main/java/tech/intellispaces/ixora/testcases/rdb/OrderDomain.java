@@ -9,8 +9,8 @@ import jakarta.persistence.Table;
 import tech.intellispaces.ixora.rdb.annotation.PersistedEntity;
 import tech.intellispaces.ixora.rdb.annotation.Projection;
 import tech.intellispaces.ixora.rdb.entity.TransactionalEntityDomain;
-import tech.intellispaces.reflections.annotation.Channel;
-import tech.intellispaces.reflections.annotation.Domain;
+import tech.intellispaces.reflections.framework.annotation.Channel;
+import tech.intellispaces.reflections.framework.annotation.Domain;
 
 /**
  * This domain represents the Book Order persisted entity.

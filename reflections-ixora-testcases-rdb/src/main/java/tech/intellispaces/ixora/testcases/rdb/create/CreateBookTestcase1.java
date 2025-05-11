@@ -12,11 +12,11 @@ import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.Books;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
-import tech.intellispaces.reflections.Jaquarius;
-import tech.intellispaces.reflections.annotation.AutoGuide;
-import tech.intellispaces.reflections.annotation.Inject;
-import tech.intellispaces.reflections.annotation.Module;
-import tech.intellispaces.reflections.annotation.Startup;
+import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.annotation.AutoGuide;
+import tech.intellispaces.reflections.framework.annotation.Inject;
+import tech.intellispaces.reflections.framework.annotation.Module;
+import tech.intellispaces.reflections.framework.annotation.Startup;
 
 /**
  * This testcase demonstrates creating a persisted entity in the database.

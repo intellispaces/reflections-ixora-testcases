@@ -1,8 +1,8 @@
 package tech.intellispaces.ixora.testcases.properties;
 
-import tech.intellispaces.reflections.annotation.Channel;
-import tech.intellispaces.reflections.annotation.Dataset;
-import tech.intellispaces.reflections.annotation.Domain;
+import tech.intellispaces.reflections.framework.annotation.Channel;
+import tech.intellispaces.reflections.framework.annotation.Dataset;
+import tech.intellispaces.reflections.framework.annotation.Domain;
 
 @Dataset
 @Domain("6d541c31-31cc-4d68-9680-003a5c270e55")

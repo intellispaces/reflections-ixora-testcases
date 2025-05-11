@@ -11,12 +11,12 @@ import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.TransactionToBookByIdentifierChannel;
-import tech.intellispaces.reflections.Jaquarius;
-import tech.intellispaces.reflections.annotation.Inject;
-import tech.intellispaces.reflections.annotation.Module;
-import tech.intellispaces.reflections.annotation.Startup;
+import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.annotation.Inject;
+import tech.intellispaces.reflections.framework.annotation.Module;
+import tech.intellispaces.reflections.framework.annotation.Startup;
 
-import static tech.intellispaces.reflections.object.reference.ObjectHandles.handle;
+import static tech.intellispaces.reflections.framework.object.reference.ObjectHandles.handle;
 
 /**
  * This testcase demonstrates getting a persisted entity from the database.

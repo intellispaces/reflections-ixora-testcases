@@ -9,10 +9,10 @@ import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.statement.MovableResultSet;
 import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
-import tech.intellispaces.reflections.Jaquarius;
-import tech.intellispaces.reflections.annotation.Inject;
-import tech.intellispaces.reflections.annotation.Module;
-import tech.intellispaces.reflections.annotation.Startup;
+import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.annotation.Inject;
+import tech.intellispaces.reflections.framework.annotation.Module;
+import tech.intellispaces.reflections.framework.annotation.Startup;
 
 import static tech.intellispaces.ixora.testcases.rdb.query.QueryBookSql.SELECT_BOOK_COUNT;
 

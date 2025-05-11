@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>tech.intellispaces.reflections.ixora</groupId>
+        <groupId>tech.intellispaces.reflections</groupId>
         <artifactId>reflections-ixora-testcases-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -14,37 +14,37 @@
     <dependencies>
         <!-- Intellispaces -->
         <dependency>
-            <groupId>tech.intellispaces.reflections.ixora</groupId>
+            <groupId>tech.intellispaces.reflections</groupId>
             <artifactId>reflections-ixora-testcases-http-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>tech.intellispaces.reflections.ixora</groupId>
+            <groupId>tech.intellispaces.reflections</groupId>
             <artifactId>reflections-ixora-http-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>tech.intellispaces.reflections.ixora</groupId>
+            <groupId>tech.intellispaces.reflections</groupId>
             <artifactId>reflections-ixora-okhttp-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>tech.intellispaces.reflections.ixora</groupId>
+            <groupId>tech.intellispaces.reflections</groupId>
             <artifactId>reflections-ixora-jetty-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>tech.intellispaces.reflections.ixora</groupId>
+            <groupId>tech.intellispaces.reflections</groupId>
             <artifactId>reflections-ixora-cli-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>tech.intellispaces.reflections.ixora</groupId>
+            <groupId>tech.intellispaces.reflections</groupId>
             <artifactId>reflections-ixora-internet-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>tech.intellispaces.reflections.ixora</groupId>
+            <groupId>tech.intellispaces.reflections</groupId>
             <artifactId>reflections-ixora-http-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

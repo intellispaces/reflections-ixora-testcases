@@ -4,9 +4,9 @@ import tech.intellispaces.ixora.http.HttpRequestDomain;
 import tech.intellispaces.ixora.http.HttpResponseDomain;
 import tech.intellispaces.ixora.http.InboundHttpPortDomain;
 import tech.intellispaces.ixora.http.annotation.HttpPort;
-import tech.intellispaces.reflections.annotation.Channel;
-import tech.intellispaces.reflections.annotation.Domain;
-import tech.intellispaces.reflections.traverse.TraverseTypes;
+import tech.intellispaces.reflections.framework.annotation.Channel;
+import tech.intellispaces.reflections.framework.annotation.Domain;
+import tech.intellispaces.reflections.framework.traverse.TraverseTypes;
 
 @HttpPort(SimpleHttpPortOntology.class)
 @Domain("51e05981-c19c-4ad6-94e0-cf70e76ed47a")

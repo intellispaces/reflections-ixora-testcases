@@ -12,11 +12,11 @@ import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.ixora.http.MovableOutboundHttpPortHandle;
 import tech.intellispaces.ixora.jetty.JettyServerPorts;
 import tech.intellispaces.ixora.okhttp.OkHttpPorts;
-import tech.intellispaces.reflections.annotation.Inject;
-import tech.intellispaces.reflections.annotation.Projection;
-import tech.intellispaces.reflections.annotation.Startup;
-import tech.intellispaces.reflections.object.reference.DownwardObjectFactory;
-import tech.intellispaces.reflections.object.reference.ObjectReferenceFunctions;
+import tech.intellispaces.reflections.framework.annotation.Inject;
+import tech.intellispaces.reflections.framework.annotation.Projection;
+import tech.intellispaces.reflections.framework.annotation.Startup;
+import tech.intellispaces.reflections.framework.object.reference.DownwardObjectFactory;
+import tech.intellispaces.reflections.framework.object.reference.ObjectReferenceFunctions;
 
 import static tech.intellispaces.commons.collection.CollectionFunctions.toList;
 

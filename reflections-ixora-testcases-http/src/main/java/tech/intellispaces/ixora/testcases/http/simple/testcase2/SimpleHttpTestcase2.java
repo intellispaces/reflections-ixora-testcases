@@ -6,9 +6,9 @@ import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuideImpl;
 import tech.intellispaces.ixora.internet.uri.JoinBasePathStringWithEndpointStringGuideImpl;
 import tech.intellispaces.ixora.internet.uri.SplitUriPathStringToPartsGuideImpl;
 import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpModule;
-import tech.intellispaces.reflections.Jaquarius;
-import tech.intellispaces.reflections.annotation.Module;
-import tech.intellispaces.reflections.object.reference.DownwardObjectFactory;
+import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.annotation.Module;
+import tech.intellispaces.reflections.framework.object.reference.DownwardObjectFactory;
 
 @Module({
     JoinBasePathStringWithEndpointStringGuideImpl.class,

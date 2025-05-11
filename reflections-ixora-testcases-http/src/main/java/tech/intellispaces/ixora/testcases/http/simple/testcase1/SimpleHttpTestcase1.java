@@ -4,9 +4,9 @@ import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuideImpl;
 import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpModule;
-import tech.intellispaces.reflections.Jaquarius;
-import tech.intellispaces.reflections.annotation.Module;
-import tech.intellispaces.reflections.object.reference.DownwardObjectFactory;
+import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.annotation.Module;
+import tech.intellispaces.reflections.framework.object.reference.DownwardObjectFactory;
 
 @Module({
     SimpleHttpPortExchangeGuideImpl.class,
