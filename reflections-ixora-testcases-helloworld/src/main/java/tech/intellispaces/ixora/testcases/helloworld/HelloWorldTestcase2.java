@@ -1,6 +1,6 @@
 package tech.intellispaces.ixora.testcases.helloworld;
 
-import tech.intellispaces.ixora.cli.MovableConsoleHandle;
+import tech.intellispaces.ixora.cli.MovableConsoleReflection;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.reflections.framework.Jaquarius;
 import tech.intellispaces.reflections.framework.annotation.Inject;
@@ -28,7 +28,7 @@ public class HelloWorldTestcase2 {
    * @param console value of the module projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableConsoleHandle console) {
+  public void startup(@Inject MovableConsoleReflection console) {
     console.println("Hello, world!");
   }
 

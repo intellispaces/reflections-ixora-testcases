@@ -6,7 +6,7 @@ import tech.intellispaces.reflections.framework.Jaquarius;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
 import tech.intellispaces.reflections.framework.annotation.Startup;
-import tech.intellispaces.reflections.framework.object.reference.MovableObjectHandle;
+import tech.intellispaces.reflections.framework.reflection.MovableReflection;
 
 /**
  * This testcase demonstrates printing a string to the module console.
@@ -30,7 +30,7 @@ public class HelloWorldTestcase5 {
    * @param console value of the module projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableObjectHandle<ConsoleDomain> console) {
+  public void startup(@Inject MovableReflection<ConsoleDomain> console) {
     console.moveThru(ConsoleDomain::println, "Hello, world!");
   }
 

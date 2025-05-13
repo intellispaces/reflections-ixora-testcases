@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import tech.intellispaces.ixora.http.HttpRequest;
-import tech.intellispaces.ixora.http.HttpResponseHandle;
+import tech.intellispaces.ixora.http.HttpResponseReflection;
 import tech.intellispaces.ixora.http.HttpResponses;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuide;
 import tech.intellispaces.reflections.framework.annotation.AutoGuide;
@@ -19,7 +19,7 @@ public abstract class SimpleHttpPortExchangeGuideImpl implements SimpleHttpPortE
 
   @Mapper
   @Override
-  public HttpResponseHandle exchange(SimpleHttpPort port, HttpRequest request) {
+  public HttpResponseReflection exchange(SimpleHttpPort port, HttpRequest request) {
     String path = request.requestURI().path();
     return switch (path) {
       case "/date/current" -> HttpResponses.ok(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE));

@@ -4,14 +4,14 @@ import tech.intellispaces.commons.type.Types;
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDataGuide;
-import tech.intellispaces.ixora.data.collection.ListHandle;
+import tech.intellispaces.ixora.data.collection.ListReflection;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.statement.MovableResultSetHandle;
-import tech.intellispaces.ixora.rdb.transaction.MovableTransactionHandle;
-import tech.intellispaces.ixora.testcases.rdb.BookSalesProjectionHandle;
+import tech.intellispaces.ixora.rdb.statement.MovableResultSetReflection;
+import tech.intellispaces.ixora.rdb.transaction.MovableTransactionReflection;
+import tech.intellispaces.ixora.testcases.rdb.BookSalesProjectionReflection;
 import tech.intellispaces.reflections.framework.Jaquarius;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
@@ -43,10 +43,10 @@ public abstract class QueryBookSalesTestcase3 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject MovableTransactionHandle tx, @Inject MovableConsole console) {
-    MovableResultSetHandle rs = tx.query(SELECT_BOOK_SALES);
-    ListHandle<BookSalesProjectionHandle> bookSales = rs.dataList(Types.get(BookSalesProjectionHandle.class));
-    for (BookSalesProjectionHandle bookSale : bookSales) {
+  public void startup(@Inject MovableTransactionReflection tx, @Inject MovableConsole console) {
+    MovableResultSetReflection rs = tx.query(SELECT_BOOK_SALES);
+    ListReflection<BookSalesProjectionReflection> bookSales = rs.dataList(Types.get(BookSalesProjectionReflection.class));
+    for (BookSalesProjectionReflection bookSale : bookSales) {
       console.print("Book title: ");
       console.print(bookSale.title());
       console.print(". Sales: ");

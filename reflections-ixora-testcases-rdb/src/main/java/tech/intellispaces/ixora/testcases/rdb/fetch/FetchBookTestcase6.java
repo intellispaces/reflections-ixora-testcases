@@ -6,9 +6,9 @@ import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactoryHandle;
+import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactoryReflection;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
-import tech.intellispaces.ixora.rdb.transaction.TransactionHandle;
+import tech.intellispaces.ixora.rdb.transaction.TransactionReflection;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.TransactionToBookByIdentifierChannel;
@@ -38,7 +38,7 @@ public abstract class FetchBookTestcase6 {
    * Implementation of this method will be auto generated.
    */
   @Inject
-  abstract MovableTransactionFactoryHandle transactionFactory();
+  abstract MovableTransactionFactoryReflection transactionFactory();
 
   /**
    * This method will be invoked automatically after the module is started.
@@ -51,8 +51,8 @@ public abstract class FetchBookTestcase6 {
    */
   @Startup
   public void startup(@Inject MovableConsole console) {
-    MovableTransactionFactoryHandle transactionFactory = transactionFactory();
-    TransactionFunctions.transactional(transactionFactory, (TransactionHandle tx) -> {
+    MovableTransactionFactoryReflection transactionFactory = transactionFactory();
+    TransactionFunctions.transactional(transactionFactory, (TransactionReflection tx) -> {
       int bookId = 2;
       Book book = tx.mapThru(TransactionToBookByIdentifierChannel.class, bookId);
 

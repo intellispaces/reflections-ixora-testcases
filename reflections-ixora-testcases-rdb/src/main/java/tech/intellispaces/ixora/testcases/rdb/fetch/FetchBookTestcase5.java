@@ -16,7 +16,7 @@ import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
 import tech.intellispaces.reflections.framework.annotation.Startup;
 
-import static tech.intellispaces.reflections.framework.object.reference.ObjectHandles.handle;
+import static tech.intellispaces.reflections.framework.reflection.Reflections.reflection;
 
 /**
  * This testcase demonstrates getting a persisted entity from the database.
@@ -55,7 +55,7 @@ public abstract class FetchBookTestcase5 {
     MovableTransactionFactory transactionFactory = transactionFactory();
     TransactionFunctions.transactional(transactionFactory, tx -> {
       int bookId = 2;
-      Book book = handle(tx).mapThru(TransactionToBookByIdentifierChannel.class, bookId);
+      Book book = reflection(tx).mapThru(TransactionToBookByIdentifierChannel.class, bookId);
 
       console.print("Book title: ");
       console.println(book.title());

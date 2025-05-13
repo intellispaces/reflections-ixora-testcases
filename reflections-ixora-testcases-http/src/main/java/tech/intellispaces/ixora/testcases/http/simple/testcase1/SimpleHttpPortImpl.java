@@ -2,29 +2,29 @@ package tech.intellispaces.ixora.testcases.http.simple.testcase1;
 
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
 import tech.intellispaces.reflections.framework.annotation.Mover;
-import tech.intellispaces.reflections.framework.annotation.ObjectHandle;
-import tech.intellispaces.reflections.framework.object.reference.DownwardObjectFactory;
+import tech.intellispaces.reflections.framework.annotation.Reflection;
+import tech.intellispaces.reflections.framework.reflection.DownwardObjectFactory;
 
-@ObjectHandle(SimpleHttpPortDomain.class)
-public abstract class SimpleHttpPortImpl implements MovableSimpleHttpPortHandle {
+@Reflection(SimpleHttpPortDomain.class)
+public abstract class SimpleHttpPortImpl implements MovableSimpleHttpPortReflection {
   private final MovableInboundHttpPort underlyingPort;
 
   public SimpleHttpPortImpl(
-      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortHandleFactory
+      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortReflectionFactory
   ) {
-    this.underlyingPort = underlyingPortHandleFactory.create(this);
+    this.underlyingPort = underlyingPortReflectionFactory.create(this);
   }
 
   @Mover
   @Override
-  public MovableSimpleHttpPortHandle open() {
+  public MovableSimpleHttpPortReflection open() {
     underlyingPort.open();
     return this;
   }
 
   @Mover
   @Override
-  public MovableSimpleHttpPortHandle shut() {
+  public MovableSimpleHttpPortReflection shut() {
     underlyingPort.shut();
     return this;
   }

@@ -6,7 +6,7 @@ import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuideImpl;
 import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpModule;
 import tech.intellispaces.reflections.framework.Jaquarius;
 import tech.intellispaces.reflections.framework.annotation.Module;
-import tech.intellispaces.reflections.framework.object.reference.DownwardObjectFactory;
+import tech.intellispaces.reflections.framework.reflection.DownwardObjectFactory;
 
 @Module({
     SimpleHttpPortExchangeGuideImpl.class,
@@ -17,9 +17,9 @@ public class SimpleHttpTestcase1 extends AbstractSimpleHttpModule {
 
   @Override
   protected MovableInboundHttpPort createInboundPort(
-      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortHandleFactory
+      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortReflectionFactory
   ) {
-    return SimpleHttpPorts.create(underlyingPortHandleFactory);
+    return SimpleHttpPorts.create(underlyingPortReflectionFactory);
   }
 
   /**

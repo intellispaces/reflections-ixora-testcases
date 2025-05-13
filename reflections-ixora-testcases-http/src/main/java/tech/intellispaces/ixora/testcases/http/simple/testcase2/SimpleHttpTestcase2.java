@@ -8,7 +8,7 @@ import tech.intellispaces.ixora.internet.uri.SplitUriPathStringToPartsGuideImpl;
 import tech.intellispaces.ixora.testcases.http.simple.AbstractSimpleHttpModule;
 import tech.intellispaces.reflections.framework.Jaquarius;
 import tech.intellispaces.reflections.framework.annotation.Module;
-import tech.intellispaces.reflections.framework.object.reference.DownwardObjectFactory;
+import tech.intellispaces.reflections.framework.reflection.DownwardObjectFactory;
 
 @Module({
     JoinBasePathStringWithEndpointStringGuideImpl.class,
@@ -21,9 +21,9 @@ public class SimpleHttpTestcase2 extends AbstractSimpleHttpModule {
 
   @Override
   protected MovableInboundHttpPort createInboundPort(
-      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortHandleFactory
+      DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortReflectionFactory
   ) {
-    return SimpleHttpPorts.create(underlyingPortHandleFactory).asInboundHttpPort();
+    return SimpleHttpPorts.create(underlyingPortReflectionFactory).asInboundHttpPort();
   }
 
   /**

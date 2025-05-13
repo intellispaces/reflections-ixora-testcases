@@ -6,7 +6,7 @@ import tech.intellispaces.reflections.framework.Jaquarius;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
 import tech.intellispaces.reflections.framework.annotation.Startup;
-import tech.intellispaces.reflections.framework.object.reference.MovableObjectHandle;
+import tech.intellispaces.reflections.framework.reflection.MovableReflection;
 import tech.intellispaces.reflections.framework.space.channel.ChannelIds;
 
 /**
@@ -30,7 +30,7 @@ public class HelloWorldTestcase6 {
    * @param console value of the module projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableObjectHandle<ConsoleDomain> console) {
+  public void startup(@Inject MovableReflection<ConsoleDomain> console) {
     // Gets identifier of the channel
     String cid = ChannelIds.get(ConsoleDomain.class, ConsoleDomain::println, "");
 
