@@ -11,7 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.LoggerFactory;
 
-import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.ReflectionsFramework;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -41,7 +41,7 @@ public class ModulePropertiesTest {
     System.setOut(ps);
 
     // When
-    Jaquarius.createStartAndStopModule(moduleClass);
+    ReflectionsFramework.flashModule(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);
@@ -60,7 +60,7 @@ public class ModulePropertiesTest {
     System.setOut(ps);
 
     // When
-    Jaquarius.createStartAndStopModule(moduleClass);
+    ReflectionsFramework.flashModule(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

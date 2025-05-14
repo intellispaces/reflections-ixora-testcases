@@ -4,7 +4,7 @@ import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDataGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
-import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.ReflectionsFramework;
 import tech.intellispaces.reflections.framework.annotation.Configuration;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
@@ -58,7 +58,7 @@ public interface ModulePropertiesTestcase5 {
      * The main method of the application loads and starts the module.
      */
     public static void main(String[] args) {
-      Jaquarius.createModule(MainUnit.class, args).start();
+      ReflectionsFramework.loadModule(MainUnit.class, args).start();
     }
   }
 

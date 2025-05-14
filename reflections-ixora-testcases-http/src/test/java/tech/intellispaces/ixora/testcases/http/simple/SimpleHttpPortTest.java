@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import tech.intellispaces.ixora.testcases.http.simple.testcase1.SimpleHttpTestcase1;
 import tech.intellispaces.ixora.testcases.http.simple.testcase2.SimpleHttpTestcase2;
-import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.ReflectionsFramework;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -42,7 +42,7 @@ public class SimpleHttpPortTest {
     System.setOut(ps);
 
     // When
-    Jaquarius.createStartAndStopModule(moduleClass);
+    ReflectionsFramework.flashModule(moduleClass);
 
     // Then
     String output = os.toString(StandardCharsets.UTF_8);

@@ -12,7 +12,7 @@ import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.BookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.Books;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
-import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.ReflectionsFramework;
 import tech.intellispaces.reflections.framework.annotation.AutoGuide;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
@@ -68,6 +68,6 @@ public abstract class CreateBookTestcase1 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Jaquarius.createModule(CreateBookTestcase1.class, args).start();
+    ReflectionsFramework.loadModule(CreateBookTestcase1.class, args).start();
   }
 }

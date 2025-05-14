@@ -2,7 +2,7 @@ package tech.intellispaces.ixora.testcases.helloworld;
 
 import tech.intellispaces.ixora.cli.ConsoleDomain;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.ReflectionsFramework;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
 import tech.intellispaces.reflections.framework.annotation.Startup;
@@ -42,6 +42,6 @@ public class HelloWorldTestcase6 {
    * The main method of the application loads and starts the module.
    */
   public static void main(String[] args) {
-    Jaquarius.createModule(HelloWorldTestcase6.class, args).start();
+    ReflectionsFramework.loadModule(HelloWorldTestcase6.class, args).start();
   }
 }

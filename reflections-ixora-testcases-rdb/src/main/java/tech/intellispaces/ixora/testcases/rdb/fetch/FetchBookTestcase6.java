@@ -12,7 +12,7 @@ import tech.intellispaces.ixora.rdb.transaction.TransactionReflection;
 import tech.intellispaces.ixora.testcases.rdb.Book;
 import tech.intellispaces.ixora.testcases.rdb.DefaultBookCrudGuide;
 import tech.intellispaces.ixora.testcases.rdb.TransactionToBookByIdentifierChannel;
-import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.ReflectionsFramework;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
 import tech.intellispaces.reflections.framework.annotation.Startup;
@@ -68,6 +68,6 @@ public abstract class FetchBookTestcase6 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Jaquarius.createModule(FetchBookTestcase6.class, args).start();
+    ReflectionsFramework.loadModule(FetchBookTestcase6.class, args).start();
   }
 }

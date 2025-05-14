@@ -9,7 +9,7 @@ import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
 import tech.intellispaces.ixora.rdb.statement.MovableResultSet;
 import tech.intellispaces.ixora.rdb.transaction.MovableTransactionFactory;
 import tech.intellispaces.ixora.rdb.transaction.TransactionFunctions;
-import tech.intellispaces.reflections.framework.Jaquarius;
+import tech.intellispaces.reflections.framework.ReflectionsFramework;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
 import tech.intellispaces.reflections.framework.annotation.Startup;
@@ -50,6 +50,6 @@ public abstract class QueryBookCountTestcase4 {
    * In the main method, we load and run the IntelliSpaces framework module.
    */
   public static void main(String[] args) {
-    Jaquarius.createModule(QueryBookCountTestcase4.class, args).start();
+    ReflectionsFramework.loadModule(QueryBookCountTestcase4.class, args).start();
   }
 }
