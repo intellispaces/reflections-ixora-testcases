@@ -31,7 +31,7 @@
         </dependency>
         <dependency>
             <groupId>tech.intellispaces.reflections</groupId>
-            <artifactId>reflections-ixora-data-snakeyaml</artifactId>
+            <artifactId>reflections-ixora-data-snakeyaml-kit</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

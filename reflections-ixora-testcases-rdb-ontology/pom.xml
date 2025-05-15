@@ -21,7 +21,7 @@
         <!-- Intellispaces Reflections -->
         <dependency>
             <groupId>tech.intellispaces.reflections</groupId>
-            <artifactId>reflections-annotationprocessor</artifactId>
+            <artifactId>reflections-framework-annotationprocessor</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
