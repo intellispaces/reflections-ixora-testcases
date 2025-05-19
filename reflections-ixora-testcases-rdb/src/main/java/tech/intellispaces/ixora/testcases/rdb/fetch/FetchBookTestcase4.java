@@ -33,7 +33,7 @@ public abstract class FetchBookTestcase4 {
   /**
    * The book default implementation of the CRUD guide.
    */
-  @Inject
+  @Inject(byName = false)
   abstract DefaultBookCrudGuide bookCrudGuide();
 
   /**
