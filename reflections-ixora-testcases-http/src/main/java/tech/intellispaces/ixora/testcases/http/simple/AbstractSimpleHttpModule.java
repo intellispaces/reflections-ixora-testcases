@@ -18,6 +18,8 @@ import tech.intellispaces.reflections.framework.annotation.Startup;
 import tech.intellispaces.reflections.framework.reflection.DownwardObjectFactory;
 import tech.intellispaces.reflections.framework.reflection.ReflectionFunctions;
 
+import static tech.intellispaces.commons.collection.CollectionFunctions.toList;
+
 public abstract class AbstractSimpleHttpModule {
   private static final int PORT_NUMBER = 8080;
 
