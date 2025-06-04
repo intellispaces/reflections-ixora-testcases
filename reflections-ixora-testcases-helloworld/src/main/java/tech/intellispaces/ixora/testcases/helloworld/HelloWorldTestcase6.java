@@ -1,5 +1,6 @@
 package tech.intellispaces.ixora.testcases.helloworld;
 
+import tech.intellispaces.core.Rid;
 import tech.intellispaces.ixora.cli.ConsoleDomain;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.reflections.framework.ReflectionsFramework;
@@ -32,10 +33,10 @@ public class HelloWorldTestcase6 {
   @Startup
   public void startup(@Inject MovableReflection<ConsoleDomain> console) {
     // Gets identifier of the channel
-    String cid = ChannelIds.get(ConsoleDomain.class, ConsoleDomain::println, "");
+    Rid channelId = ChannelIds.get(ConsoleDomain.class, ConsoleDomain::println, "");
 
     // Moves console through channel
-    console.moveThru(cid, "Hello, world!");
+    console.moveThru(channelId, "Hello, world!");
   }
 
   /**
