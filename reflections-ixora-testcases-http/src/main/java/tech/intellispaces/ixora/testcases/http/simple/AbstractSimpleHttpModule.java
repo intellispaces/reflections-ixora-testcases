@@ -7,9 +7,9 @@ import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.http.HttpMethods;
 import tech.intellispaces.ixora.http.HttpRequest;
 import tech.intellispaces.ixora.http.HttpRequests;
-import tech.intellispaces.ixora.http.HttpResponseReflection;
+import tech.intellispaces.ixora.http.HttpResponse;
 import tech.intellispaces.ixora.http.MovableInboundHttpPort;
-import tech.intellispaces.ixora.http.MovableOutboundHttpPortReflection;
+import tech.intellispaces.ixora.http.MovableOutboundHttpPort;
 import tech.intellispaces.ixora.jetty.JettyServerPorts;
 import tech.intellispaces.ixora.okhttp.OkHttpPorts;
 import tech.intellispaces.reflections.framework.annotation.Inject;
@@ -33,8 +33,8 @@ public abstract class AbstractSimpleHttpModule {
   );
 
   @Projection
-  public MovableOutboundHttpPortReflection outboundPort() {
-    return OkHttpPorts.create().asOutboundHttpPort();
+  public MovableOutboundHttpPort outboundPort() {
+    return OkHttpPorts.create();
   }
 
   @Startup
@@ -53,7 +53,7 @@ public abstract class AbstractSimpleHttpModule {
   private String call(String endpoint) {
     HttpRequest req = HttpRequests.create(HttpMethods.get(), "http://localhost:" + PORT_NUMBER + endpoint);
 
-    HttpResponseReflection res = null;
+    HttpResponse res = null;
     try {
       res = outboundPort().exchange(req);
       byte[] bodyBytes = ArraysFunctions.toByteArray(toList(res.bodyStream().readAll().iterator()));

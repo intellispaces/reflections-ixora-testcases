@@ -1,6 +1,5 @@
 package tech.intellispaces.ixora.testcases.helloworld;
 
-import tech.intellispaces.ixora.cli.ConsoleDomain;
 import tech.intellispaces.ixora.cli.ConsolePrintlnStringChannel;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.reflections.framework.ReflectionsFramework;
@@ -31,7 +30,7 @@ public class HelloWorldTestcase3 {
    * @param console value of the module projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableReflection<ConsoleDomain> console) {
+  public void startup(@Inject MovableReflection console) {
     console.moveThru(ConsolePrintlnStringChannel.class, "Hello, world!");
   }
 

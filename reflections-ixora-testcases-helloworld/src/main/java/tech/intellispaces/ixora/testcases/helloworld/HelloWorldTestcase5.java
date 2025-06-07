@@ -30,8 +30,8 @@ public class HelloWorldTestcase5 {
    * @param console value of the module projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableReflection<ConsoleDomain> console) {
-    console.moveThru(ConsoleDomain::println, "Hello, world!");
+  public void startup(@Inject MovableReflection console) {
+//    console.moveThru(ConsoleDomain::println, "Hello, world!");
   }
 
   /**

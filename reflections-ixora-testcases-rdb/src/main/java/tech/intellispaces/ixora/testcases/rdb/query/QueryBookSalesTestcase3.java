@@ -4,14 +4,14 @@ import tech.intellispaces.commons.type.Types;
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
 import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDataGuide;
-import tech.intellispaces.ixora.data.collection.ListReflection;
+import tech.intellispaces.ixora.data.collection.List;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.ixora.hikaricp.configuration.HikariCpConfiguration;
 import tech.intellispaces.ixora.rdb.annotation.Transactional;
 import tech.intellispaces.ixora.rdb.configuration.RdbConfiguration;
-import tech.intellispaces.ixora.rdb.statement.MovableResultSetReflection;
-import tech.intellispaces.ixora.rdb.transaction.MovableTransactionReflection;
-import tech.intellispaces.ixora.testcases.rdb.BookSalesProjectionReflection;
+import tech.intellispaces.ixora.rdb.statement.MovableResultSet;
+import tech.intellispaces.ixora.rdb.transaction.MovableTransaction;
+import tech.intellispaces.ixora.testcases.rdb.BookSalesProjection;
 import tech.intellispaces.reflections.framework.ReflectionsFramework;
 import tech.intellispaces.reflections.framework.annotation.Inject;
 import tech.intellispaces.reflections.framework.annotation.Module;
@@ -43,10 +43,10 @@ public abstract class QueryBookSalesTestcase3 {
    */
   @Startup
   @Transactional
-  public void startup(@Inject MovableTransactionReflection tx, @Inject MovableConsole console) {
-    MovableResultSetReflection rs = tx.query(SELECT_BOOK_SALES);
-    ListReflection<BookSalesProjectionReflection> bookSales = rs.dataList(Types.get(BookSalesProjectionReflection.class));
-    for (BookSalesProjectionReflection bookSale : bookSales) {
+  public void startup(@Inject MovableTransaction tx, @Inject MovableConsole console) {
+    MovableResultSet rs = tx.query(SELECT_BOOK_SALES);
+    List<BookSalesProjection> bookSales = rs.dataList(Types.get(BookSalesProjection.class));
+    for (BookSalesProjection bookSale : bookSales) {
       console.print("Book title: ");
       console.print(bookSale.title());
       console.print(". Sales: ");

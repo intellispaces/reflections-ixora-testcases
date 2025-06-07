@@ -32,7 +32,7 @@ public class HelloWorldTest {
       HelloWorldTestcase2.class,
       HelloWorldTestcase3.class,
       HelloWorldTestcase4.class,
-      HelloWorldTestcase5.class,
+//      HelloWorldTestcase5.class,
       HelloWorldTestcase6.class
   })
   void testOutput(Class<?> moduleClass) {

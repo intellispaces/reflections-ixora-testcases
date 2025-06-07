@@ -5,11 +5,11 @@ import tech.intellispaces.reflections.framework.annotation.Mover;
 import tech.intellispaces.reflections.framework.annotation.Reflection;
 import tech.intellispaces.reflections.framework.reflection.DownwardObjectFactory;
 
-@Reflection(SimpleHttpPortDomain.class)
-public abstract class SimpleHttpPortImpl implements MovableSimpleHttpPortReflection {
+@Reflection(domainClass = SimpleHttpPortDomain.class)
+public abstract class SimpleHttpPortReflection implements MovableSimpleHttpPort {
   private final MovableInboundHttpPort underlyingPort;
 
-  public SimpleHttpPortImpl(
+  public SimpleHttpPortReflection(
       DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortReflectionFactory
   ) {
     this.underlyingPort = underlyingPortReflectionFactory.create(this);
@@ -17,14 +17,14 @@ public abstract class SimpleHttpPortImpl implements MovableSimpleHttpPortReflect
 
   @Mover
   @Override
-  public MovableSimpleHttpPortReflection open() {
+  public MovableSimpleHttpPort open() {
     underlyingPort.open();
     return this;
   }
 
   @Mover
   @Override
-  public MovableSimpleHttpPortReflection shut() {
+  public MovableSimpleHttpPort shut() {
     underlyingPort.shut();
     return this;
   }

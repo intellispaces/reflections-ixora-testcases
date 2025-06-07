@@ -23,7 +23,7 @@ public class SimpleHttpTestcase2 extends AbstractSimpleHttpModule {
   protected MovableInboundHttpPort createInboundPort(
       DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortReflectionFactory
   ) {
-    return SimpleHttpPorts.create(underlyingPortReflectionFactory).asInboundHttpPort();
+    return SimpleHttpPorts.create(underlyingPortReflectionFactory);
   }
 
   /**

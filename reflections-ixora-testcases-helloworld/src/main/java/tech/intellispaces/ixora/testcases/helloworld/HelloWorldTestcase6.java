@@ -31,7 +31,7 @@ public class HelloWorldTestcase6 {
    * @param console value of the module projection named 'console'.
    */
   @Startup
-  public void startup(@Inject MovableReflection<ConsoleDomain> console) {
+  public void startup(@Inject MovableReflection console) {
     // Gets identifier of the channel
     Rid channelId = ChannelIds.get(ConsoleDomain.class, ConsoleDomain::println, "");
 

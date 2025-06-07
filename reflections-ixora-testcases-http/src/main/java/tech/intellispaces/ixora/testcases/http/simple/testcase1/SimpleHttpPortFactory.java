@@ -8,9 +8,9 @@ import tech.intellispaces.reflections.framework.reflection.DownwardObjectFactory
 public class SimpleHttpPortFactory implements SimpleHttpPortAssistantCustomizer {
 
   @Override
-  public MovableSimpleHttpPortReflection create(
+  public MovableSimpleHttpPort create(
       DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortReflectionFactory
   ) {
-    return new SimpleHttpPortImplWrapper(underlyingPortReflectionFactory);
+    return new SimpleHttpPortReflectionWrapper(underlyingPortReflectionFactory);
   }
 }

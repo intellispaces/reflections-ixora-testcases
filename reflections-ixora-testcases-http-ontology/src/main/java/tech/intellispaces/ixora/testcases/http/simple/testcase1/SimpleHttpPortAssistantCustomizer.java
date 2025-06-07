@@ -7,7 +7,7 @@ import tech.intellispaces.reflections.framework.reflection.DownwardObjectFactory
 @AssistantCustomizer(SimpleHttpPortDomain.class)
 public interface SimpleHttpPortAssistantCustomizer {
 
-  MovableSimpleHttpPortReflection create(
+  MovableSimpleHttpPort create(
       DownwardObjectFactory<? extends MovableInboundHttpPort> underlyingPortReflectionFactory
   );
 }
