@@ -31,7 +31,7 @@ public class HelloWorldTestcase5 {
    */
   @Startup
   public void startup(@Inject MovableReflection console) {
-//    console.moveThru(ConsoleDomain::println, "Hello, world!");
+    console.moveThru(ConsoleDomain.class, ConsoleDomain::println, "Hello, world!");
   }
 
   /**
