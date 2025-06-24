@@ -9,7 +9,7 @@ import tech.intellispaces.ixora.http.HttpResponses;
 import tech.intellispaces.ixora.internet.uri.GetUriQueryParamGuide;
 import tech.intellispaces.reflections.framework.annotation.AutoGuide;
 import tech.intellispaces.reflections.framework.annotation.Guide;
-import tech.intellispaces.reflections.framework.annotation.Mapper;
+import tech.intellispaces.reflections.framework.annotation.MapperOfMoving;
 
 @Guide
 public abstract class SimpleHttpPortExchangeGuideImpl implements SimpleHttpPortExchangeGuide {
@@ -17,8 +17,8 @@ public abstract class SimpleHttpPortExchangeGuideImpl implements SimpleHttpPortE
   @AutoGuide
   abstract GetUriQueryParamGuide getUriQueryParamGuide();
 
-  @Mapper
   @Override
+  @MapperOfMoving
   public HttpResponse exchange(SimpleHttpPort port, HttpRequest request) {
     String path = request.requestURI().path();
     return switch (path) {
