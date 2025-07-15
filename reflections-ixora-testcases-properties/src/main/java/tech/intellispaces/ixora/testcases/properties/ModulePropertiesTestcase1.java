@@ -44,8 +44,8 @@ public abstract class ModulePropertiesTestcase1 {
    */
   @Startup
   public void startup(@Inject MovableConsole console) {
-    console.println("City: " + moduleProperties().stringValue("owner.address.city"));
-    console.println("Street: " + moduleProperties().stringValue("owner.address.street"));
+    console.println("City: " + moduleProperties().stringProperty("owner.address.city"));
+    console.println("Street: " + moduleProperties().stringProperty("owner.address.street"));
   }
 
   /**

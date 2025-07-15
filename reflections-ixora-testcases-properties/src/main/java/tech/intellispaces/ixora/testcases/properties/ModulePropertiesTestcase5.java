@@ -2,7 +2,7 @@ package tech.intellispaces.ixora.testcases.properties;
 
 import tech.intellispaces.ixora.cli.MovableConsole;
 import tech.intellispaces.ixora.cli.configuration.CliConfiguration;
-import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDataGuide;
+import tech.intellispaces.ixora.data.association.SimplePropertiesSetToDatasetGuide;
 import tech.intellispaces.ixora.data.snakeyaml.SnakeyamlGuide;
 import tech.intellispaces.reflections.framework.ReflectionsFramework;
 import tech.intellispaces.reflections.framework.annotation.Configuration;
@@ -27,9 +27,9 @@ public interface ModulePropertiesTestcase5 {
    * <p>
    * The guide {@link SnakeyamlGuide} implements parsing YAML strings.
    * <p>
-   * The guide {@link SimplePropertiesSetToDataGuide} implements map of properties to data.
+   * The guide {@link SimplePropertiesSetToDatasetGuide} implements map of properties to data.
    */
-  @Module({ ModuleConfiguration.class, CliConfiguration.class, SnakeyamlGuide.class, SimplePropertiesSetToDataGuide.class })
+  @Module({ ModuleConfiguration.class, CliConfiguration.class, SnakeyamlGuide.class, SimplePropertiesSetToDatasetGuide.class })
   abstract class MainUnit {
 
     /**
